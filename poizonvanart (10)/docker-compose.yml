@@ -1,0 +1,13 @@
+version: '3.8'
+
+services:
+  poizonvanart:
+    build: .
+    container_name: poizonvanart-app
+    ports:
+      - "8080:8080"
+    environment:
+      - PORT=8080
+    volumes:
+      - ./project/data:/app/project/data
+    restart: unless-stopped

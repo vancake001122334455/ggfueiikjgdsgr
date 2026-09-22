@@ -1,0 +1,13 @@
+{
+  "name": "poizonvanart",
+  "version": "1.0.0",
+  "description": "E-commerce & cross-border logistics platform for POIZON (Dewu)",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "start": "node server/index.js",
+    "open": "node ../run.js",
+    "dev": "node --watch server/index.js",
+    "test": "node --test"
+  }
+}

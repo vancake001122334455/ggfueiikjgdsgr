@@ -1,0 +1,1490 @@
+{
+  "meta": {
+    "version": "1.0.0",
+    "generated": "2026-09-20",
+    "currency_base": "RUB"
+  },
+  "roles": [
+    {
+      "code": "owner",
+      "name": "Владелец",
+      "is_system": true,
+      "permissions": [
+        "*"
+      ]
+    },
+    {
+      "code": "admin",
+      "name": "Администратор",
+      "is_system": true,
+      "permissions": [
+        "orders.read",
+        "orders.write",
+        "orders.status",
+        "users.read",
+        "users.write",
+        "users.blacklist",
+        "catalog.read",
+        "catalog.write",
+        "tiktok.moderate",
+        "referrals.read",
+        "disputes.handle",
+        "chat.write",
+        "tasks.write",
+        "tasks.read",
+        "warehouse.manage",
+        "stickers.print",
+        "export.data"
+      ]
+    },
+    {
+      "code": "manager",
+      "name": "Менеджер",
+      "is_system": true,
+      "description": "Ведёт заказы и клиентов, модерация TikTok, стикеры и экспорт. Без доступа к P&L, курсам и корректировке балансов.",
+      "permissions": [
+        "orders.read",
+        "orders.write",
+        "orders.status",
+        "users.read",
+        "catalog.read",
+        "tiktok.moderate",
+        "referrals.read",
+        "disputes.handle",
+        "chat.write",
+        "tasks.write",
+        "tasks.read",
+        "stickers.print",
+        "export.data"
+      ]
+    },
+    {
+      "code": "finance",
+      "name": "Финансист",
+      "is_system": true,
+      "permissions": [
+        "orders.read",
+        "finance.read",
+        "rates.write",
+        "wallet.adjust",
+        "refunds.handle",
+        "pnl.read",
+        "export.data"
+      ]
+    },
+    {
+      "code": "support",
+      "name": "Поддержка",
+      "is_system": true,
+      "permissions": [
+        "orders.read",
+        "users.read",
+        "chat.write",
+        "disputes.read",
+        "notifications.send",
+        "tiktok.read"
+      ]
+    },
+    {
+      "code": "warehouse",
+      "name": "Склад (Китай)",
+      "is_system": true,
+      "permissions": [
+        "orders.read",
+        "warehouse.photos",
+        "warehouse.weigh",
+        "orders.status",
+        "stickers.print",
+        "tasks.read"
+      ]
+    },
+    {
+      "code": "courier",
+      "name": "Курьер",
+      "is_system": true,
+      "permissions": [
+        "orders.read",
+        "orders.status"
+      ]
+    },
+    {
+      "code": "client",
+      "name": "Клиент",
+      "is_system": true,
+      "permissions": [
+        "self.read",
+        "self.write",
+        "cart.write",
+        "orders.create",
+        "wallet.self",
+        "tiktok.submit",
+        "chat.self"
+      ]
+    }
+  ],
+  "settings": {
+    "rates.currency_view": {
+      "value": [
+        "BYN",
+        "RUB",
+        "USD"
+      ],
+      "is_public": true,
+      "description": "Доступные валюты отображения"
+    },
+    "rates.currency_rates": {
+      "is_public": true,
+      "description": "Курс к RUB. effective = base * (1 + markup/100)",
+      "value": {
+        "RUB": {
+          "base": 1,
+          "markup": 0,
+          "symbol": "₽",
+          "minor": "kopeck"
+        },
+        "BYN": {
+          "base": 33.2,
+          "markup": 1.5,
+          "symbol": "Br",
+          "minor": "kopeck"
+        },
+        "USD": {
+          "base": 92.4,
+          "markup": 2.0,
+          "symbol": "$",
+          "minor": "cent"
+        },
+        "CNY": {
+          "base": 12.85,
+          "markup": 3.0,
+          "symbol": "¥",
+          "minor": "fen"
+        }
+      }
+    },
+    "rates.auto_source": {
+      "value": "manual",
+      "is_public": false,
+      "description": "manual | cbr | nbrb"
+    },
+    "rates.auto_markup_default": {
+      "value": 2.5,
+      "is_public": false
+    },
+    "logistics.tariffs": {
+      "is_public": true,
+      "value": {
+        "RU_MOW": {
+          "label": "Москва, РФ",
+          "usd_per_kg": 3.5,
+          "days_min": 22,
+          "days_max": 28,
+          "currency_accept": [
+            "RUB"
+          ]
+        },
+        "BY_MSQ": {
+          "label": "Минск, РБ",
+          "usd_per_kg": 4.5,
+          "days_min": 30,
+          "days_max": 35,
+          "currency_accept": [
+            "BYN",
+            "RUB"
+          ]
+        }
+      }
+    },
+    "logistics.packaging": {
+      "is_public": true,
+      "value": {
+        "none": 0,
+        "basic": 3,
+        "corners": 5,
+        "crate": 6
+      }
+    },
+    "logistics.unloading_usd": {
+      "value": 3,
+      "is_public": true
+    },
+    "logistics.unloading_volume_max_m3": {
+      "value": 0.4,
+      "is_public": true
+    },
+    "logistics.volumetric_divisor": {
+      "value": 5000,
+      "is_public": true
+    },
+    "logistics.min_billable_kg": {
+      "value": 0.5,
+      "is_public": true
+    },
+    "insurance.tiers": {
+      "is_public": true,
+      "value": [
+        {
+          "max_usd": 500,
+          "rate": 0.02
+        },
+        {
+          "max_usd": 1000,
+          "rate": 0.03
+        },
+        {
+          "max_usd": null,
+          "rate": 0.03
+        }
+      ]
+    },
+    "commission.base_rate": {
+      "value": 0.1,
+      "is_public": true
+    },
+    "loyalty.tiers": {
+      "is_public": true,
+      "value": [
+        {
+          "code": "BASE",
+          "name": "Base",
+          "commission": 0.1,
+          "threshold_rub_minor": 0,
+          "perks": [
+            "Стандартная поддержка"
+          ]
+        },
+        {
+          "code": "SILVER",
+          "name": "Silver",
+          "commission": 0.08,
+          "threshold_rub_minor": 5000000,
+          "perks": [
+            "Комиссия 8%",
+            "Приоритетный выкуп"
+          ]
+        },
+        {
+          "code": "GOLD",
+          "name": "Gold VIP",
+          "commission": 0.05,
+          "threshold_rub_minor": 20000000,
+          "perks": [
+            "Комиссия 5%",
+            "Личный менеджер",
+            "Бесплатная разгрузка"
+          ]
+        }
+      ]
+    },
+    "referral.config": {
+      "is_public": true,
+      "value": {
+        "trigger": "first_paid_order",
+        "reward_type": "percent_of_order",
+        "percent": 3,
+        "cap_rub_minor": 150000,
+        "fallback_fixed_rub_minor": 30000,
+        "invitee_bonus_rub_minor": 20000,
+        "cookie_days": 30,
+        "wallet_type": "bonus",
+        "clawback_on_refund": true
+      }
+    },
+    "tiktok.config": {
+      "is_public": true,
+      "value": {
+        "hashtag": "#poizonvanart",
+        "mention": "@poizonvanart",
+        "site_url": "poizonvanart.com",
+        "reward_per_1000_views_rub_minor": 1500,
+        "min_views": 1000,
+        "max_submissions_per_day": 5,
+        "wallet_type": "bonus",
+        "require_moderation": true
+      }
+    },
+    "catalog.default_weights_kg": {
+      "is_public": true,
+      "value": {
+        "sneakers": 1.4,
+        "tshirt": 0.5,
+        "hoodie": 1.1,
+        "jacket": 2.0,
+        "pants": 0.8,
+        "shorts": 0.4,
+        "accessories": 0.3,
+        "bag": 1.2,
+        "cap": 0.25
+      }
+    },
+    "cart.merge_packaging_default": {
+      "value": true,
+      "is_public": true
+    },
+    "alerts.price_drop_threshold_percent": {
+      "value": 3,
+      "is_public": false
+    },
+    "alerts.rate_drop_threshold_percent": {
+      "value": 2,
+      "is_public": false
+    },
+    "payments.providers": {
+      "value": {
+        "RU": "yookassa",
+        "BY": "belpay",
+        "sbp": true,
+        "erip": true
+      },
+      "is_public": true
+    },
+    "contacts": {
+      "is_public": true,
+      "value": {
+        "telegram": "https://t.me/poizonvanart",
+        "whatsapp": "https://wa.me/375291234567",
+        "email": "hello@poizonvanart.com",
+        "phone_ru": "+7 495 000-00-00",
+        "phone_by": "+375 29 123-45-67"
+      }
+    }
+  },
+  "categories": [
+    {
+      "slug": "sneakers",
+      "name": "Кроссовки",
+      "avg_weight_kg": 1.4,
+      "sort_order": 1
+    },
+    {
+      "slug": "tshirt",
+      "name": "Футболки",
+      "avg_weight_kg": 0.5,
+      "sort_order": 2
+    },
+    {
+      "slug": "hoodie",
+      "name": "Худи и свитшоты",
+      "avg_weight_kg": 1.1,
+      "sort_order": 3
+    },
+    {
+      "slug": "jacket",
+      "name": "Куртки",
+      "avg_weight_kg": 2.0,
+      "sort_order": 4
+    },
+    {
+      "slug": "pants",
+      "name": "Брюки и джинсы",
+      "avg_weight_kg": 0.8,
+      "sort_order": 5
+    },
+    {
+      "slug": "accessories",
+      "name": "Аксессуары",
+      "avg_weight_kg": 0.3,
+      "sort_order": 6
+    },
+    {
+      "slug": "bag",
+      "name": "Сумки",
+      "avg_weight_kg": 1.2,
+      "sort_order": 7
+    }
+  ],
+  "brands": [
+    {
+      "slug": "nike",
+      "name": "Nike",
+      "size_bias": 0
+    },
+    {
+      "slug": "adidas",
+      "name": "Adidas",
+      "size_bias": 0
+    },
+    {
+      "slug": "jordan",
+      "name": "Air Jordan",
+      "size_bias": 0
+    },
+    {
+      "slug": "newbalance",
+      "name": "New Balance",
+      "size_bias": 0
+    },
+    {
+      "slug": "salomon",
+      "name": "Salomon",
+      "size_bias": -0.5
+    },
+    {
+      "slug": "essentials",
+      "name": "Fear of God Essentials",
+      "size_bias": 1
+    },
+    {
+      "slug": "stussy",
+      "name": "Stüssy",
+      "size_bias": 0.5
+    },
+    {
+      "slug": "arcteryx",
+      "name": "Arc'teryx",
+      "size_bias": 0
+    }
+  ],
+  "products": [
+    {
+      "sku": "PV-NK-AJ1-RETRO",
+      "brand": "jordan",
+      "category": "sneakers",
+      "name": "Air Jordan 1 Retro High OG 'Chicago Lost & Found'",
+      "name_cn": "AJ1 高帮 芝加哥",
+      "slug": "air-jordan-1-retro-high-chicago",
+      "external_source": "poizon",
+      "external_id": "spu-100231",
+      "external_url": "https://www.poizon.com/product?spu=100231",
+      "weight_est_kg": 1.4,
+      "is_featured": true,
+      "description": "Легендарная расцветка Chicago в версии Lost & Found. Кожа, винтажная обработка подошвы, комплект с дополнительными шнурками.",
+      "images": [
+        "/img/p/aj1-chicago.svg"
+      ],
+      "variants": [
+        {
+          "color": "Chicago/White-Red",
+          "size_eur": "40",
+          "size_us": "7",
+          "size_cn": "250",
+          "price_cny_minor": 149900,
+          "weight_kg": 1.35,
+          "stock_status": "in_stock"
+        },
+        {
+          "color": "Chicago/White-Red",
+          "size_eur": "41",
+          "size_us": "8",
+          "size_cn": "260",
+          "price_cny_minor": 149900,
+          "weight_kg": 1.4,
+          "stock_status": "in_stock"
+        },
+        {
+          "color": "Chicago/White-Red",
+          "size_eur": "42.5",
+          "size_us": "9",
+          "size_cn": "270",
+          "price_cny_minor": 155900,
+          "weight_kg": 1.45,
+          "stock_status": "low"
+        },
+        {
+          "color": "Chicago/White-Red",
+          "size_eur": "44",
+          "size_us": "10",
+          "size_cn": "280",
+          "price_cny_minor": 159900,
+          "weight_kg": 1.5,
+          "stock_status": "in_stock"
+        }
+      ]
+    },
+    {
+      "sku": "PV-NB-9060-GRY",
+      "brand": "newbalance",
+      "category": "sneakers",
+      "name": "New Balance 9060 'Rain Cloud'",
+      "name_cn": "NB 9060 雨云灰",
+      "slug": "new-balance-9060-rain-cloud",
+      "external_source": "poizon",
+      "external_id": "spu-208814",
+      "external_url": "https://www.poizon.com/product?spu=208814",
+      "weight_est_kg": 1.3,
+      "is_featured": true,
+      "description": "Культовый силуэт 9060 в универсальной серой расцветке. Замша + сетка, амортизация ABZORB.",
+      "images": [
+        "/img/p/nb9060.svg"
+      ],
+      "variants": [
+        {
+          "color": "Rain Cloud",
+          "size_eur": "40.5",
+          "size_us": "7.5",
+          "size_cn": "255",
+          "price_cny_minor": 79900,
+          "weight_kg": 1.25,
+          "stock_status": "in_stock"
+        },
+        {
+          "color": "Rain Cloud",
+          "size_eur": "42",
+          "size_us": "8.5",
+          "size_cn": "265",
+          "price_cny_minor": 79900,
+          "weight_kg": 1.3,
+          "stock_status": "in_stock"
+        },
+        {
+          "color": "Rain Cloud",
+          "size_eur": "43",
+          "size_us": "9.5",
+          "size_cn": "275",
+          "price_cny_minor": 82900,
+          "weight_kg": 1.35,
+          "stock_status": "in_stock"
+        },
+        {
+          "color": "Sea Salt",
+          "size_eur": "42",
+          "size_us": "8.5",
+          "size_cn": "265",
+          "price_cny_minor": 84900,
+          "weight_kg": 1.3,
+          "stock_status": "low"
+        }
+      ]
+    },
+    {
+      "sku": "PV-AD-SAMBA-OG",
+      "brand": "adidas",
+      "category": "sneakers",
+      "name": "Adidas Samba OG 'Cloud White / Core Black'",
+      "name_cn": "阿迪达斯 Samba OG",
+      "slug": "adidas-samba-og-white",
+      "external_source": "poizon",
+      "external_id": "spu-330117",
+      "external_url": "https://www.poizon.com/product?spu=330117",
+      "weight_est_kg": 1.1,
+      "is_featured": false,
+      "description": "Классика террасной моды. Кожа, замшевый мысок, резиновая подошва.",
+      "images": [
+        "/img/p/samba.svg"
+      ],
+      "variants": [
+        {
+          "color": "Cloud White/Core Black",
+          "size_eur": "38",
+          "size_us": "6",
+          "size_cn": "240",
+          "price_cny_minor": 65900,
+          "weight_kg": 1.05,
+          "stock_status": "in_stock"
+        },
+        {
+          "color": "Cloud White/Core Black",
+          "size_eur": "40",
+          "size_us": "7",
+          "size_cn": "250",
+          "price_cny_minor": 65900,
+          "weight_kg": 1.1,
+          "stock_status": "in_stock"
+        },
+        {
+          "color": "Cloud White/Core Black",
+          "size_eur": "42",
+          "size_us": "8.5",
+          "size_cn": "265",
+          "price_cny_minor": 68900,
+          "weight_kg": 1.15,
+          "stock_status": "in_stock"
+        }
+      ]
+    },
+    {
+      "sku": "PV-SM-XT6-FT",
+      "brand": "salomon",
+      "category": "sneakers",
+      "name": "Salomon XT-6 'Forage/Black'",
+      "name_cn": "萨洛蒙 XT-6",
+      "slug": "salomon-xt6-forage",
+      "external_source": "dewu",
+      "external_id": "spu-441200",
+      "external_url": "https://www.dewu.com/product?spu=441200",
+      "weight_est_kg": 1.2,
+      "is_featured": false,
+      "description": "Трейл-силуэт, ставший иконой стритвира. Быстрая шнуровка Quicklace, шасси ACS.",
+      "images": [
+        "/img/p/xt6.svg"
+      ],
+      "variants": [
+        {
+          "color": "Forage/Black",
+          "size_eur": "41.3",
+          "size_us": "8",
+          "size_cn": "260",
+          "price_cny_minor": 112900,
+          "weight_kg": 1.2,
+          "stock_status": "in_stock"
+        },
+        {
+          "color": "Forage/Black",
+          "size_eur": "43.3",
+          "size_us": "9.5",
+          "size_cn": "275",
+          "price_cny_minor": 112900,
+          "weight_kg": 1.25,
+          "stock_status": "in_stock"
+        }
+      ]
+    },
+    {
+      "sku": "PV-FOG-ESS-HOODIE",
+      "brand": "essentials",
+      "category": "hoodie",
+      "name": "Fear of God Essentials Hoodie 'Oatmeal'",
+      "name_cn": "FOG Essentials 连帽卫衣",
+      "slug": "fog-essentials-hoodie-oatmeal",
+      "external_source": "poizon",
+      "external_id": "spu-551002",
+      "external_url": "https://www.poizon.com/product?spu=551002",
+      "weight_est_kg": 1.1,
+      "is_featured": true,
+      "description": "Плотный флис 480 г/м², свободный крой (бокс-фит), резиновый логотип на груди. Маломерит — берите на размер меньше.",
+      "images": [
+        "/img/p/fog-hoodie.svg"
+      ],
+      "variants": [
+        {
+          "color": "Oatmeal",
+          "size_eur": "S",
+          "size_us": "S",
+          "size_cn": "165/88A",
+          "price_cny_minor": 52900,
+          "weight_kg": 1.0,
+          "stock_status": "in_stock"
+        },
+        {
+          "color": "Oatmeal",
+          "size_eur": "M",
+          "size_us": "M",
+          "size_cn": "170/92A",
+          "price_cny_minor": 52900,
+          "weight_kg": 1.1,
+          "stock_status": "in_stock"
+        },
+        {
+          "color": "Oatmeal",
+          "size_eur": "L",
+          "size_us": "L",
+          "size_cn": "175/96A",
+          "price_cny_minor": 55900,
+          "weight_kg": 1.2,
+          "stock_status": "in_stock"
+        },
+        {
+          "color": "Black",
+          "size_eur": "M",
+          "size_us": "M",
+          "size_cn": "170/92A",
+          "price_cny_minor": 54900,
+          "weight_kg": 1.1,
+          "stock_status": "low"
+        }
+      ]
+    },
+    {
+      "sku": "PV-STU-TEE-BASIC",
+      "brand": "stussy",
+      "category": "tshirt",
+      "name": "Stüssy Basic Logo Tee 'White'",
+      "name_cn": "Stussy 基础款 T恤",
+      "slug": "stussy-basic-logo-tee-white",
+      "external_source": "poizon",
+      "external_id": "spu-660311",
+      "external_url": "https://www.poizon.com/product?spu=660311",
+      "weight_est_kg": 0.5,
+      "is_featured": false,
+      "description": "Хлопок 220 г/м², прямой крой, принт на водной основе.",
+      "images": [
+        "/img/p/stussy-tee.svg"
+      ],
+      "variants": [
+        {
+          "color": "White",
+          "size_eur": "M",
+          "size_us": "M",
+          "size_cn": "170/92A",
+          "price_cny_minor": 25900,
+          "weight_kg": 0.45,
+          "stock_status": "in_stock"
+        },
+        {
+          "color": "White",
+          "size_eur": "L",
+          "size_us": "L",
+          "size_cn": "175/96A",
+          "price_cny_minor": 25900,
+          "weight_kg": 0.5,
+          "stock_status": "in_stock"
+        },
+        {
+          "color": "Black",
+          "size_eur": "L",
+          "size_us": "L",
+          "size_cn": "175/96A",
+          "price_cny_minor": 26900,
+          "weight_kg": 0.5,
+          "stock_status": "in_stock"
+        }
+      ]
+    },
+    {
+      "sku": "PV-ATX-BETA-JKT",
+      "brand": "arcteryx",
+      "category": "jacket",
+      "name": "Arc'teryx Beta LT Jacket 'Black Sapphire'",
+      "name_cn": "始祖鸟 Beta LT 冲锋衣",
+      "slug": "arcteryx-beta-lt-black",
+      "external_source": "poizon",
+      "external_id": "spu-778420",
+      "external_url": "https://www.poizon.com/product?spu=778420",
+      "weight_est_kg": 2.0,
+      "is_featured": true,
+      "description": "3-слойный GORE-TEX, проклеенные швы, капюшон StormHood. Хит сезона в Китае.",
+      "images": [
+        "/img/p/beta-lt.svg"
+      ],
+      "variants": [
+        {
+          "color": "Black Sapphire",
+          "size_eur": "M",
+          "size_us": "M",
+          "size_cn": "170/92A",
+          "price_cny_minor": 329900,
+          "weight_kg": 1.9,
+          "stock_status": "in_stock"
+        },
+        {
+          "color": "Black Sapphire",
+          "size_eur": "L",
+          "size_us": "L",
+          "size_cn": "175/96A",
+          "price_cny_minor": 329900,
+          "weight_kg": 2.0,
+          "stock_status": "low"
+        },
+        {
+          "color": "Void",
+          "size_eur": "L",
+          "size_us": "L",
+          "size_cn": "175/96A",
+          "price_cny_minor": 339900,
+          "weight_kg": 2.0,
+          "stock_status": "in_stock"
+        }
+      ]
+    },
+    {
+      "sku": "PV-NK-TECH-PANT",
+      "brand": "nike",
+      "category": "pants",
+      "name": "Nike Tech Fleece Joggers 'Black'",
+      "name_cn": "耐克 Tech Fleece 卫裤",
+      "slug": "nike-tech-fleece-joggers-black",
+      "external_source": "poizon",
+      "external_id": "spu-889001",
+      "external_url": "https://www.poizon.com/product?spu=889001",
+      "weight_est_kg": 0.8,
+      "is_featured": false,
+      "description": "Tech Fleece, зауженный крой, карманы на молнии.",
+      "images": [
+        "/img/p/tech-jogger.svg"
+      ],
+      "variants": [
+        {
+          "color": "Black",
+          "size_eur": "M",
+          "size_us": "M",
+          "size_cn": "170/74A",
+          "price_cny_minor": 46900,
+          "weight_kg": 0.75,
+          "stock_status": "in_stock"
+        },
+        {
+          "color": "Black",
+          "size_eur": "L",
+          "size_us": "L",
+          "size_cn": "175/78A",
+          "price_cny_minor": 46900,
+          "weight_kg": 0.8,
+          "stock_status": "in_stock"
+        }
+      ]
+    }
+  ],
+  "size_guides": [
+    {
+      "brand": null,
+      "category": "sneakers",
+      "kind": "footwear",
+      "notes": "Измерьте длину стопы в мм (от пятки до большого пальца) и выберите ближайший больший размер. Для Nike/Jordan добавьте +5 мм, для New Balance — по таблице.",
+      "rows": [
+        {
+          "foot_mm": 230,
+          "eur": "36",
+          "us_m": "4",
+          "us_w": "5.5",
+          "uk": "3.5",
+          "cn": "230"
+        },
+        {
+          "foot_mm": 235,
+          "eur": "37",
+          "us_m": "5",
+          "us_w": "6.5",
+          "uk": "4.5",
+          "cn": "235"
+        },
+        {
+          "foot_mm": 240,
+          "eur": "38",
+          "us_m": "6",
+          "us_w": "7.5",
+          "uk": "5.5",
+          "cn": "240"
+        },
+        {
+          "foot_mm": 245,
+          "eur": "38.5",
+          "us_m": "6.5",
+          "us_w": "8",
+          "uk": "6",
+          "cn": "245"
+        },
+        {
+          "foot_mm": 250,
+          "eur": "40",
+          "us_m": "7",
+          "us_w": "8.5",
+          "uk": "6.5",
+          "cn": "250"
+        },
+        {
+          "foot_mm": 255,
+          "eur": "40.5",
+          "us_m": "7.5",
+          "us_w": "9",
+          "uk": "7",
+          "cn": "255"
+        },
+        {
+          "foot_mm": 260,
+          "eur": "41",
+          "us_m": "8",
+          "us_w": "9.5",
+          "uk": "7.5",
+          "cn": "260"
+        },
+        {
+          "foot_mm": 265,
+          "eur": "42",
+          "us_m": "8.5",
+          "us_w": "10",
+          "uk": "8",
+          "cn": "265"
+        },
+        {
+          "foot_mm": 270,
+          "eur": "42.5",
+          "us_m": "9",
+          "us_w": "10.5",
+          "uk": "8.5",
+          "cn": "270"
+        },
+        {
+          "foot_mm": 275,
+          "eur": "43",
+          "us_m": "9.5",
+          "us_w": "11",
+          "uk": "9",
+          "cn": "275"
+        },
+        {
+          "foot_mm": 280,
+          "eur": "44",
+          "us_m": "10",
+          "us_w": "11.5",
+          "uk": "9.5",
+          "cn": "280"
+        },
+        {
+          "foot_mm": 285,
+          "eur": "44.5",
+          "us_m": "10.5",
+          "us_w": "12",
+          "uk": "10",
+          "cn": "285"
+        },
+        {
+          "foot_mm": 290,
+          "eur": "45",
+          "us_m": "11",
+          "us_w": "12.5",
+          "uk": "10.5",
+          "cn": "290"
+        }
+      ]
+    },
+    {
+      "brand": null,
+      "category": "hoodie",
+      "kind": "apparel",
+      "notes": "Ориентир по росту/весу. Американские и китайские размеры различаются: китайский L ≈ европейский M.",
+      "rows": [
+        {
+          "size": "XS",
+          "height_cm": "158–164",
+          "weight_kg": "45–55",
+          "chest_cm": "84–88",
+          "cn": "160/80A"
+        },
+        {
+          "size": "S",
+          "height_cm": "164–170",
+          "weight_kg": "55–63",
+          "chest_cm": "88–94",
+          "cn": "165/84A"
+        },
+        {
+          "size": "M",
+          "height_cm": "170–176",
+          "weight_kg": "63–73",
+          "chest_cm": "94–100",
+          "cn": "170/92A"
+        },
+        {
+          "size": "L",
+          "height_cm": "176–182",
+          "weight_kg": "73–84",
+          "chest_cm": "100–106",
+          "cn": "175/96A"
+        },
+        {
+          "size": "XL",
+          "height_cm": "182–188",
+          "weight_kg": "84–95",
+          "chest_cm": "106–112",
+          "cn": "180/100A"
+        },
+        {
+          "size": "2XL",
+          "height_cm": "188–194",
+          "weight_kg": "95–110",
+          "chest_cm": "112–120",
+          "cn": "185/104A"
+        }
+      ]
+    },
+    {
+      "brand": "essentials",
+      "category": "hoodie",
+      "kind": "apparel",
+      "notes": "Fear of God Essentials — оверсайз. Берите на размер меньше обычного.",
+      "rows": [
+        {
+          "size": "S",
+          "height_cm": "170–178",
+          "weight_kg": "55–68",
+          "chest_cm": "104",
+          "cn": "165/88A"
+        },
+        {
+          "size": "M",
+          "height_cm": "175–183",
+          "weight_kg": "68–80",
+          "chest_cm": "110",
+          "cn": "170/92A"
+        },
+        {
+          "size": "L",
+          "height_cm": "180–190",
+          "weight_kg": "80–95",
+          "chest_cm": "116",
+          "cn": "175/96A"
+        }
+      ]
+    },
+    {
+      "brand": "salomon",
+      "category": "sneakers",
+      "kind": "footwear",
+      "notes": "Salomon маломерит на полразмера — берите +0.5.",
+      "rows": [
+        {
+          "foot_mm": 250,
+          "eur": "40.6",
+          "us_m": "7.5",
+          "uk": "7",
+          "cn": "250"
+        },
+        {
+          "foot_mm": 260,
+          "eur": "41.3",
+          "us_m": "8",
+          "uk": "7.5",
+          "cn": "260"
+        },
+        {
+          "foot_mm": 265,
+          "eur": "42",
+          "us_m": "8.5",
+          "uk": "8",
+          "cn": "265"
+        },
+        {
+          "foot_mm": 275,
+          "eur": "43.3",
+          "us_m": "9.5",
+          "uk": "9",
+          "cn": "275"
+        },
+        {
+          "foot_mm": 280,
+          "eur": "44",
+          "us_m": "10",
+          "uk": "9.5",
+          "cn": "280"
+        }
+      ]
+    }
+  ],
+  "users": [
+    {
+      "public_uid": "PV-000001",
+      "role": "owner",
+      "phone": "+375290000001",
+      "email": "owner@poizonvanart.com",
+      "first_name": "Артём",
+      "last_name": "Власов",
+      "password": "Owner!2026",
+      "referral_code": "OWNER",
+      "loyalty_tier": "GOLD",
+      "lifetime_value_minor": 0,
+      "balance_main_minor": 0,
+      "balance_bonus_minor": 0,
+      "settings": {
+        "theme": "dark",
+        "currency": "RUB",
+        "default_destination": "BY_MSQ"
+      }
+    },
+    {
+      "public_uid": "PV-000002",
+      "role": "warehouse",
+      "phone": "+8613800000002",
+      "email": "wh@poizonvanart.com",
+      "first_name": "Ли",
+      "last_name": "Вэй",
+      "password": "Warehouse!2026",
+      "referral_code": "WHCHINA",
+      "settings": {
+        "theme": "light",
+        "currency": "USD",
+        "default_destination": "RU_MOW"
+      }
+    },
+    {
+      "public_uid": "PV-000003",
+      "role": "admin",
+      "phone": "+74950000003",
+      "email": "admin@poizonvanart.com",
+      "first_name": "Дарья",
+      "last_name": "Климова",
+      "password": "Admin!2026",
+      "referral_code": "ADMIN",
+      "settings": {
+        "theme": "dark",
+        "currency": "RUB"
+      }
+    },
+    {
+      "public_uid": "PV-000004",
+      "role": "manager",
+      "phone": "+74950000004",
+      "email": "manager@poizonvanart.com",
+      "first_name": "Артём",
+      "last_name": "Гордеев",
+      "password": "Manager!2026",
+      "referral_code": "MANAGER",
+      "settings": {
+        "theme": "dark",
+        "currency": "RUB"
+      }
+    },
+    {
+      "public_uid": "PV-000124",
+      "role": "client",
+      "phone": "+375291234567",
+      "email": "ivan@example.com",
+      "first_name": "Иван",
+      "last_name": "Соколов",
+      "password": "Demo!2026",
+      "referral_code": "IVANPV",
+      "loyalty_tier": "SILVER",
+      "lifetime_value_minor": 7420000,
+      "balance_main_minor": 1500000,
+      "balance_bonus_minor": 24500,
+      "telegram_chat_id": 111222333,
+      "settings": {
+        "theme": "dark",
+        "currency": "BYN",
+        "default_destination": "BY_MSQ"
+      },
+      "address": {
+        "kind": "BY_MSQ",
+        "recipient": "Иван Соколов",
+        "phone": "+375291234567",
+        "country": "BY",
+        "city": "Минск",
+        "address_line": "ул. Немига 5, кв. 42",
+        "postal_code": "220004",
+        "pickup_point": "ПВЗ Немига"
+      }
+    },
+    {
+      "public_uid": "PV-000125",
+      "role": "client",
+      "phone": "+79161234567",
+      "email": "maria@example.com",
+      "first_name": "Мария",
+      "last_name": "Орлова",
+      "password": "Demo!2026",
+      "referral_code": "MARIAPV",
+      "referred_by_code": "IVANPV",
+      "loyalty_tier": "BASE",
+      "lifetime_value_minor": 1850000,
+      "balance_main_minor": 300000,
+      "balance_bonus_minor": 5000,
+      "settings": {
+        "theme": "light",
+        "currency": "RUB",
+        "default_destination": "RU_MOW"
+      }
+    },
+    {
+      "public_uid": "PV-000126",
+      "role": "client",
+      "phone": "+79261110022",
+      "email": "kirill@example.com",
+      "first_name": "Кирилл",
+      "last_name": "Ерёмин",
+      "password": "Demo!2026",
+      "referral_code": "KIRILLPV",
+      "referred_by_code": "IVANPV",
+      "loyalty_tier": "BASE",
+      "lifetime_value_minor": 0,
+      "balance_main_minor": 0,
+      "balance_bonus_minor": 20000,
+      "settings": {
+        "theme": "dark",
+        "currency": "RUB",
+        "default_destination": "RU_MOW"
+      }
+    }
+  ],
+  "orders": [
+    {
+      "order_no": "PV-2026-000031",
+      "user": "PV-000124",
+      "status": "delivered",
+      "destination": "BY_MSQ",
+      "paid_at": "2026-02-03T11:20:00Z",
+      "delivered_at": "2026-03-06T12:00:00Z",
+      "tracking_number": "BY-CN-7710984",
+      "carrier": "VanCargo",
+      "weight_est_kg": 2.0,
+      "weight_fact_kg": 2.1,
+      "payment_method": "card",
+      "items": [
+        {
+          "sku": "PV-ATX-BETA-JKT",
+          "variant": 0,
+          "qty": 1
+        },
+        {
+          "sku": "PV-NK-TECH-PANT",
+          "variant": 0,
+          "qty": 1
+        }
+      ]
+    },
+    {
+      "order_no": "PV-2026-000064",
+      "user": "PV-000124",
+      "status": "delivered",
+      "destination": "RU_MOW",
+      "paid_at": "2026-04-22T08:05:00Z",
+      "delivered_at": "2026-05-18T12:00:00Z",
+      "tracking_number": "RU-CN-3320117",
+      "carrier": "VanCargo",
+      "weight_est_kg": 2.5,
+      "weight_fact_kg": 2.5,
+      "payment_method": "sbp",
+      "items": [
+        {
+          "sku": "PV-SM-XT6-FT",
+          "variant": 1,
+          "qty": 1
+        },
+        {
+          "sku": "PV-STU-TEE-BASIC",
+          "variant": 2,
+          "qty": 2
+        }
+      ]
+    },
+    {
+      "order_no": "PV-2026-000101",
+      "user": "PV-000124",
+      "status": "delivered",
+      "destination": "BY_MSQ",
+      "paid_at": "2026-06-14T10:12:00Z",
+      "delivered_at": "2026-07-18T12:00:00Z",
+      "tracking_number": "BY-CN-8841203",
+      "carrier": "VanCargo",
+      "weight_est_kg": 2.9,
+      "weight_fact_kg": 3.05,
+      "payment_method": "combined",
+      "items": [
+        {
+          "sku": "PV-NB-9060-GRY",
+          "variant": 1,
+          "qty": 1
+        },
+        {
+          "sku": "PV-FOG-ESS-HOODIE",
+          "variant": 1,
+          "qty": 1
+        }
+      ]
+    },
+    {
+      "order_no": "PV-2026-000118",
+      "user": "PV-000124",
+      "status": "in_transit",
+      "destination": "BY_MSQ",
+      "paid_at": "2026-08-28T09:30:00Z",
+      "sent_at": "2026-09-06T08:00:00Z",
+      "tracking_number": "BY-CN-9910455",
+      "carrier": "VanCargo",
+      "weight_est_kg": 1.45,
+      "weight_fact_kg": 1.52,
+      "payment_method": "card",
+      "items": [
+        {
+          "sku": "PV-NK-AJ1-RETRO",
+          "variant": 3,
+          "qty": 1
+        }
+      ],
+      "photos": [
+        {
+          "kind": "report",
+          "caption": "Коробка Poizon, пломба Legit Check цела"
+        },
+        {
+          "kind": "report",
+          "caption": "Сертификат подлинности + бирка"
+        },
+        {
+          "kind": "weight",
+          "caption": "Взвешивание: 1.52 кг с упаковкой"
+        }
+      ]
+    },
+    {
+      "order_no": "PV-2026-000122",
+      "user": "PV-000125",
+      "status": "photo_report",
+      "destination": "RU_MOW",
+      "paid_at": "2026-09-12T15:45:00Z",
+      "purchased_at": "2026-09-15T06:20:00Z",
+      "weight_est_kg": 2.0,
+      "payment_method": "wallet",
+      "items": [
+        {
+          "sku": "PV-ATX-BETA-JKT",
+          "variant": 1,
+          "qty": 1
+        },
+        {
+          "sku": "PV-STU-TEE-BASIC",
+          "variant": 1,
+          "qty": 2
+        }
+      ],
+      "photos": [
+        {
+          "kind": "report",
+          "caption": "Arc'teryx Beta LT — проверка швов и голограммы"
+        },
+        {
+          "kind": "report",
+          "caption": "Футболки Stüssy: 2 шт., бирки на месте"
+        }
+      ]
+    },
+    {
+      "order_no": "PV-2026-000126",
+      "user": "PV-000126",
+      "status": "paid",
+      "destination": "RU_MOW",
+      "paid_at": "2026-09-19T18:05:00Z",
+      "weight_est_kg": 1.1,
+      "payment_method": "bonus",
+      "items": [
+        {
+          "sku": "PV-AD-SAMBA-OG",
+          "variant": 1,
+          "qty": 1
+        }
+      ]
+    },
+    {
+      "order_no": "PV-2026-000127",
+      "user": "PV-000124",
+      "status": "awaiting_payment",
+      "destination": "RU_MOW",
+      "created_at": "2026-09-20T07:10:00Z",
+      "weight_est_kg": 1.4,
+      "items": [
+        {
+          "sku": "PV-SM-XT6-FT",
+          "variant": 1,
+          "qty": 1
+        }
+      ]
+    }
+  ],
+  "tiktok_submissions": [
+    {
+      "user": "PV-000124",
+      "url": "https://www.tiktok.com/@ivan.sokolov/video/7410223344556677889",
+      "views_declared": 48200,
+      "status": "approved",
+      "views_verified": 47300,
+      "reviewed_at": "2026-09-05T11:00:00Z",
+      "reviewer": "PV-000003",
+      "hashtag_found": true,
+      "link_found": true
+    },
+    {
+      "user": "PV-000125",
+      "url": "https://www.tiktok.com/@maria_orlova/video/7415556667778889990",
+      "views_declared": 12300,
+      "status": "pending",
+      "views_verified": null,
+      "hashtag_found": true,
+      "link_found": true,
+      "created_at": "2026-09-19T20:14:00Z"
+    },
+    {
+      "user": "PV-000126",
+      "url": "https://www.tiktok.com/@kirill_e/video/7419990001112223334",
+      "views_declared": 3200,
+      "status": "pending",
+      "views_verified": null,
+      "hashtag_found": false,
+      "link_found": true,
+      "created_at": "2026-09-20T06:40:00Z"
+    }
+  ],
+  "wallet_transactions_seed": [
+    {
+      "user": "PV-000124",
+      "wallet_type": "main",
+      "type": "topup",
+      "amount_minor": 2000000,
+      "currency": "RUB",
+      "comment": "Пополнение через СБП",
+      "created_at": "2026-08-20T12:00:00Z"
+    },
+    {
+      "user": "PV-000124",
+      "wallet_type": "bonus",
+      "type": "tiktok_reward",
+      "amount_minor": 70950,
+      "currency": "RUB",
+      "comment": "TikTok: 47 300 просмотров",
+      "created_at": "2026-09-05T11:00:00Z"
+    },
+    {
+      "user": "PV-000124",
+      "wallet_type": "bonus",
+      "type": "referral_reward",
+      "amount_minor": 55500,
+      "currency": "RUB",
+      "comment": "Реферал PV-000125 — первый оплаченный заказ",
+      "created_at": "2026-09-12T16:00:00Z"
+    },
+    {
+      "user": "PV-000126",
+      "wallet_type": "bonus",
+      "type": "referral_reward",
+      "amount_minor": 20000,
+      "currency": "RUB",
+      "comment": "Приветственный бонус приглашённого",
+      "created_at": "2026-09-18T10:00:00Z"
+    },
+    {
+      "user": "PV-000124",
+      "wallet_type": "main",
+      "type": "topup",
+      "amount_minor": 1500000,
+      "currency": "RUB",
+      "comment": "Пополнение картой (эквайринг)",
+      "created_at": "2026-09-18T09:05:00Z"
+    },
+    {
+      "user": "PV-000125",
+      "wallet_type": "main",
+      "type": "topup",
+      "amount_minor": 7000000,
+      "currency": "RUB",
+      "comment": "Пополнение через СБП (70 000 ₽)",
+      "created_at": "2026-09-10T14:20:00Z"
+    }
+  ],
+  "reviews": [
+    {
+      "author_name": "Иван С.",
+      "rating": 5,
+      "body": "AJ1 Chicago доехали за 26 дней в Минск. Фотоотчёт пришёл на 4-й день, пломба Poizon была цела. Вес совпал до 70 грамм.",
+      "is_published": true
+    },
+    {
+      "author_name": "Мария О.",
+      "rating": 5,
+      "body": "Брала Arc'teryx Beta LT — переживала за подлинность. Пришёл сертификат, голограмма, всё по Legit Check. Комиссия 10% честно показана в калькуляторе.",
+      "is_published": true
+    },
+    {
+      "author_name": "Кирилл Е.",
+      "rating": 4,
+      "body": "Samba OG пришли на 2 дня позже вилки срока, но поддержка отвечала в Telegram за 5 минут. Бонус за TikTok начислили без вопросов.",
+      "is_published": true
+    }
+  ],
+  "tasks_seed": [
+    {
+      "title": "Выкупить PV-2026-000127 (Salomon XT-6) до конца дня",
+      "assignee": "PV-000002",
+      "priority": "high",
+      "status": "todo"
+    },
+    {
+      "title": "Проверить TikTok-заявки за 19–20 сентября",
+      "assignee": "PV-000003",
+      "priority": "normal",
+      "status": "in_progress"
+    },
+    {
+      "title": "Сверить леджер кошельков с платежами за август",
+      "assignee": "PV-000001",
+      "priority": "normal",
+      "status": "todo"
+    }
+  ]
+}

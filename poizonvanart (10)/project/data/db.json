@@ -1,0 +1,6979 @@
+{
+ "__schema": "1.0.0",
+ "seeded_at": "2026-09-21T17:19:40.944Z",
+ "roles": [
+  {
+   "id": 1,
+   "code": "owner",
+   "name": "Владелец",
+   "description": null,
+   "permissions": [
+    "*"
+   ],
+   "is_system": true,
+   "created_at": "2026-09-21T17:19:40.944Z"
+  },
+  {
+   "id": 2,
+   "code": "admin",
+   "name": "Администратор",
+   "description": null,
+   "permissions": [
+    "orders.read",
+    "orders.write",
+    "orders.status",
+    "users.read",
+    "users.write",
+    "users.blacklist",
+    "catalog.read",
+    "catalog.write",
+    "tiktok.moderate",
+    "referrals.read",
+    "disputes.handle",
+    "chat.write",
+    "tasks.write",
+    "tasks.read",
+    "warehouse.manage",
+    "stickers.print",
+    "export.data"
+   ],
+   "is_system": true,
+   "created_at": "2026-09-21T17:19:40.944Z"
+  },
+  {
+   "id": 3,
+   "code": "manager",
+   "name": "Менеджер",
+   "description": "Ведёт заказы и клиентов, модерация TikTok, стикеры и экспорт. Без доступа к P&L, курсам и корректировке балансов.",
+   "permissions": [
+    "orders.read",
+    "orders.write",
+    "orders.status",
+    "users.read",
+    "catalog.read",
+    "tiktok.moderate",
+    "referrals.read",
+    "disputes.handle",
+    "chat.write",
+    "tasks.write",
+    "tasks.read",
+    "stickers.print",
+    "export.data"
+   ],
+   "is_system": true,
+   "created_at": "2026-09-21T17:19:40.944Z"
+  },
+  {
+   "id": 4,
+   "code": "finance",
+   "name": "Финансист",
+   "description": null,
+   "permissions": [
+    "orders.read",
+    "finance.read",
+    "rates.write",
+    "wallet.adjust",
+    "refunds.handle",
+    "pnl.read",
+    "export.data"
+   ],
+   "is_system": true,
+   "created_at": "2026-09-21T17:19:40.944Z"
+  },
+  {
+   "id": 5,
+   "code": "support",
+   "name": "Поддержка",
+   "description": null,
+   "permissions": [
+    "orders.read",
+    "users.read",
+    "chat.write",
+    "disputes.read",
+    "notifications.send",
+    "tiktok.read"
+   ],
+   "is_system": true,
+   "created_at": "2026-09-21T17:19:40.944Z"
+  },
+  {
+   "id": 6,
+   "code": "warehouse",
+   "name": "Склад (Китай)",
+   "description": null,
+   "permissions": [
+    "orders.read",
+    "warehouse.photos",
+    "warehouse.weigh",
+    "orders.status",
+    "stickers.print",
+    "tasks.read"
+   ],
+   "is_system": true,
+   "created_at": "2026-09-21T17:19:40.944Z"
+  },
+  {
+   "id": 7,
+   "code": "courier",
+   "name": "Курьер",
+   "description": null,
+   "permissions": [
+    "orders.read",
+    "orders.status"
+   ],
+   "is_system": true,
+   "created_at": "2026-09-21T17:19:40.944Z"
+  },
+  {
+   "id": 8,
+   "code": "client",
+   "name": "Клиент",
+   "description": null,
+   "permissions": [
+    "self.read",
+    "self.write",
+    "cart.write",
+    "orders.create",
+    "wallet.self",
+    "tiktok.submit",
+    "chat.self"
+   ],
+   "is_system": true,
+   "created_at": "2026-09-21T17:19:40.944Z"
+  }
+ ],
+ "users": [
+  {
+   "id": "u_nWHUQ5mLoPSz",
+   "public_uid": "PV-000001",
+   "role_id": 1,
+   "role_code": "owner",
+   "phone": "+375290000001",
+   "email": "owner@poizonvanart.com",
+   "telegram_username": null,
+   "telegram_chat_id": null,
+   "password_hash": "scrypt$d91c0bc93bdf13d75a62aafafd03cb50$694006af150cf28244b54037c04c50df66c188eaa03b4b11552cf249171ce5d987626f5a2c8abfe1b1c45358bab550ec345fd17dc074cb00e7d5bb7302076025",
+   "first_name": "Артём",
+   "last_name": "Власов",
+   "referral_code": "OWNER",
+   "referred_by_id": null,
+   "loyalty_tier": "BASE",
+   "lifetime_value_minor": 0,
+   "balance_main_minor": 0,
+   "balance_bonus_minor": 0,
+   "is_blacklisted": false,
+   "is_verified": true,
+   "last_login_at": "2026-09-22T13:14:53.375Z",
+   "created_at": "2026-09-21T17:19:41.000Z",
+   "updated_at": "2026-09-22T13:14:53.375Z",
+   "last_login_ip": "127.0.0.1"
+  },
+  {
+   "id": "u_piF5WfcD0llm",
+   "public_uid": "PV-000002",
+   "role_id": 6,
+   "role_code": "warehouse",
+   "phone": "+8613800000002",
+   "email": "wh@poizonvanart.com",
+   "telegram_username": null,
+   "telegram_chat_id": null,
+   "password_hash": "scrypt$65c2b0265cee59cb737cafc66aa32094$282d3cd974bf1fea2327a58e6043c8df0d2ff934d156b688839910043b9ed6aa8ce015b946b065c5c8a336a04293602d21717c78dad50bfa4d294adae57ea6ed",
+   "first_name": "Ли",
+   "last_name": "Вэй",
+   "referral_code": "WHCHINA",
+   "referred_by_id": null,
+   "loyalty_tier": "BASE",
+   "lifetime_value_minor": 0,
+   "balance_main_minor": 0,
+   "balance_bonus_minor": 0,
+   "is_blacklisted": false,
+   "is_verified": true,
+   "last_login_at": null,
+   "created_at": "2026-09-21T17:19:41.051Z",
+   "updated_at": "2026-09-21T17:19:41.051Z"
+  },
+  {
+   "id": "u_bvz2Dc6o9v2s",
+   "public_uid": "PV-000003",
+   "role_id": 2,
+   "role_code": "admin",
+   "phone": "+74950000003",
+   "email": "admin@poizonvanart.com",
+   "telegram_username": null,
+   "telegram_chat_id": null,
+   "password_hash": "scrypt$3aa9f5e0d5f51c5804a998e74b0efb25$f3cba1df840a3a2a03da2b8ccb1928375dbc2a6baeafb511730e30f07a416b9354ceb988b8157be41fe5c004992d609c766dd7f06c2565c5dfda3a485b3894f0",
+   "first_name": "Дарья",
+   "last_name": "Климова",
+   "referral_code": "ADMIN",
+   "referred_by_id": null,
+   "loyalty_tier": "BASE",
+   "lifetime_value_minor": 0,
+   "balance_main_minor": 0,
+   "balance_bonus_minor": 0,
+   "is_blacklisted": false,
+   "is_verified": true,
+   "last_login_at": "2026-09-22T04:25:40.505Z",
+   "created_at": "2026-09-21T17:19:41.096Z",
+   "updated_at": "2026-09-22T04:25:40.505Z",
+   "last_login_ip": "127.0.0.1"
+  },
+  {
+   "id": "u_bVBa3zY6WGKf",
+   "public_uid": "PV-000004",
+   "role_id": 3,
+   "role_code": "manager",
+   "phone": "+74950000004",
+   "email": "manager@poizonvanart.com",
+   "telegram_username": null,
+   "telegram_chat_id": null,
+   "password_hash": "scrypt$bdd5c4ccb742087fb12266fc853cc181$dcd8bfab7303064003a5e5b4e3675d41b1701ad8c5b1d1b4f18e53c31c3eeb60431162678d14e85d8a7b0e6b44d615018eda5906efa41b089e5050f78d5fcbe8",
+   "first_name": "Артём",
+   "last_name": "Гордеев",
+   "referral_code": "MANAGER",
+   "referred_by_id": null,
+   "loyalty_tier": "BASE",
+   "lifetime_value_minor": 0,
+   "balance_main_minor": 0,
+   "balance_bonus_minor": 0,
+   "is_blacklisted": false,
+   "is_verified": true,
+   "last_login_at": null,
+   "created_at": "2026-09-21T17:19:41.141Z",
+   "updated_at": "2026-09-21T17:19:41.141Z"
+  },
+  {
+   "id": "u_6YIL0HdscOee",
+   "public_uid": "PV-000124",
+   "role_id": 8,
+   "role_code": "client",
+   "phone": "+375291234567",
+   "email": "ivan@example.com",
+   "telegram_username": null,
+   "telegram_chat_id": 111222333,
+   "password_hash": "scrypt$99c0610518999d18a63f4eed5ce4fdd2$2fd5506b5173961b7e962289f14caff9ae702f8774fae783b85fd8ac5e90f1c991bb2d5cfdf9e904ba13b93b7fed8db84c4f0bb4b3b9b30ba28a2d3e191eee47",
+   "first_name": "Иван",
+   "last_name": "Соколов",
+   "referral_code": "IVANPV",
+   "referred_by_id": null,
+   "loyalty_tier": "SILVER",
+   "lifetime_value_minor": 12614374,
+   "balance_main_minor": 3500000,
+   "balance_bonus_minor": 317809,
+   "is_blacklisted": false,
+   "is_verified": true,
+   "last_login_at": "2026-09-21T18:45:40.740Z",
+   "created_at": "2026-09-21T17:19:41.189Z",
+   "updated_at": "2026-09-21T18:45:40.740Z",
+   "last_login_ip": "127.0.0.1"
+  },
+  {
+   "id": "u_ZSA6uZyReB",
+   "public_uid": "PV-000125",
+   "role_id": 8,
+   "role_code": "client",
+   "phone": "+79161234567",
+   "email": "maria@example.com",
+   "telegram_username": null,
+   "telegram_chat_id": null,
+   "password_hash": "scrypt$e486df1c51ef8dbf0ee07849c374dee5$a8f8e93e0c6f138d04a3cc8821c686101b347b70718ae61be2947262b3eb7c60b58a178ad7a5defe1a9267df254ac0a2a2ba61b05eb6eaf6f0a387e7188acb97",
+   "first_name": "Мария",
+   "last_name": "Орлова",
+   "referral_code": "MARIAPV",
+   "referred_by_id": "u_6YIL0HdscOee",
+   "loyalty_tier": "SILVER",
+   "lifetime_value_minor": 5712697,
+   "balance_main_minor": 1287303,
+   "balance_bonus_minor": 20000,
+   "is_blacklisted": false,
+   "is_verified": true,
+   "last_login_at": "2026-09-21T18:05:29.076Z",
+   "created_at": "2026-09-21T17:19:41.232Z",
+   "updated_at": "2026-09-21T18:05:29.076Z",
+   "last_login_ip": "127.0.0.1"
+  },
+  {
+   "id": "u_xiPlHCyaZcj",
+   "public_uid": "PV-000126",
+   "role_id": 8,
+   "role_code": "client",
+   "phone": "+79261110022",
+   "email": "kirill@example.com",
+   "telegram_username": null,
+   "telegram_chat_id": null,
+   "password_hash": "scrypt$e6ec5835e73369161fa2b34ddac64d0d$5b757619c75d74e19f6c734a35fe95b8092c13490d513b8205800ae527a0609860e0a811cfdcfc7a5ed9f29211e39d3afde504b893719da905a08c20477f1586",
+   "first_name": "Кирилл",
+   "last_name": "Ерёмин",
+   "referral_code": "KIRILLPV",
+   "referred_by_id": "u_6YIL0HdscOee",
+   "loyalty_tier": "BASE",
+   "lifetime_value_minor": 1080172,
+   "balance_main_minor": 0,
+   "balance_bonus_minor": 20000,
+   "is_blacklisted": false,
+   "is_verified": true,
+   "last_login_at": null,
+   "created_at": "2026-09-21T17:19:41.278Z",
+   "updated_at": "2026-09-21T17:19:41.278Z"
+  },
+  {
+   "id": "7dr87DFJYZ16",
+   "created_at": "2026-09-21T18:05:35.463Z",
+   "public_uid": "PV-000134",
+   "role_id": 8,
+   "role_code": "client",
+   "phone": "+7 (999) 777-88-99",
+   "email": "oleg_1790013935413@test.com",
+   "telegram_username": null,
+   "telegram_chat_id": null,
+   "password_hash": "scrypt$b3e908515e1d4cf38b9e3e6be6fb44b2$4dce1891e14c8eb567f9542b93b085414642f4e71e90b02ef88a574a8b67c2c4ff7606e70f38f22adbbccc5097c70ea14d76c1c52ce1109f295208ce34939b6f",
+   "first_name": "Олег",
+   "last_name": "Тестов",
+   "referral_code": "G96PSS",
+   "referred_by_id": null,
+   "loyalty_tier": "BASE",
+   "lifetime_value_minor": 0,
+   "balance_main_minor": 0,
+   "balance_bonus_minor": 0,
+   "is_blacklisted": false,
+   "is_verified": false,
+   "last_login_at": "2026-09-21T18:05:35.464Z",
+   "last_login_ip": "127.0.0.1",
+   "updated_at": "2026-09-21T18:05:35.464Z"
+  },
+  {
+   "id": "iinQwwtqDiu1",
+   "created_at": "2026-09-21T18:33:29.855Z",
+   "public_uid": "PV-000135",
+   "role_id": 8,
+   "role_code": "client",
+   "phone": "+79998887766",
+   "email": "alex_test_2026@example.com",
+   "telegram_username": null,
+   "telegram_chat_id": null,
+   "password_hash": "scrypt$3aa6d5a11d99f028ecb6376857e2d5f0$478feab9c197fe0022a51e1e627e0a9819ff1a34e73eda908be1b95326d6aa11c5b8b3551622944aa951e58811d8b5ec176b295cf10f6ce2abbcbdf01c4e0c67",
+   "first_name": "Алексей",
+   "last_name": "Смирнов",
+   "referral_code": "J7U852",
+   "referred_by_id": null,
+   "loyalty_tier": "BASE",
+   "lifetime_value_minor": 1092146,
+   "balance_main_minor": 0,
+   "balance_bonus_minor": 0,
+   "is_blacklisted": false,
+   "is_verified": false,
+   "last_login_at": "2026-09-21T18:33:29.856Z",
+   "last_login_ip": "127.0.0.1",
+   "updated_at": "2026-09-21T18:34:00.901Z"
+  },
+  {
+   "id": "ipsvF26eIFPo",
+   "created_at": "2026-09-21T19:19:15.550Z",
+   "public_uid": "PV-000136",
+   "role_id": 8,
+   "role_code": "client",
+   "phone": "+375299863415",
+   "email": null,
+   "telegram_username": null,
+   "telegram_chat_id": null,
+   "password_hash": "scrypt$2f2277d88faa4c239661f91988379807$bb98963b3699d9c2a00569917594460d82d9c5c9fa516f6a55572e32e279a806f7ce2a17432764224d75dc6623f6ef4c05e6c59dd209fb0e113d88c91e8efa37",
+   "first_name": null,
+   "last_name": null,
+   "referral_code": "LSL7BH",
+   "referred_by_id": null,
+   "loyalty_tier": "BASE",
+   "lifetime_value_minor": 0,
+   "balance_main_minor": 0,
+   "balance_bonus_minor": 0,
+   "is_blacklisted": false,
+   "is_verified": false,
+   "last_login_at": "2026-09-21T19:19:15.551Z",
+   "last_login_ip": "127.0.0.1",
+   "updated_at": "2026-09-21T19:19:15.551Z"
+  },
+  {
+   "id": "TSfme7VDOEwN",
+   "created_at": "2026-09-21T19:19:42.156Z",
+   "public_uid": "PV-000137",
+   "role_id": 8,
+   "role_code": "client",
+   "phone": "+375297307893",
+   "email": "artem@example.by",
+   "telegram_username": null,
+   "telegram_chat_id": null,
+   "password_hash": "scrypt$7e999a9c5bb3cc0e1089aa22584b9109$a519c67ab6826edbc8734f692c05a2688cdbb7b5e88657d33220f9eeb7d929fd85b4554434144e524e03a5526be5c9309ac21f5e2aab5c11390eadf872af9e71",
+   "first_name": null,
+   "last_name": null,
+   "referral_code": "TM5LSH",
+   "referred_by_id": null,
+   "loyalty_tier": "BASE",
+   "lifetime_value_minor": 1105327,
+   "balance_main_minor": 0,
+   "balance_bonus_minor": 0,
+   "is_blacklisted": false,
+   "is_verified": false,
+   "last_login_at": "2026-09-21T19:19:42.197Z",
+   "last_login_ip": "127.0.0.1",
+   "updated_at": "2026-09-21T19:19:42.212Z"
+  },
+  {
+   "id": "rwuuxWapb8fT",
+   "created_at": "2026-09-21T19:20:55.029Z",
+   "public_uid": "PV-000138",
+   "role_id": 8,
+   "role_code": "client",
+   "phone": "+375293754544",
+   "email": null,
+   "telegram_username": null,
+   "telegram_chat_id": null,
+   "password_hash": "scrypt$f8c58ec158e326e66eede487b9998e20$9561a24c99a6dca3196d59a07401e35d377bd0b837572f290141235aab9b0bd0619d4273ec368f5e4f0b576f5a26a77954b0f3d2f7dd148dc73073f0b05ef5ed",
+   "first_name": null,
+   "last_name": null,
+   "referral_code": "957THR",
+   "referred_by_id": null,
+   "loyalty_tier": "BASE",
+   "lifetime_value_minor": 1105327,
+   "balance_main_minor": 0,
+   "balance_bonus_minor": 0,
+   "is_blacklisted": false,
+   "is_verified": false,
+   "last_login_at": "2026-09-21T19:20:55.071Z",
+   "last_login_ip": "127.0.0.1",
+   "updated_at": "2026-09-21T19:20:55.084Z"
+  },
+  {
+   "id": "vqs5B9MeSQng",
+   "created_at": "2026-09-21T19:21:10.099Z",
+   "public_uid": "PV-000139",
+   "role_id": 8,
+   "role_code": "client",
+   "phone": "+375293037223",
+   "email": "artem_1790018470148@example.by",
+   "telegram_username": null,
+   "telegram_chat_id": null,
+   "password_hash": "scrypt$e96a950cca95bc7b82c52845e30254f8$e307e4489a1172d247f3775270ecf85c565af2ee6e4af45e186f6b4ec4d835f968c9c3dd2dd997f9f5f5ade8d77f075540f84a913abfb74422cab75d8f8800a8",
+   "first_name": "Артём",
+   "last_name": "Обновлённый",
+   "referral_code": "LF4QGK",
+   "referred_by_id": null,
+   "loyalty_tier": "BASE",
+   "lifetime_value_minor": 1105327,
+   "balance_main_minor": 0,
+   "balance_bonus_minor": 0,
+   "is_blacklisted": false,
+   "is_verified": false,
+   "last_login_at": "2026-09-21T19:21:10.147Z",
+   "last_login_ip": "127.0.0.1",
+   "updated_at": "2026-09-21T19:21:10.166Z"
+  }
+ ],
+ "user_settings": [
+  {
+   "id": "us_L7N9Q4lyeISZ",
+   "user_id": "u_nWHUQ5mLoPSz",
+   "theme": "dark",
+   "currency": "RUB",
+   "language": "ru",
+   "notify_telegram": true,
+   "notify_email": true,
+   "notify_price_drop": true,
+   "notify_status": true,
+   "default_destination": "BY_MSQ",
+   "default_packaging": "basic",
+   "default_insurance": "none",
+   "updated_at": "2026-09-21T17:19:41.000Z"
+  },
+  {
+   "id": "us_VBFmhFINGKpW",
+   "user_id": "u_piF5WfcD0llm",
+   "theme": "light",
+   "currency": "USD",
+   "language": "ru",
+   "notify_telegram": true,
+   "notify_email": true,
+   "notify_price_drop": true,
+   "notify_status": true,
+   "default_destination": "RU_MOW",
+   "default_packaging": "basic",
+   "default_insurance": "none",
+   "updated_at": "2026-09-21T17:19:41.051Z"
+  },
+  {
+   "id": "us_zApKX2N113F9",
+   "user_id": "u_bvz2Dc6o9v2s",
+   "theme": "dark",
+   "currency": "RUB",
+   "language": "ru",
+   "notify_telegram": true,
+   "notify_email": true,
+   "notify_price_drop": true,
+   "notify_status": true,
+   "default_destination": "RU_MOW",
+   "default_packaging": "basic",
+   "default_insurance": "none",
+   "updated_at": "2026-09-21T17:19:41.096Z"
+  },
+  {
+   "id": "us_rNhixSLM4wQY",
+   "user_id": "u_bVBa3zY6WGKf",
+   "theme": "dark",
+   "currency": "RUB",
+   "language": "ru",
+   "notify_telegram": true,
+   "notify_email": true,
+   "notify_price_drop": true,
+   "notify_status": true,
+   "default_destination": "RU_MOW",
+   "default_packaging": "basic",
+   "default_insurance": "none",
+   "updated_at": "2026-09-21T17:19:41.141Z"
+  },
+  {
+   "id": "us_lmeGX4AvvioJ",
+   "user_id": "u_6YIL0HdscOee",
+   "theme": "dark",
+   "currency": "BYN",
+   "language": "ru",
+   "notify_telegram": true,
+   "notify_email": true,
+   "notify_price_drop": true,
+   "notify_status": true,
+   "default_destination": "BY_MSQ",
+   "default_packaging": "basic",
+   "default_insurance": "none",
+   "updated_at": "2026-09-21T17:19:41.189Z"
+  },
+  {
+   "id": "us_AcnLApBCQizZ",
+   "user_id": "u_ZSA6uZyReB",
+   "theme": "light",
+   "currency": "RUB",
+   "language": "ru",
+   "notify_telegram": true,
+   "notify_email": true,
+   "notify_price_drop": true,
+   "notify_status": true,
+   "default_destination": "RU_MOW",
+   "default_packaging": "basic",
+   "default_insurance": "none",
+   "updated_at": "2026-09-21T17:19:41.232Z"
+  },
+  {
+   "id": "us_ny2chNhmURr",
+   "user_id": "u_xiPlHCyaZcj",
+   "theme": "dark",
+   "currency": "RUB",
+   "language": "ru",
+   "notify_telegram": true,
+   "notify_email": true,
+   "notify_price_drop": true,
+   "notify_status": true,
+   "default_destination": "RU_MOW",
+   "default_packaging": "basic",
+   "default_insurance": "none",
+   "updated_at": "2026-09-21T17:19:41.278Z"
+  },
+  {
+   "id": "gzAkGW6g7Mk",
+   "created_at": "2026-09-21T18:05:35.463Z",
+   "user_id": "7dr87DFJYZ16",
+   "theme": "dark",
+   "currency": "RUB",
+   "language": "ru",
+   "notify_telegram": true,
+   "notify_email": true,
+   "notify_price_drop": true,
+   "notify_status": true,
+   "default_destination": "RU_MOW",
+   "default_packaging": "basic",
+   "default_insurance": "none"
+  },
+  {
+   "id": "fnShpJ8aoQeu",
+   "created_at": "2026-09-21T18:33:29.855Z",
+   "user_id": "iinQwwtqDiu1",
+   "theme": "dark",
+   "currency": "USD",
+   "language": "ru",
+   "notify_telegram": true,
+   "notify_email": true,
+   "notify_price_drop": true,
+   "notify_status": true,
+   "default_destination": "RU_MOW",
+   "default_packaging": "basic",
+   "default_insurance": "none",
+   "updated_at": "2026-09-21T18:33:37.902Z"
+  },
+  {
+   "id": "MZf1i1RS7iSW",
+   "created_at": "2026-09-21T19:19:15.550Z",
+   "user_id": "ipsvF26eIFPo",
+   "theme": "dark",
+   "currency": "RUB",
+   "language": "ru",
+   "notify_telegram": true,
+   "notify_email": true,
+   "notify_price_drop": true,
+   "notify_status": true,
+   "default_destination": "RU_MOW",
+   "default_packaging": "basic",
+   "default_insurance": "none"
+  },
+  {
+   "id": "sKKu8lnATjX",
+   "created_at": "2026-09-21T19:19:42.156Z",
+   "user_id": "TSfme7VDOEwN",
+   "theme": "dark",
+   "currency": "RUB",
+   "language": "ru",
+   "notify_telegram": true,
+   "notify_email": true,
+   "notify_price_drop": true,
+   "notify_status": true,
+   "default_destination": "RU_MOW",
+   "default_packaging": "basic",
+   "default_insurance": "none"
+  },
+  {
+   "id": "5XBx7eq3NGk",
+   "created_at": "2026-09-21T19:20:55.030Z",
+   "user_id": "rwuuxWapb8fT",
+   "theme": "dark",
+   "currency": "RUB",
+   "language": "ru",
+   "notify_telegram": true,
+   "notify_email": true,
+   "notify_price_drop": true,
+   "notify_status": true,
+   "default_destination": "RU_MOW",
+   "default_packaging": "basic",
+   "default_insurance": "none"
+  },
+  {
+   "id": "gHeamH14Xyj",
+   "created_at": "2026-09-21T19:21:10.099Z",
+   "user_id": "vqs5B9MeSQng",
+   "theme": "dark",
+   "currency": "RUB",
+   "language": "ru",
+   "notify_telegram": true,
+   "notify_email": true,
+   "notify_price_drop": true,
+   "notify_status": true,
+   "default_destination": "RU_MOW",
+   "default_packaging": "basic",
+   "default_insurance": "none"
+  }
+ ],
+ "user_addresses": [
+  {
+   "id": "ad_CJJ4RPpDci9q",
+   "user_id": "u_6YIL0HdscOee",
+   "is_default": true,
+   "created_at": "2026-09-21T17:19:41.189Z",
+   "kind": "BY_MSQ",
+   "recipient": "Иван Соколов",
+   "phone": "+375291234567",
+   "country": "BY",
+   "city": "Минск",
+   "address_line": "ул. Немига 5, кв. 42",
+   "postal_code": "220004",
+   "pickup_point": "ПВЗ Немига"
+  }
+ ],
+ "sessions": [
+  {
+   "id": "hiIN1Loa3fV6T2LkibEyCA",
+   "created_at": "2026-09-21T18:05:29.076Z",
+   "user_id": "u_ZSA6uZyReB",
+   "refresh_hash": "b13d08c1fc901c6d098e488afbca125824789290ad2bb3a83f69b13c6e242371",
+   "user_agent": "curl/8.14.1",
+   "ip": "127.0.0.1",
+   "expires_at": "2026-10-21T18:05:29.075Z"
+  },
+  {
+   "id": "wg31Wsd6nnYvYiHZlD0GZA",
+   "created_at": "2026-09-21T18:05:29.130Z",
+   "user_id": "u_6YIL0HdscOee",
+   "refresh_hash": "06745afb35cc0349e1f94429bf727f34c0f0199e8f6921d1d1b1be47d8f86de6",
+   "user_agent": "curl/8.14.1",
+   "ip": "127.0.0.1",
+   "expires_at": "2026-10-21T18:05:29.130Z"
+  },
+  {
+   "id": "lNf7otBTcxxVE8jFUExskQ",
+   "created_at": "2026-09-21T18:05:35.463Z",
+   "user_id": "7dr87DFJYZ16",
+   "refresh_hash": "c4cf9b31a21e2e1a89a03c6862b709ccc9f25a559f7b4f2bba919139e76d2501",
+   "user_agent": "node",
+   "ip": "127.0.0.1",
+   "expires_at": "2026-10-21T18:05:35.463Z"
+  },
+  {
+   "id": "UJ-JIMxNCbc3VAeWZeYpsg",
+   "created_at": "2026-09-21T18:18:25.815Z",
+   "user_id": "u_6YIL0HdscOee",
+   "refresh_hash": "e861f1f82be839a73eeddb77c93c5930cb0eded1b4d8830985afe7f34d39f9c5",
+   "user_agent": "curl/8.14.1",
+   "ip": "127.0.0.1",
+   "expires_at": "2026-10-21T18:18:25.815Z"
+  },
+  {
+   "id": "RTyh4cqsC2i_80dAadJdNQ",
+   "created_at": "2026-09-21T18:33:29.856Z",
+   "user_id": "iinQwwtqDiu1",
+   "refresh_hash": "141fc1039cf9e5af9d46aea6ede24da7b7b64ef770de7d1ad8683278502ff03c",
+   "user_agent": "curl/8.14.1",
+   "ip": "127.0.0.1",
+   "expires_at": "2026-10-21T18:33:29.856Z"
+  },
+  {
+   "id": "EJgaa9_4qlhMFHdHVzYI9w",
+   "created_at": "2026-09-21T18:45:40.740Z",
+   "user_id": "u_6YIL0HdscOee",
+   "refresh_hash": "868b4220f1279d22f80ddd672221469e74bb785208b60408f43ea1fbbcdfbd4e",
+   "user_agent": "curl/8.14.1",
+   "ip": "127.0.0.1",
+   "expires_at": "2026-10-21T18:45:40.740Z"
+  },
+  {
+   "id": "UXj0QChWPZewpPPHpuAN0A",
+   "created_at": "2026-09-21T19:19:15.551Z",
+   "user_id": "ipsvF26eIFPo",
+   "refresh_hash": "fae7dcddd95faf47a8a6ad30d61e85ef7eae7ce5ed3dda02013de5bd42373d2a",
+   "user_agent": null,
+   "ip": "127.0.0.1",
+   "expires_at": "2026-10-21T19:19:15.551Z"
+  },
+  {
+   "id": "XoRz8ruH-JlSJfctiK0HAQ",
+   "created_at": "2026-09-21T19:19:42.156Z",
+   "user_id": "TSfme7VDOEwN",
+   "refresh_hash": "60a0c692211098ae1c5e2737ba3e804a49c2af001cb916c2c6984df89110d8b9",
+   "user_agent": null,
+   "ip": "127.0.0.1",
+   "expires_at": "2026-10-21T19:19:42.156Z"
+  },
+  {
+   "id": "cdZnUs2Rqfs3twxEI8gH0A",
+   "created_at": "2026-09-21T19:19:42.197Z",
+   "user_id": "TSfme7VDOEwN",
+   "refresh_hash": "baa1d4117962ab97c45a491de3288910eb47b5bf658fbcebf46d40858d1786fa",
+   "user_agent": null,
+   "ip": "127.0.0.1",
+   "expires_at": "2026-10-21T19:19:42.197Z"
+  },
+  {
+   "id": "BsFxmKqj47Ho3vCEOgdBew",
+   "created_at": "2026-09-21T19:20:55.030Z",
+   "user_id": "rwuuxWapb8fT",
+   "refresh_hash": "af4de802278cd20ec0a8a60f82f888600d4c6a3aefe63e12db52a3d8bfe8bf69",
+   "user_agent": null,
+   "ip": "127.0.0.1",
+   "expires_at": "2026-10-21T19:20:55.030Z"
+  },
+  {
+   "id": "yNJR16_P6Il_85kMjRaArQ",
+   "created_at": "2026-09-21T19:20:55.071Z",
+   "user_id": "rwuuxWapb8fT",
+   "refresh_hash": "f1b33df159a0dfb561aa0e4b2baf93d18e8ba324e64c05cc580d8f34f584499e",
+   "user_agent": null,
+   "ip": "127.0.0.1",
+   "expires_at": "2026-10-21T19:20:55.071Z"
+  },
+  {
+   "id": "ogMYVVKgFEMC1WXlk5soLw",
+   "created_at": "2026-09-21T19:21:10.100Z",
+   "user_id": "vqs5B9MeSQng",
+   "refresh_hash": "3722dd21de21e5063393b6aa5677de9699fc5b49537d72b2067801c5bc771683",
+   "user_agent": null,
+   "ip": "127.0.0.1",
+   "expires_at": "2026-10-21T19:21:10.100Z"
+  },
+  {
+   "id": "E1mL8twI89Ux2yePiBW3tA",
+   "created_at": "2026-09-21T19:21:10.147Z",
+   "user_id": "vqs5B9MeSQng",
+   "refresh_hash": "6ff6746416f5f2768a671c3e50b2488f83ec87b3055c2bd5891278a2af094516",
+   "user_agent": null,
+   "ip": "127.0.0.1",
+   "expires_at": "2026-10-21T19:21:10.147Z"
+  },
+  {
+   "id": "oInUN1p2k1t9JtR0U9xsVQ",
+   "created_at": "2026-09-22T04:25:40.505Z",
+   "user_id": "u_bvz2Dc6o9v2s",
+   "refresh_hash": "89ccb552656d9f7d4abcca4480d8b5d14be5c3ccd082a9a89805028b39e252b0",
+   "user_agent": null,
+   "ip": "127.0.0.1",
+   "expires_at": "2026-10-22T04:25:40.505Z"
+  },
+  {
+   "id": "_0TpumMWnMdyiZcpl0OYww",
+   "created_at": "2026-09-22T04:26:40.030Z",
+   "user_id": "u_nWHUQ5mLoPSz",
+   "refresh_hash": "97cfb2948c604da79bbcb22e617c14c5a3f9f529d88b233786cb302ee4c03123",
+   "user_agent": null,
+   "ip": "127.0.0.1",
+   "expires_at": "2026-10-22T04:26:40.030Z"
+  },
+  {
+   "id": "o49Y4ob--4L7NJwGUmBnsA",
+   "created_at": "2026-09-22T13:14:33.374Z",
+   "user_id": "u_nWHUQ5mLoPSz",
+   "refresh_hash": "49a10cec416e6c79c1fcbca71691b30f0dec7ec3f96e70a6da820269d7ca4fbb",
+   "user_agent": null,
+   "ip": "127.0.0.1",
+   "expires_at": "2026-10-22T13:14:33.374Z"
+  },
+  {
+   "id": "PF_ywMiIhLA-xMoFgyrmAw",
+   "created_at": "2026-09-22T13:14:53.375Z",
+   "user_id": "u_nWHUQ5mLoPSz",
+   "refresh_hash": "9c5cb898e22993eb8ec6885efc01ef286d48d2a37d3dbf5007286fdf83a35a70",
+   "user_agent": null,
+   "ip": "127.0.0.1",
+   "expires_at": "2026-10-22T13:14:53.375Z"
+  }
+ ],
+ "blacklists": [],
+ "settings": [
+  {
+   "id": "st_bi78KXcX3Dsk",
+   "key": "rates.currency_view",
+   "value": [
+    "BYN",
+    "RUB",
+    "USD"
+   ],
+   "description": "Доступные валюты отображения",
+   "is_public": true,
+   "updated_by": null,
+   "updated_at": "2026-09-21T17:19:40.945Z"
+  },
+  {
+   "id": "st_wNjoRYvhjsZX",
+   "key": "rates.currency_rates",
+   "value": {
+    "RUB": {
+     "base": 1,
+     "markup": 0,
+     "symbol": "₽",
+     "minor": "kopeck"
+    },
+    "BYN": {
+     "base": 33.2,
+     "markup": 1.5,
+     "symbol": "Br",
+     "minor": "kopeck"
+    },
+    "USD": {
+     "base": 92.4,
+     "markup": 2,
+     "symbol": "$",
+     "minor": "cent"
+    },
+    "CNY": {
+     "base": 12.85,
+     "markup": 3,
+     "symbol": "¥",
+     "minor": "fen"
+    }
+   },
+   "description": "Курс к RUB. effective = base * (1 + markup/100)",
+   "is_public": true,
+   "updated_by": null,
+   "updated_at": "2026-09-21T17:19:40.945Z"
+  },
+  {
+   "id": "st_68VzsiXIOoec",
+   "key": "rates.auto_source",
+   "value": "manual",
+   "description": "manual | cbr | nbrb",
+   "is_public": false,
+   "updated_by": null,
+   "updated_at": "2026-09-21T17:19:40.945Z"
+  },
+  {
+   "id": "st_jwt34Pi0rsUg",
+   "key": "rates.auto_markup_default",
+   "value": 2.5,
+   "description": null,
+   "is_public": false,
+   "updated_by": null,
+   "updated_at": "2026-09-21T17:19:40.945Z"
+  },
+  {
+   "id": "st_0sjY5V0wreG",
+   "key": "logistics.tariffs",
+   "value": {
+    "RU_MOW": {
+     "label": "Москва, РФ",
+     "usd_per_kg": 3.5,
+     "days_min": 22,
+     "days_max": 28,
+     "currency_accept": [
+      "RUB"
+     ]
+    },
+    "BY_MSQ": {
+     "label": "Минск, РБ",
+     "usd_per_kg": 4.5,
+     "days_min": 30,
+     "days_max": 35,
+     "currency_accept": [
+      "BYN",
+      "RUB"
+     ]
+    }
+   },
+   "description": null,
+   "is_public": true,
+   "updated_by": null,
+   "updated_at": "2026-09-21T17:19:40.945Z"
+  },
+  {
+   "id": "st_evpDrlyljNg",
+   "key": "logistics.packaging",
+   "value": {
+    "none": 0,
+    "basic": 3,
+    "corners": 5,
+    "crate": 6
+   },
+   "description": null,
+   "is_public": true,
+   "updated_by": null,
+   "updated_at": "2026-09-21T17:19:40.945Z"
+  },
+  {
+   "id": "st_9IvrieOMM0w",
+   "key": "logistics.unloading_usd",
+   "value": 3,
+   "description": null,
+   "is_public": true,
+   "updated_by": null,
+   "updated_at": "2026-09-21T17:19:40.945Z"
+  },
+  {
+   "id": "st_C8uksF08uQ3p",
+   "key": "logistics.unloading_volume_max_m3",
+   "value": 0.4,
+   "description": null,
+   "is_public": true,
+   "updated_by": null,
+   "updated_at": "2026-09-21T17:19:40.945Z"
+  },
+  {
+   "id": "st_9T0lHCnzZ7tp",
+   "key": "logistics.volumetric_divisor",
+   "value": 5000,
+   "description": null,
+   "is_public": true,
+   "updated_by": null,
+   "updated_at": "2026-09-21T17:19:40.945Z"
+  },
+  {
+   "id": "st_FX7C1bWsXuke",
+   "key": "logistics.min_billable_kg",
+   "value": 0.5,
+   "description": null,
+   "is_public": true,
+   "updated_by": null,
+   "updated_at": "2026-09-21T17:19:40.945Z"
+  },
+  {
+   "id": "st_68JgDrXpUYv",
+   "key": "insurance.tiers",
+   "value": [
+    {
+     "max_usd": 500,
+     "rate": 0.02
+    },
+    {
+     "max_usd": 1000,
+     "rate": 0.03
+    },
+    {
+     "max_usd": null,
+     "rate": 0.03
+    }
+   ],
+   "description": null,
+   "is_public": true,
+   "updated_by": null,
+   "updated_at": "2026-09-21T17:19:40.945Z"
+  },
+  {
+   "id": "st_admm4u7Cx",
+   "key": "commission.base_rate",
+   "value": 0.1,
+   "description": null,
+   "is_public": true,
+   "updated_by": null,
+   "updated_at": "2026-09-21T17:19:40.945Z"
+  },
+  {
+   "id": "st_t0sw38BtpXcN",
+   "key": "loyalty.tiers",
+   "value": [
+    {
+     "code": "BASE",
+     "name": "Base",
+     "commission": 0.1,
+     "threshold_rub_minor": 0,
+     "perks": [
+      "Стандартная поддержка"
+     ]
+    },
+    {
+     "code": "SILVER",
+     "name": "Silver",
+     "commission": 0.08,
+     "threshold_rub_minor": 5000000,
+     "perks": [
+      "Комиссия 8%",
+      "Приоритетный выкуп"
+     ]
+    },
+    {
+     "code": "GOLD",
+     "name": "Gold VIP",
+     "commission": 0.05,
+     "threshold_rub_minor": 20000000,
+     "perks": [
+      "Комиссия 5%",
+      "Личный менеджер",
+      "Бесплатная разгрузка"
+     ]
+    }
+   ],
+   "description": null,
+   "is_public": true,
+   "updated_by": null,
+   "updated_at": "2026-09-21T17:19:40.945Z"
+  },
+  {
+   "id": "st_yvPpQtQpuV4",
+   "key": "referral.config",
+   "value": {
+    "trigger": "first_paid_order",
+    "reward_type": "percent_of_order",
+    "percent": 3,
+    "cap_rub_minor": 150000,
+    "fallback_fixed_rub_minor": 30000,
+    "invitee_bonus_rub_minor": 20000,
+    "cookie_days": 30,
+    "wallet_type": "bonus",
+    "clawback_on_refund": true
+   },
+   "description": null,
+   "is_public": true,
+   "updated_by": null,
+   "updated_at": "2026-09-21T17:19:40.945Z"
+  },
+  {
+   "id": "st_xYQIDnlK07",
+   "key": "tiktok.config",
+   "value": {
+    "hashtag": "#poizonvanart",
+    "mention": "@poizonvanart",
+    "site_url": "poizonvanart.com",
+    "reward_per_1000_views_rub_minor": 1500,
+    "min_views": 1000,
+    "max_submissions_per_day": 5,
+    "wallet_type": "bonus",
+    "require_moderation": true
+   },
+   "description": null,
+   "is_public": true,
+   "updated_by": null,
+   "updated_at": "2026-09-21T17:19:40.945Z"
+  },
+  {
+   "id": "st_nrn0bCjtWvz0",
+   "key": "catalog.default_weights_kg",
+   "value": {
+    "sneakers": 1.4,
+    "tshirt": 0.5,
+    "hoodie": 1.1,
+    "jacket": 2,
+    "pants": 0.8,
+    "shorts": 0.4,
+    "accessories": 0.3,
+    "bag": 1.2,
+    "cap": 0.25
+   },
+   "description": null,
+   "is_public": true,
+   "updated_by": null,
+   "updated_at": "2026-09-21T17:19:40.945Z"
+  },
+  {
+   "id": "st_a5ExO1aGAtOt",
+   "key": "cart.merge_packaging_default",
+   "value": true,
+   "description": null,
+   "is_public": true,
+   "updated_by": null,
+   "updated_at": "2026-09-21T17:19:40.945Z"
+  },
+  {
+   "id": "st_bj4kckA5uinC",
+   "key": "alerts.price_drop_threshold_percent",
+   "value": 3,
+   "description": null,
+   "is_public": false,
+   "updated_by": null,
+   "updated_at": "2026-09-21T17:19:40.945Z"
+  },
+  {
+   "id": "st_rAJpc0QaKydF",
+   "key": "alerts.rate_drop_threshold_percent",
+   "value": 2,
+   "description": null,
+   "is_public": false,
+   "updated_by": null,
+   "updated_at": "2026-09-21T17:19:40.945Z"
+  },
+  {
+   "id": "st_Ku6doZ7LUjYj",
+   "key": "payments.providers",
+   "value": {
+    "RU": "yookassa",
+    "BY": "belpay",
+    "sbp": true,
+    "erip": true
+   },
+   "description": null,
+   "is_public": true,
+   "updated_by": null,
+   "updated_at": "2026-09-21T17:19:40.945Z"
+  },
+  {
+   "id": "st_bZmZDCxMdu0l",
+   "key": "contacts",
+   "value": {
+    "telegram": "https://t.me/poizonvanart",
+    "whatsapp": "https://wa.me/375291234567",
+    "email": "hello@poizonvanart.com",
+    "phone_ru": "+7 495 000-00-00",
+    "phone_by": "+375 29 123-45-67"
+   },
+   "description": null,
+   "is_public": true,
+   "updated_by": null,
+   "updated_at": "2026-09-21T17:19:40.945Z"
+  }
+ ],
+ "rate_history": [
+  {
+   "id": "rh_CYkkWZYPYYfl",
+   "currency": "RUB",
+   "base_rate": 1,
+   "markup_percent": 0,
+   "effective_rate": 1,
+   "source": "manual",
+   "valid_from": "2026-09-21T17:19:41.323Z",
+   "created_by": null
+  },
+  {
+   "id": "rh_7KnKvg9R8td9",
+   "currency": "BYN",
+   "base_rate": 33.2,
+   "markup_percent": 1.5,
+   "effective_rate": 33.698,
+   "source": "manual",
+   "valid_from": "2026-09-21T17:19:41.323Z",
+   "created_by": null
+  },
+  {
+   "id": "rh_w2ypc0kyho61",
+   "currency": "USD",
+   "base_rate": 92.4,
+   "markup_percent": 2,
+   "effective_rate": 94.248,
+   "source": "manual",
+   "valid_from": "2026-09-21T17:19:41.323Z",
+   "created_by": null
+  },
+  {
+   "id": "rh_azcdZgtlk9S",
+   "currency": "CNY",
+   "base_rate": 12.85,
+   "markup_percent": 3,
+   "effective_rate": 13.2355,
+   "source": "manual",
+   "valid_from": "2026-09-21T17:19:41.323Z",
+   "created_by": null
+  }
+ ],
+ "categories": [
+  {
+   "id": 1,
+   "slug": "sneakers",
+   "name": "Кроссовки",
+   "parent_id": null,
+   "avg_weight_kg": 1.4,
+   "sort_order": 1,
+   "is_active": true
+  },
+  {
+   "id": 2,
+   "slug": "tshirt",
+   "name": "Футболки",
+   "parent_id": null,
+   "avg_weight_kg": 0.5,
+   "sort_order": 2,
+   "is_active": true
+  },
+  {
+   "id": 3,
+   "slug": "hoodie",
+   "name": "Худи и свитшоты",
+   "parent_id": null,
+   "avg_weight_kg": 1.1,
+   "sort_order": 3,
+   "is_active": true
+  },
+  {
+   "id": 4,
+   "slug": "jacket",
+   "name": "Куртки",
+   "parent_id": null,
+   "avg_weight_kg": 2,
+   "sort_order": 4,
+   "is_active": true
+  },
+  {
+   "id": 5,
+   "slug": "pants",
+   "name": "Брюки и джинсы",
+   "parent_id": null,
+   "avg_weight_kg": 0.8,
+   "sort_order": 5,
+   "is_active": true
+  },
+  {
+   "id": 6,
+   "slug": "accessories",
+   "name": "Аксессуары",
+   "parent_id": null,
+   "avg_weight_kg": 0.3,
+   "sort_order": 6,
+   "is_active": true
+  },
+  {
+   "id": 7,
+   "slug": "bag",
+   "name": "Сумки",
+   "parent_id": null,
+   "avg_weight_kg": 1.2,
+   "sort_order": 7,
+   "is_active": true
+  }
+ ],
+ "brands": [
+  {
+   "id": 1,
+   "slug": "nike",
+   "name": "Nike",
+   "logo_url": null,
+   "size_bias": 0
+  },
+  {
+   "id": 2,
+   "slug": "adidas",
+   "name": "Adidas",
+   "logo_url": null,
+   "size_bias": 0
+  },
+  {
+   "id": 3,
+   "slug": "jordan",
+   "name": "Air Jordan",
+   "logo_url": null,
+   "size_bias": 0
+  },
+  {
+   "id": 4,
+   "slug": "newbalance",
+   "name": "New Balance",
+   "logo_url": null,
+   "size_bias": 0
+  },
+  {
+   "id": 5,
+   "slug": "salomon",
+   "name": "Salomon",
+   "logo_url": null,
+   "size_bias": -0.5
+  },
+  {
+   "id": 6,
+   "slug": "essentials",
+   "name": "Fear of God Essentials",
+   "logo_url": null,
+   "size_bias": 1
+  },
+  {
+   "id": 7,
+   "slug": "stussy",
+   "name": "Stüssy",
+   "logo_url": null,
+   "size_bias": 0.5
+  },
+  {
+   "id": 8,
+   "slug": "arcteryx",
+   "name": "Arc'teryx",
+   "logo_url": null,
+   "size_bias": 0
+  }
+ ],
+ "products": [
+  {
+   "id": "pr_pGJNEmNj9ZZo",
+   "sku": "PV-NK-AJ1-RETRO",
+   "brand_id": 3,
+   "category_id": 1,
+   "brand_slug": "jordan",
+   "category_slug": "sneakers",
+   "brand_name": "Air Jordan",
+   "category_name": "Кроссовки",
+   "name": "Air Jordan 1 Retro High OG 'Chicago Lost & Found'",
+   "name_cn": "AJ1 高帮 芝加哥",
+   "slug": "air-jordan-1-retro-high-chicago",
+   "description": "Легендарная расцветка Chicago в версии Lost & Found. Кожа, винтажная обработка подошвы, комплект с дополнительными шнурками.",
+   "images": [
+    "/img/p/aj1-chicago.svg"
+   ],
+   "external_source": "poizon",
+   "external_id": "spu-100231",
+   "external_url": "https://www.poizon.com/product?spu=100231",
+   "weight_est_kg": 1.4,
+   "price_cny_minor": 149900,
+   "is_active": true,
+   "is_featured": true,
+   "created_at": "2026-09-21T17:19:40.946Z",
+   "updated_at": "2026-09-21T17:19:40.946Z"
+  },
+  {
+   "id": "pr_Bb2lPBajUcge",
+   "sku": "PV-NB-9060-GRY",
+   "brand_id": 4,
+   "category_id": 1,
+   "brand_slug": "newbalance",
+   "category_slug": "sneakers",
+   "brand_name": "New Balance",
+   "category_name": "Кроссовки",
+   "name": "New Balance 9060 'Rain Cloud'",
+   "name_cn": "NB 9060 雨云灰",
+   "slug": "new-balance-9060-rain-cloud",
+   "description": "Культовый силуэт 9060 в универсальной серой расцветке. Замша + сетка, амортизация ABZORB.",
+   "images": [
+    "/img/p/nb9060.svg"
+   ],
+   "external_source": "poizon",
+   "external_id": "spu-208814",
+   "external_url": "https://www.poizon.com/product?spu=208814",
+   "weight_est_kg": 1.3,
+   "price_cny_minor": 79900,
+   "is_active": true,
+   "is_featured": true,
+   "created_at": "2026-09-21T17:19:40.946Z",
+   "updated_at": "2026-09-21T17:19:40.946Z"
+  },
+  {
+   "id": "pr_GRUkjnDU4iUg",
+   "sku": "PV-AD-SAMBA-OG",
+   "brand_id": 2,
+   "category_id": 1,
+   "brand_slug": "adidas",
+   "category_slug": "sneakers",
+   "brand_name": "Adidas",
+   "category_name": "Кроссовки",
+   "name": "Adidas Samba OG 'Cloud White / Core Black'",
+   "name_cn": "阿迪达斯 Samba OG",
+   "slug": "adidas-samba-og-white",
+   "description": "Классика террасной моды. Кожа, замшевый мысок, резиновая подошва.",
+   "images": [
+    "/img/p/samba.svg"
+   ],
+   "external_source": "poizon",
+   "external_id": "spu-330117",
+   "external_url": "https://www.poizon.com/product?spu=330117",
+   "weight_est_kg": 1.1,
+   "price_cny_minor": 65900,
+   "is_active": true,
+   "is_featured": false,
+   "created_at": "2026-09-21T17:19:40.946Z",
+   "updated_at": "2026-09-21T17:19:40.946Z"
+  },
+  {
+   "id": "pr_2gjWmIekhM2a",
+   "sku": "PV-SM-XT6-FT",
+   "brand_id": 5,
+   "category_id": 1,
+   "brand_slug": "salomon",
+   "category_slug": "sneakers",
+   "brand_name": "Salomon",
+   "category_name": "Кроссовки",
+   "name": "Salomon XT-6 'Forage/Black'",
+   "name_cn": "萨洛蒙 XT-6",
+   "slug": "salomon-xt6-forage",
+   "description": "Трейл-силуэт, ставший иконой стритвира. Быстрая шнуровка Quicklace, шасси ACS.",
+   "images": [
+    "/img/p/xt6.svg"
+   ],
+   "external_source": "dewu",
+   "external_id": "spu-441200",
+   "external_url": "https://www.dewu.com/product?spu=441200",
+   "weight_est_kg": 1.2,
+   "price_cny_minor": 112900,
+   "is_active": true,
+   "is_featured": false,
+   "created_at": "2026-09-21T17:19:40.946Z",
+   "updated_at": "2026-09-21T17:19:40.946Z"
+  },
+  {
+   "id": "pr_hko9gtGsG2kl",
+   "sku": "PV-FOG-ESS-HOODIE",
+   "brand_id": 6,
+   "category_id": 3,
+   "brand_slug": "essentials",
+   "category_slug": "hoodie",
+   "brand_name": "Fear of God Essentials",
+   "category_name": "Худи и свитшоты",
+   "name": "Fear of God Essentials Hoodie 'Oatmeal'",
+   "name_cn": "FOG Essentials 连帽卫衣",
+   "slug": "fog-essentials-hoodie-oatmeal",
+   "description": "Плотный флис 480 г/м², свободный крой (бокс-фит), резиновый логотип на груди. Маломерит — берите на размер меньше.",
+   "images": [
+    "/img/p/fog-hoodie.svg"
+   ],
+   "external_source": "poizon",
+   "external_id": "spu-551002",
+   "external_url": "https://www.poizon.com/product?spu=551002",
+   "weight_est_kg": 1.1,
+   "price_cny_minor": 52900,
+   "is_active": true,
+   "is_featured": true,
+   "created_at": "2026-09-21T17:19:40.947Z",
+   "updated_at": "2026-09-21T17:19:40.947Z"
+  },
+  {
+   "id": "pr_XkAshOP6mS4Y",
+   "sku": "PV-STU-TEE-BASIC",
+   "brand_id": 7,
+   "category_id": 2,
+   "brand_slug": "stussy",
+   "category_slug": "tshirt",
+   "brand_name": "Stüssy",
+   "category_name": "Футболки",
+   "name": "Stüssy Basic Logo Tee 'White'",
+   "name_cn": "Stussy 基础款 T恤",
+   "slug": "stussy-basic-logo-tee-white",
+   "description": "Хлопок 220 г/м², прямой крой, принт на водной основе.",
+   "images": [
+    "/img/p/stussy-tee.svg"
+   ],
+   "external_source": "poizon",
+   "external_id": "spu-660311",
+   "external_url": "https://www.poizon.com/product?spu=660311",
+   "weight_est_kg": 0.5,
+   "price_cny_minor": 25900,
+   "is_active": true,
+   "is_featured": false,
+   "created_at": "2026-09-21T17:19:40.947Z",
+   "updated_at": "2026-09-21T17:19:40.947Z"
+  },
+  {
+   "id": "pr_aZFukFOUzNBr",
+   "sku": "PV-ATX-BETA-JKT",
+   "brand_id": 8,
+   "category_id": 4,
+   "brand_slug": "arcteryx",
+   "category_slug": "jacket",
+   "brand_name": "Arc'teryx",
+   "category_name": "Куртки",
+   "name": "Arc'teryx Beta LT Jacket 'Black Sapphire'",
+   "name_cn": "始祖鸟 Beta LT 冲锋衣",
+   "slug": "arcteryx-beta-lt-black",
+   "description": "3-слойный GORE-TEX, проклеенные швы, капюшон StormHood. Хит сезона в Китае.",
+   "images": [
+    "/img/p/beta-lt.svg"
+   ],
+   "external_source": "poizon",
+   "external_id": "spu-778420",
+   "external_url": "https://www.poizon.com/product?spu=778420",
+   "weight_est_kg": 2,
+   "price_cny_minor": 329900,
+   "is_active": true,
+   "is_featured": true,
+   "created_at": "2026-09-21T17:19:40.947Z",
+   "updated_at": "2026-09-21T17:19:40.947Z"
+  },
+  {
+   "id": "pr_GIcujHj6sXBK",
+   "sku": "PV-NK-TECH-PANT",
+   "brand_id": 1,
+   "category_id": 5,
+   "brand_slug": "nike",
+   "category_slug": "pants",
+   "brand_name": "Nike",
+   "category_name": "Брюки и джинсы",
+   "name": "Nike Tech Fleece Joggers 'Black'",
+   "name_cn": "耐克 Tech Fleece 卫裤",
+   "slug": "nike-tech-fleece-joggers-black",
+   "description": "Tech Fleece, зауженный крой, карманы на молнии.",
+   "images": [
+    "/img/p/tech-jogger.svg"
+   ],
+   "external_source": "poizon",
+   "external_id": "spu-889001",
+   "external_url": "https://www.poizon.com/product?spu=889001",
+   "weight_est_kg": 0.8,
+   "price_cny_minor": 46900,
+   "is_active": true,
+   "is_featured": false,
+   "created_at": "2026-09-21T17:19:40.947Z",
+   "updated_at": "2026-09-21T17:19:40.947Z"
+  }
+ ],
+ "product_variants": [
+  {
+   "id": "pv_0NKnfPeaAUzz",
+   "product_id": "pr_pGJNEmNj9ZZo",
+   "seq": 0,
+   "color": "Chicago/White-Red",
+   "size_eur": "40",
+   "size_us": "7",
+   "size_cn": "250",
+   "price_cny_minor": 149900,
+   "weight_kg": 1.35,
+   "stock_status": "in_stock",
+   "sku": "PV-NK-AJ1-RETRO-CHI-40",
+   "images": [],
+   "created_at": "2026-09-21T17:19:40.946Z"
+  },
+  {
+   "id": "pv_LBtdC9SK7r8V",
+   "product_id": "pr_pGJNEmNj9ZZo",
+   "seq": 1,
+   "color": "Chicago/White-Red",
+   "size_eur": "41",
+   "size_us": "8",
+   "size_cn": "260",
+   "price_cny_minor": 149900,
+   "weight_kg": 1.4,
+   "stock_status": "in_stock",
+   "sku": "PV-NK-AJ1-RETRO-CHI-41",
+   "images": [],
+   "created_at": "2026-09-21T17:19:40.946Z"
+  },
+  {
+   "id": "pv_bFJ409Fr1WUQ",
+   "product_id": "pr_pGJNEmNj9ZZo",
+   "seq": 2,
+   "color": "Chicago/White-Red",
+   "size_eur": "42.5",
+   "size_us": "9",
+   "size_cn": "270",
+   "price_cny_minor": 155900,
+   "weight_kg": 1.45,
+   "stock_status": "low",
+   "sku": "PV-NK-AJ1-RETRO-CHI-42.5",
+   "images": [],
+   "created_at": "2026-09-21T17:19:40.946Z"
+  },
+  {
+   "id": "pv_8iI65DGFywV9",
+   "product_id": "pr_pGJNEmNj9ZZo",
+   "seq": 3,
+   "color": "Chicago/White-Red",
+   "size_eur": "44",
+   "size_us": "10",
+   "size_cn": "280",
+   "price_cny_minor": 159900,
+   "weight_kg": 1.5,
+   "stock_status": "in_stock",
+   "sku": "PV-NK-AJ1-RETRO-CHI-44",
+   "images": [],
+   "created_at": "2026-09-21T17:19:40.946Z"
+  },
+  {
+   "id": "pv_EzCxiMJSeTk3",
+   "product_id": "pr_Bb2lPBajUcge",
+   "seq": 0,
+   "color": "Rain Cloud",
+   "size_eur": "40.5",
+   "size_us": "7.5",
+   "size_cn": "255",
+   "price_cny_minor": 79900,
+   "weight_kg": 1.25,
+   "stock_status": "in_stock",
+   "sku": "PV-NB-9060-GRY-RAI-40.5",
+   "images": [],
+   "created_at": "2026-09-21T17:19:40.946Z"
+  },
+  {
+   "id": "pv_lHMKxPXvgHP",
+   "product_id": "pr_Bb2lPBajUcge",
+   "seq": 1,
+   "color": "Rain Cloud",
+   "size_eur": "42",
+   "size_us": "8.5",
+   "size_cn": "265",
+   "price_cny_minor": 79900,
+   "weight_kg": 1.3,
+   "stock_status": "in_stock",
+   "sku": "PV-NB-9060-GRY-RAI-42",
+   "images": [],
+   "created_at": "2026-09-21T17:19:40.946Z"
+  },
+  {
+   "id": "pv_4OxcxyRNsQX1",
+   "product_id": "pr_Bb2lPBajUcge",
+   "seq": 2,
+   "color": "Rain Cloud",
+   "size_eur": "43",
+   "size_us": "9.5",
+   "size_cn": "275",
+   "price_cny_minor": 82900,
+   "weight_kg": 1.35,
+   "stock_status": "in_stock",
+   "sku": "PV-NB-9060-GRY-RAI-43",
+   "images": [],
+   "created_at": "2026-09-21T17:19:40.946Z"
+  },
+  {
+   "id": "pv_nMaIEsOcgPXQ",
+   "product_id": "pr_Bb2lPBajUcge",
+   "seq": 3,
+   "color": "Sea Salt",
+   "size_eur": "42",
+   "size_us": "8.5",
+   "size_cn": "265",
+   "price_cny_minor": 84900,
+   "weight_kg": 1.3,
+   "stock_status": "low",
+   "sku": "PV-NB-9060-GRY-SEA-42",
+   "images": [],
+   "created_at": "2026-09-21T17:19:40.946Z"
+  },
+  {
+   "id": "pv_7D2xbMe5PjXR",
+   "product_id": "pr_GRUkjnDU4iUg",
+   "seq": 0,
+   "color": "Cloud White/Core Black",
+   "size_eur": "38",
+   "size_us": "6",
+   "size_cn": "240",
+   "price_cny_minor": 65900,
+   "weight_kg": 1.05,
+   "stock_status": "in_stock",
+   "sku": "PV-AD-SAMBA-OG-CLO-38",
+   "images": [],
+   "created_at": "2026-09-21T17:19:40.946Z"
+  },
+  {
+   "id": "pv_GIHwPGmVXxga",
+   "product_id": "pr_GRUkjnDU4iUg",
+   "seq": 1,
+   "color": "Cloud White/Core Black",
+   "size_eur": "40",
+   "size_us": "7",
+   "size_cn": "250",
+   "price_cny_minor": 65900,
+   "weight_kg": 1.1,
+   "stock_status": "in_stock",
+   "sku": "PV-AD-SAMBA-OG-CLO-40",
+   "images": [],
+   "created_at": "2026-09-21T17:19:40.946Z"
+  },
+  {
+   "id": "pv_d9rkwt56dy3W",
+   "product_id": "pr_GRUkjnDU4iUg",
+   "seq": 2,
+   "color": "Cloud White/Core Black",
+   "size_eur": "42",
+   "size_us": "8.5",
+   "size_cn": "265",
+   "price_cny_minor": 68900,
+   "weight_kg": 1.15,
+   "stock_status": "in_stock",
+   "sku": "PV-AD-SAMBA-OG-CLO-42",
+   "images": [],
+   "created_at": "2026-09-21T17:19:40.946Z"
+  },
+  {
+   "id": "pv_o58GkEZEnKY",
+   "product_id": "pr_2gjWmIekhM2a",
+   "seq": 0,
+   "color": "Forage/Black",
+   "size_eur": "41.3",
+   "size_us": "8",
+   "size_cn": "260",
+   "price_cny_minor": 112900,
+   "weight_kg": 1.2,
+   "stock_status": "in_stock",
+   "sku": "PV-SM-XT6-FT-FOR-41.3",
+   "images": [],
+   "created_at": "2026-09-21T17:19:40.947Z"
+  },
+  {
+   "id": "pv_lLrF9NjnuTF",
+   "product_id": "pr_2gjWmIekhM2a",
+   "seq": 1,
+   "color": "Forage/Black",
+   "size_eur": "43.3",
+   "size_us": "9.5",
+   "size_cn": "275",
+   "price_cny_minor": 112900,
+   "weight_kg": 1.25,
+   "stock_status": "in_stock",
+   "sku": "PV-SM-XT6-FT-FOR-43.3",
+   "images": [],
+   "created_at": "2026-09-21T17:19:40.947Z"
+  },
+  {
+   "id": "pv_PTvuws5cv8dw",
+   "product_id": "pr_hko9gtGsG2kl",
+   "seq": 0,
+   "color": "Oatmeal",
+   "size_eur": "S",
+   "size_us": "S",
+   "size_cn": "165/88A",
+   "price_cny_minor": 52900,
+   "weight_kg": 1,
+   "stock_status": "in_stock",
+   "sku": "PV-FOG-ESS-HOODIE-OAT-S",
+   "images": [],
+   "created_at": "2026-09-21T17:19:40.947Z"
+  },
+  {
+   "id": "pv_0LdbJuWAb9p1",
+   "product_id": "pr_hko9gtGsG2kl",
+   "seq": 1,
+   "color": "Oatmeal",
+   "size_eur": "M",
+   "size_us": "M",
+   "size_cn": "170/92A",
+   "price_cny_minor": 52900,
+   "weight_kg": 1.1,
+   "stock_status": "in_stock",
+   "sku": "PV-FOG-ESS-HOODIE-OAT-M",
+   "images": [],
+   "created_at": "2026-09-21T17:19:40.947Z"
+  },
+  {
+   "id": "pv_LiSN8EKXzOjj",
+   "product_id": "pr_hko9gtGsG2kl",
+   "seq": 2,
+   "color": "Oatmeal",
+   "size_eur": "L",
+   "size_us": "L",
+   "size_cn": "175/96A",
+   "price_cny_minor": 55900,
+   "weight_kg": 1.2,
+   "stock_status": "in_stock",
+   "sku": "PV-FOG-ESS-HOODIE-OAT-L",
+   "images": [],
+   "created_at": "2026-09-21T17:19:40.947Z"
+  },
+  {
+   "id": "pv_mUz2Gl3Zsid",
+   "product_id": "pr_hko9gtGsG2kl",
+   "seq": 3,
+   "color": "Black",
+   "size_eur": "M",
+   "size_us": "M",
+   "size_cn": "170/92A",
+   "price_cny_minor": 54900,
+   "weight_kg": 1.1,
+   "stock_status": "low",
+   "sku": "PV-FOG-ESS-HOODIE-BLA-M",
+   "images": [],
+   "created_at": "2026-09-21T17:19:40.947Z"
+  },
+  {
+   "id": "pv_2aE2iTvdTP5E",
+   "product_id": "pr_XkAshOP6mS4Y",
+   "seq": 0,
+   "color": "White",
+   "size_eur": "M",
+   "size_us": "M",
+   "size_cn": "170/92A",
+   "price_cny_minor": 25900,
+   "weight_kg": 0.45,
+   "stock_status": "in_stock",
+   "sku": "PV-STU-TEE-BASIC-WHI-M",
+   "images": [],
+   "created_at": "2026-09-21T17:19:40.947Z"
+  },
+  {
+   "id": "pv_ZcwPMAzWrJ0O",
+   "product_id": "pr_XkAshOP6mS4Y",
+   "seq": 1,
+   "color": "White",
+   "size_eur": "L",
+   "size_us": "L",
+   "size_cn": "175/96A",
+   "price_cny_minor": 25900,
+   "weight_kg": 0.5,
+   "stock_status": "in_stock",
+   "sku": "PV-STU-TEE-BASIC-WHI-L",
+   "images": [],
+   "created_at": "2026-09-21T17:19:40.947Z"
+  },
+  {
+   "id": "pv_0JbtLcFT2U7",
+   "product_id": "pr_XkAshOP6mS4Y",
+   "seq": 2,
+   "color": "Black",
+   "size_eur": "L",
+   "size_us": "L",
+   "size_cn": "175/96A",
+   "price_cny_minor": 26900,
+   "weight_kg": 0.5,
+   "stock_status": "in_stock",
+   "sku": "PV-STU-TEE-BASIC-BLA-L",
+   "images": [],
+   "created_at": "2026-09-21T17:19:40.947Z"
+  },
+  {
+   "id": "pv_YlVeYwBHOIYB",
+   "product_id": "pr_aZFukFOUzNBr",
+   "seq": 0,
+   "color": "Black Sapphire",
+   "size_eur": "M",
+   "size_us": "M",
+   "size_cn": "170/92A",
+   "price_cny_minor": 329900,
+   "weight_kg": 1.9,
+   "stock_status": "in_stock",
+   "sku": "PV-ATX-BETA-JKT-BLA-M",
+   "images": [],
+   "created_at": "2026-09-21T17:19:40.947Z"
+  },
+  {
+   "id": "pv_XFpLUSBMXMo8",
+   "product_id": "pr_aZFukFOUzNBr",
+   "seq": 1,
+   "color": "Black Sapphire",
+   "size_eur": "L",
+   "size_us": "L",
+   "size_cn": "175/96A",
+   "price_cny_minor": 329900,
+   "weight_kg": 2,
+   "stock_status": "low",
+   "sku": "PV-ATX-BETA-JKT-BLA-L",
+   "images": [],
+   "created_at": "2026-09-21T17:19:40.947Z"
+  },
+  {
+   "id": "pv_bONd6lCOdpW",
+   "product_id": "pr_aZFukFOUzNBr",
+   "seq": 2,
+   "color": "Void",
+   "size_eur": "L",
+   "size_us": "L",
+   "size_cn": "175/96A",
+   "price_cny_minor": 339900,
+   "weight_kg": 2,
+   "stock_status": "in_stock",
+   "sku": "PV-ATX-BETA-JKT-VOI-L",
+   "images": [],
+   "created_at": "2026-09-21T17:19:40.947Z"
+  },
+  {
+   "id": "pv_lVFUBh1fvoP",
+   "product_id": "pr_GIcujHj6sXBK",
+   "seq": 0,
+   "color": "Black",
+   "size_eur": "M",
+   "size_us": "M",
+   "size_cn": "170/74A",
+   "price_cny_minor": 46900,
+   "weight_kg": 0.75,
+   "stock_status": "in_stock",
+   "sku": "PV-NK-TECH-PANT-BLA-M",
+   "images": [],
+   "created_at": "2026-09-21T17:19:40.947Z"
+  },
+  {
+   "id": "pv_ngR9GAk3Sn6A",
+   "product_id": "pr_GIcujHj6sXBK",
+   "seq": 1,
+   "color": "Black",
+   "size_eur": "L",
+   "size_us": "L",
+   "size_cn": "175/78A",
+   "price_cny_minor": 46900,
+   "weight_kg": 0.8,
+   "stock_status": "in_stock",
+   "sku": "PV-NK-TECH-PANT-BLA-L",
+   "images": [],
+   "created_at": "2026-09-21T17:19:40.947Z"
+  }
+ ],
+ "size_guides": [
+  {
+   "id": "sg_RpQSdRbCREP9",
+   "brand_slug": null,
+   "category_slug": "sneakers",
+   "kind": "footwear",
+   "rows": [
+    {
+     "foot_mm": 230,
+     "eur": "36",
+     "us_m": "4",
+     "us_w": "5.5",
+     "uk": "3.5",
+     "cn": "230"
+    },
+    {
+     "foot_mm": 235,
+     "eur": "37",
+     "us_m": "5",
+     "us_w": "6.5",
+     "uk": "4.5",
+     "cn": "235"
+    },
+    {
+     "foot_mm": 240,
+     "eur": "38",
+     "us_m": "6",
+     "us_w": "7.5",
+     "uk": "5.5",
+     "cn": "240"
+    },
+    {
+     "foot_mm": 245,
+     "eur": "38.5",
+     "us_m": "6.5",
+     "us_w": "8",
+     "uk": "6",
+     "cn": "245"
+    },
+    {
+     "foot_mm": 250,
+     "eur": "40",
+     "us_m": "7",
+     "us_w": "8.5",
+     "uk": "6.5",
+     "cn": "250"
+    },
+    {
+     "foot_mm": 255,
+     "eur": "40.5",
+     "us_m": "7.5",
+     "us_w": "9",
+     "uk": "7",
+     "cn": "255"
+    },
+    {
+     "foot_mm": 260,
+     "eur": "41",
+     "us_m": "8",
+     "us_w": "9.5",
+     "uk": "7.5",
+     "cn": "260"
+    },
+    {
+     "foot_mm": 265,
+     "eur": "42",
+     "us_m": "8.5",
+     "us_w": "10",
+     "uk": "8",
+     "cn": "265"
+    },
+    {
+     "foot_mm": 270,
+     "eur": "42.5",
+     "us_m": "9",
+     "us_w": "10.5",
+     "uk": "8.5",
+     "cn": "270"
+    },
+    {
+     "foot_mm": 275,
+     "eur": "43",
+     "us_m": "9.5",
+     "us_w": "11",
+     "uk": "9",
+     "cn": "275"
+    },
+    {
+     "foot_mm": 280,
+     "eur": "44",
+     "us_m": "10",
+     "us_w": "11.5",
+     "uk": "9.5",
+     "cn": "280"
+    },
+    {
+     "foot_mm": 285,
+     "eur": "44.5",
+     "us_m": "10.5",
+     "us_w": "12",
+     "uk": "10",
+     "cn": "285"
+    },
+    {
+     "foot_mm": 290,
+     "eur": "45",
+     "us_m": "11",
+     "us_w": "12.5",
+     "uk": "10.5",
+     "cn": "290"
+    }
+   ],
+   "notes": "Измерьте длину стопы в мм (от пятки до большого пальца) и выберите ближайший больший размер. Для Nike/Jordan добавьте +5 мм, для New Balance — по таблице.",
+   "is_active": true
+  },
+  {
+   "id": "sg_RnPa0gcluply",
+   "brand_slug": null,
+   "category_slug": "hoodie",
+   "kind": "apparel",
+   "rows": [
+    {
+     "size": "XS",
+     "height_cm": "158–164",
+     "weight_kg": "45–55",
+     "chest_cm": "84–88",
+     "cn": "160/80A"
+    },
+    {
+     "size": "S",
+     "height_cm": "164–170",
+     "weight_kg": "55–63",
+     "chest_cm": "88–94",
+     "cn": "165/84A"
+    },
+    {
+     "size": "M",
+     "height_cm": "170–176",
+     "weight_kg": "63–73",
+     "chest_cm": "94–100",
+     "cn": "170/92A"
+    },
+    {
+     "size": "L",
+     "height_cm": "176–182",
+     "weight_kg": "73–84",
+     "chest_cm": "100–106",
+     "cn": "175/96A"
+    },
+    {
+     "size": "XL",
+     "height_cm": "182–188",
+     "weight_kg": "84–95",
+     "chest_cm": "106–112",
+     "cn": "180/100A"
+    },
+    {
+     "size": "2XL",
+     "height_cm": "188–194",
+     "weight_kg": "95–110",
+     "chest_cm": "112–120",
+     "cn": "185/104A"
+    }
+   ],
+   "notes": "Ориентир по росту/весу. Американские и китайские размеры различаются: китайский L ≈ европейский M.",
+   "is_active": true
+  },
+  {
+   "id": "sg_b5eUeeAfUyO",
+   "brand_slug": "essentials",
+   "category_slug": "hoodie",
+   "kind": "apparel",
+   "rows": [
+    {
+     "size": "S",
+     "height_cm": "170–178",
+     "weight_kg": "55–68",
+     "chest_cm": "104",
+     "cn": "165/88A"
+    },
+    {
+     "size": "M",
+     "height_cm": "175–183",
+     "weight_kg": "68–80",
+     "chest_cm": "110",
+     "cn": "170/92A"
+    },
+    {
+     "size": "L",
+     "height_cm": "180–190",
+     "weight_kg": "80–95",
+     "chest_cm": "116",
+     "cn": "175/96A"
+    }
+   ],
+   "notes": "Fear of God Essentials — оверсайз. Берите на размер меньше обычного.",
+   "is_active": true
+  },
+  {
+   "id": "sg_3NXK3cne2mL",
+   "brand_slug": "salomon",
+   "category_slug": "sneakers",
+   "kind": "footwear",
+   "rows": [
+    {
+     "foot_mm": 250,
+     "eur": "40.6",
+     "us_m": "7.5",
+     "uk": "7",
+     "cn": "250"
+    },
+    {
+     "foot_mm": 260,
+     "eur": "41.3",
+     "us_m": "8",
+     "uk": "7.5",
+     "cn": "260"
+    },
+    {
+     "foot_mm": 265,
+     "eur": "42",
+     "us_m": "8.5",
+     "uk": "8",
+     "cn": "265"
+    },
+    {
+     "foot_mm": 275,
+     "eur": "43.3",
+     "us_m": "9.5",
+     "uk": "9",
+     "cn": "275"
+    },
+    {
+     "foot_mm": 280,
+     "eur": "44",
+     "us_m": "10",
+     "uk": "9.5",
+     "cn": "280"
+    }
+   ],
+   "notes": "Salomon маломерит на полразмера — берите +0.5.",
+   "is_active": true
+  }
+ ],
+ "wishlists": [
+  {
+   "id": "wl_SEofcxEMLGF",
+   "user_id": "u_6YIL0HdscOee",
+   "variant_id": "pv_0NKnfPeaAUzz",
+   "price_cny_minor_at_add": 158900,
+   "alert_price_drop": true,
+   "alert_rate_drop": true,
+   "created_at": "2026-09-21T17:19:41.323Z"
+  },
+  {
+   "id": "wl_sD7VzcF3ibQt",
+   "user_id": "u_6YIL0HdscOee",
+   "variant_id": "pv_PTvuws5cv8dw",
+   "price_cny_minor_at_add": 52900,
+   "alert_price_drop": true,
+   "alert_rate_drop": false,
+   "created_at": "2026-09-21T17:19:41.323Z"
+  }
+ ],
+ "carts": [
+  {
+   "id": "ZnCyoQvSxys",
+   "created_at": "2026-09-21T18:33:48.288Z",
+   "user_id": "iinQwwtqDiu1",
+   "type": "archived",
+   "destination": "RU_MOW",
+   "packaging": "basic",
+   "insurance": "none",
+   "currency_view": "USD",
+   "share_enabled": false,
+   "share_token": null,
+   "pack_each_separately": false,
+   "updated_at": "2026-09-21T18:33:56.335Z"
+  },
+  {
+   "id": "VSUAVO5ORkVe",
+   "created_at": "2026-09-21T19:19:15.500Z",
+   "user_id": null,
+   "guest_token": "gBdfXsf8HXfPjm92",
+   "type": "active",
+   "destination": "RU_MOW",
+   "packaging": "basic",
+   "insurance": "none",
+   "currency_view": "RUB"
+  },
+  {
+   "id": "r7oAhKwzyMC",
+   "created_at": "2026-09-21T19:19:15.503Z",
+   "user_id": null,
+   "guest_token": "gBdfXsf8HXfPjm92",
+   "type": "active",
+   "destination": "RU_MOW",
+   "packaging": "basic",
+   "insurance": "none",
+   "currency_view": "RUB"
+  },
+  {
+   "id": "VSbnjNplXTpA",
+   "created_at": "2026-09-21T19:19:42.203Z",
+   "user_id": "TSfme7VDOEwN",
+   "type": "archived",
+   "destination": "RU_MOW",
+   "packaging": "basic",
+   "insurance": "none",
+   "currency_view": "RUB",
+   "share_enabled": false,
+   "share_token": null,
+   "pack_each_separately": false,
+   "updated_at": "2026-09-21T19:19:42.208Z"
+  },
+  {
+   "id": "UxGEod1vsZIt",
+   "created_at": "2026-09-21T19:20:55.077Z",
+   "user_id": "rwuuxWapb8fT",
+   "type": "archived",
+   "destination": "RU_MOW",
+   "packaging": "basic",
+   "insurance": "none",
+   "currency_view": "RUB",
+   "share_enabled": false,
+   "share_token": null,
+   "pack_each_separately": false,
+   "updated_at": "2026-09-21T19:20:55.081Z"
+  },
+  {
+   "id": "tnpqQ7BMMvIk",
+   "created_at": "2026-09-21T19:21:10.155Z",
+   "user_id": "vqs5B9MeSQng",
+   "type": "archived",
+   "destination": "RU_MOW",
+   "packaging": "basic",
+   "insurance": "none",
+   "currency_view": "RUB",
+   "share_enabled": false,
+   "share_token": null,
+   "pack_each_separately": false,
+   "updated_at": "2026-09-21T19:21:10.161Z"
+  },
+  {
+   "id": "DhhkUzZ4aWp",
+   "created_at": "2026-09-22T13:25:36.682Z",
+   "user_id": null,
+   "guest_token": "sqh7Uqh5WV90k2r9",
+   "type": "active",
+   "destination": "RU_MOW",
+   "packaging": "basic",
+   "insurance": "none",
+   "currency_view": "RUB"
+  },
+  {
+   "id": "MuPT4Mr56KBJ",
+   "created_at": "2026-09-22T13:25:44.187Z",
+   "user_id": null,
+   "guest_token": "sqh7Uqh5WV90k2r9",
+   "type": "active",
+   "destination": "RU_MOW",
+   "packaging": "basic",
+   "insurance": "none",
+   "currency_view": "RUB"
+  },
+  {
+   "id": "2wzGSNCV1qf0",
+   "created_at": "2026-09-22T13:25:45.216Z",
+   "user_id": null,
+   "guest_token": "sqh7Uqh5WV90k2r9",
+   "type": "active",
+   "destination": "RU_MOW",
+   "packaging": "basic",
+   "insurance": "none",
+   "currency_view": "RUB"
+  },
+  {
+   "id": "CDFez3qIN2g",
+   "created_at": "2026-09-22T13:25:45.608Z",
+   "user_id": null,
+   "guest_token": "sqh7Uqh5WV90k2r9",
+   "type": "active",
+   "destination": "RU_MOW",
+   "packaging": "basic",
+   "insurance": "none",
+   "currency_view": "USD"
+  },
+  {
+   "id": "OM3dn8cZxQi",
+   "created_at": "2026-09-22T13:25:45.608Z",
+   "user_id": null,
+   "guest_token": "sqh7Uqh5WV90k2r9",
+   "type": "active",
+   "destination": "RU_MOW",
+   "packaging": "basic",
+   "insurance": "none",
+   "currency_view": "USD"
+  },
+  {
+   "id": "OAsquQ9SHU3p",
+   "created_at": "2026-09-22T13:25:45.609Z",
+   "user_id": null,
+   "guest_token": "sqh7Uqh5WV90k2r9",
+   "type": "active",
+   "destination": "RU_MOW",
+   "packaging": "basic",
+   "insurance": "none",
+   "currency_view": "USD"
+  },
+  {
+   "id": "UtY5pD3X9MM7",
+   "created_at": "2026-09-22T13:25:45.614Z",
+   "user_id": null,
+   "guest_token": "sqh7Uqh5WV90k2r9",
+   "type": "active",
+   "destination": "RU_MOW",
+   "packaging": "basic",
+   "insurance": "none",
+   "currency_view": "USD"
+  }
+ ],
+ "cart_items": [
+  {
+   "id": "i7ZMEdCilHa",
+   "created_at": "2026-09-21T19:19:15.501Z",
+   "cart_id": "VSUAVO5ORkVe",
+   "source": "manual",
+   "title": "Nike Dunk Low Test",
+   "price_cny_minor": 69900,
+   "weight_kg": 1.4,
+   "qty": 1,
+   "color": null,
+   "size": "42 EU",
+   "category_slug": "sneakers",
+   "image_url": null,
+   "external_url": null,
+   "variant_id": null,
+   "product_id": null,
+   "dims_cm": null,
+   "brand_hint": null,
+   "notes": null
+  }
+ ],
+ "orders": [
+  {
+   "id": "o_bI1lW96BDo3Q",
+   "order_no": "PV-2026-000031",
+   "user_id": "u_6YIL0HdscOee",
+   "cart_id": null,
+   "status": "delivered",
+   "destination": "BY_MSQ",
+   "recipient_name": "Иван Соколов",
+   "recipient_phone": "+375291234567",
+   "recipient_address": "ул. Немига 5, кв. 42",
+   "snapshot": {
+    "rates": {
+     "RUB": {
+      "base": 1,
+      "markup": 0,
+      "symbol": "₽",
+      "minor": "kopeck"
+     },
+     "BYN": {
+      "base": 33.2,
+      "markup": 1.5,
+      "symbol": "Br",
+      "minor": "kopeck"
+     },
+     "USD": {
+      "base": 92.4,
+      "markup": 2,
+      "symbol": "$",
+      "minor": "cent"
+     },
+     "CNY": {
+      "base": 12.85,
+      "markup": 3,
+      "symbol": "¥",
+      "minor": "fen"
+     }
+    },
+    "tariff_usd_per_kg": 4.5,
+    "commission_rate": 0.08,
+    "packaging": {
+     "code": "basic",
+     "priceUsd": 3,
+     "places": 1,
+     "optimized": true,
+     "savedUsd": 3
+    },
+    "insurance": {
+     "enabled": false,
+     "rate": 0,
+     "declaredUsd": 529.15
+    },
+    "weight": {
+     "estKg": 2.65,
+     "volumetricKg": 1.728,
+     "billableKg": 2.65,
+     "volumeM3": 0.0086
+    },
+    "tiers": [
+     {
+      "code": "BASE",
+      "name": "Base",
+      "commission": 0.1,
+      "threshold_rub_minor": 0,
+      "perks": [
+       "Стандартная поддержка"
+      ]
+     },
+     {
+      "code": "SILVER",
+      "name": "Silver",
+      "commission": 0.08,
+      "threshold_rub_minor": 5000000,
+      "perks": [
+       "Комиссия 8%",
+       "Приоритетный выкуп"
+      ]
+     },
+     {
+      "code": "GOLD",
+      "name": "Gold VIP",
+      "commission": 0.05,
+      "threshold_rub_minor": 20000000,
+      "perks": [
+       "Комиссия 5%",
+       "Личный менеджер",
+       "Бесплатная разгрузка"
+      ]
+     }
+    ]
+   },
+   "currency_view": "BYN",
+   "goods_minor": 147995,
+   "commission_minor": 11840,
+   "shipping_minor": 3337,
+   "packaging_minor": 839,
+   "insurance_minor": 0,
+   "unloading_minor": 839,
+   "discount_minor": 0,
+   "total_minor": 164850,
+   "paid_minor": 164850,
+   "goods_cny_minor": 376800,
+   "cogs_cny_minor": 371148,
+   "cargo_usd_minor": 1097,
+   "extra_usd_minor": 600,
+   "acquiring_fee_minor": 3792,
+   "weight_est_kg": 2.65,
+   "weight_fact_kg": 2.1,
+   "volume_m3": 0.0086,
+   "places_count": 1,
+   "payment_status": "succeeded",
+   "payment_method": "card",
+   "loyalty_tier_at_order": "SILVER",
+   "commission_rate_at_order": 0.08,
+   "referral_code_used": null,
+   "promo_code": null,
+   "tracking_number": "BY-CN-7710984",
+   "carrier": "VanCargo",
+   "manager_id": null,
+   "warehouse_id": "u_piF5WfcD0llm",
+   "paid_at": "2026-02-03T11:20:00Z",
+   "purchased_at": null,
+   "sent_at": null,
+   "delivered_at": "2026-03-06T12:00:00Z",
+   "cancelled_at": null,
+   "eta_from": null,
+   "eta_to": null,
+   "comment": null,
+   "created_at": "2026-02-03T11:20:00Z",
+   "updated_at": "2026-09-21T17:19:41.280Z"
+  },
+  {
+   "id": "o_YSOeNaMGJ8w2",
+   "order_no": "PV-2026-000064",
+   "user_id": "u_6YIL0HdscOee",
+   "cart_id": null,
+   "status": "delivered",
+   "destination": "RU_MOW",
+   "recipient_name": "Иван Соколов",
+   "recipient_phone": "+375291234567",
+   "recipient_address": "ул. Немига 5, кв. 42",
+   "snapshot": {
+    "rates": {
+     "RUB": {
+      "base": 1,
+      "markup": 0,
+      "symbol": "₽",
+      "minor": "kopeck"
+     },
+     "BYN": {
+      "base": 33.2,
+      "markup": 1.5,
+      "symbol": "Br",
+      "minor": "kopeck"
+     },
+     "USD": {
+      "base": 92.4,
+      "markup": 2,
+      "symbol": "$",
+      "minor": "cent"
+     },
+     "CNY": {
+      "base": 12.85,
+      "markup": 3,
+      "symbol": "¥",
+      "minor": "fen"
+     }
+    },
+    "tariff_usd_per_kg": 3.5,
+    "commission_rate": 0.08,
+    "packaging": {
+     "code": "basic",
+     "priceUsd": 3,
+     "places": 1,
+     "optimized": true,
+     "savedUsd": 6
+    },
+    "insurance": {
+     "enabled": false,
+     "rate": 0,
+     "declaredUsd": 234.1
+    },
+    "weight": {
+     "estKg": 2.25,
+     "volumetricKg": 3.673,
+     "billableKg": 3.673,
+     "volumeM3": 0.0184
+    },
+    "tiers": [
+     {
+      "code": "BASE",
+      "name": "Base",
+      "commission": 0.1,
+      "threshold_rub_minor": 0,
+      "perks": [
+       "Стандартная поддержка"
+      ]
+     },
+     {
+      "code": "SILVER",
+      "name": "Silver",
+      "commission": 0.08,
+      "threshold_rub_minor": 5000000,
+      "perks": [
+       "Комиссия 8%",
+       "Приоритетный выкуп"
+      ]
+     },
+     {
+      "code": "GOLD",
+      "name": "Gold VIP",
+      "commission": 0.05,
+      "threshold_rub_minor": 20000000,
+      "perks": [
+       "Комиссия 5%",
+       "Личный менеджер",
+       "Бесплатная разгрузка"
+      ]
+     }
+    ]
+   },
+   "currency_view": "BYN",
+   "goods_minor": 65474,
+   "commission_minor": 5238,
+   "shipping_minor": 3597,
+   "packaging_minor": 839,
+   "insurance_minor": 0,
+   "unloading_minor": 839,
+   "discount_minor": 0,
+   "total_minor": 75987,
+   "paid_minor": 75987,
+   "goods_cny_minor": 166700,
+   "cogs_cny_minor": 164200,
+   "cargo_usd_minor": 1183,
+   "extra_usd_minor": 600,
+   "acquiring_fee_minor": 1748,
+   "weight_est_kg": 2.25,
+   "weight_fact_kg": 2.5,
+   "volume_m3": 0.0184,
+   "places_count": 1,
+   "payment_status": "succeeded",
+   "payment_method": "sbp",
+   "loyalty_tier_at_order": "SILVER",
+   "commission_rate_at_order": 0.08,
+   "referral_code_used": null,
+   "promo_code": null,
+   "tracking_number": "RU-CN-3320117",
+   "carrier": "VanCargo",
+   "manager_id": null,
+   "warehouse_id": "u_piF5WfcD0llm",
+   "paid_at": "2026-04-22T08:05:00Z",
+   "purchased_at": null,
+   "sent_at": null,
+   "delivered_at": "2026-05-18T12:00:00Z",
+   "cancelled_at": null,
+   "eta_from": null,
+   "eta_to": null,
+   "comment": null,
+   "created_at": "2026-04-22T08:05:00Z",
+   "updated_at": "2026-09-21T17:19:41.281Z"
+  },
+  {
+   "id": "o_0EGhgZvRylE",
+   "order_no": "PV-2026-000101",
+   "user_id": "u_6YIL0HdscOee",
+   "cart_id": null,
+   "status": "delivered",
+   "destination": "BY_MSQ",
+   "recipient_name": "Иван Соколов",
+   "recipient_phone": "+375291234567",
+   "recipient_address": "ул. Немига 5, кв. 42",
+   "snapshot": {
+    "rates": {
+     "RUB": {
+      "base": 1,
+      "markup": 0,
+      "symbol": "₽",
+      "minor": "kopeck"
+     },
+     "BYN": {
+      "base": 33.2,
+      "markup": 1.5,
+      "symbol": "Br",
+      "minor": "kopeck"
+     },
+     "USD": {
+      "base": 92.4,
+      "markup": 2,
+      "symbol": "$",
+      "minor": "cent"
+     },
+     "CNY": {
+      "base": 12.85,
+      "markup": 3,
+      "symbol": "¥",
+      "minor": "fen"
+     }
+    },
+    "tariff_usd_per_kg": 4.5,
+    "commission_rate": 0.08,
+    "packaging": {
+     "code": "basic",
+     "priceUsd": 3,
+     "places": 1,
+     "optimized": true,
+     "savedUsd": 3
+    },
+    "insurance": {
+     "enabled": false,
+     "rate": 0,
+     "declaredUsd": 186.49
+    },
+    "weight": {
+     "estKg": 2.4,
+     "volumetricKg": 2.809,
+     "billableKg": 2.809,
+     "volumeM3": 0.014
+    },
+    "tiers": [
+     {
+      "code": "BASE",
+      "name": "Base",
+      "commission": 0.1,
+      "threshold_rub_minor": 0,
+      "perks": [
+       "Стандартная поддержка"
+      ]
+     },
+     {
+      "code": "SILVER",
+      "name": "Silver",
+      "commission": 0.08,
+      "threshold_rub_minor": 5000000,
+      "perks": [
+       "Комиссия 8%",
+       "Приоритетный выкуп"
+      ]
+     },
+     {
+      "code": "GOLD",
+      "name": "Gold VIP",
+      "commission": 0.05,
+      "threshold_rub_minor": 20000000,
+      "perks": [
+       "Комиссия 5%",
+       "Личный менеджер",
+       "Бесплатная разгрузка"
+      ]
+     }
+    ]
+   },
+   "currency_view": "BYN",
+   "goods_minor": 52160,
+   "commission_minor": 4173,
+   "shipping_minor": 3535,
+   "packaging_minor": 839,
+   "insurance_minor": 0,
+   "unloading_minor": 839,
+   "discount_minor": 0,
+   "total_minor": 61546,
+   "paid_minor": 61546,
+   "goods_cny_minor": 132800,
+   "cogs_cny_minor": 130808,
+   "cargo_usd_minor": 1163,
+   "extra_usd_minor": 600,
+   "acquiring_fee_minor": 0,
+   "weight_est_kg": 2.4,
+   "weight_fact_kg": 3.05,
+   "volume_m3": 0.014,
+   "places_count": 1,
+   "payment_status": "succeeded",
+   "payment_method": "combined",
+   "loyalty_tier_at_order": "SILVER",
+   "commission_rate_at_order": 0.08,
+   "referral_code_used": null,
+   "promo_code": null,
+   "tracking_number": "BY-CN-8841203",
+   "carrier": "VanCargo",
+   "manager_id": null,
+   "warehouse_id": "u_piF5WfcD0llm",
+   "paid_at": "2026-06-14T10:12:00Z",
+   "purchased_at": null,
+   "sent_at": null,
+   "delivered_at": "2026-07-18T12:00:00Z",
+   "cancelled_at": null,
+   "eta_from": null,
+   "eta_to": null,
+   "comment": null,
+   "created_at": "2026-06-14T10:12:00Z",
+   "updated_at": "2026-09-21T17:19:41.281Z"
+  },
+  {
+   "id": "o_5VCsI5QOw2OS",
+   "order_no": "PV-2026-000118",
+   "user_id": "u_6YIL0HdscOee",
+   "cart_id": null,
+   "status": "in_transit",
+   "destination": "BY_MSQ",
+   "recipient_name": "Иван Соколов",
+   "recipient_phone": "+375291234567",
+   "recipient_address": "ул. Немига 5, кв. 42",
+   "snapshot": {
+    "rates": {
+     "RUB": {
+      "base": 1,
+      "markup": 0,
+      "symbol": "₽",
+      "minor": "kopeck"
+     },
+     "BYN": {
+      "base": 33.2,
+      "markup": 1.5,
+      "symbol": "Br",
+      "minor": "kopeck"
+     },
+     "USD": {
+      "base": 92.4,
+      "markup": 2,
+      "symbol": "$",
+      "minor": "cent"
+     },
+     "CNY": {
+      "base": 12.85,
+      "markup": 3,
+      "symbol": "¥",
+      "minor": "fen"
+     }
+    },
+    "tariff_usd_per_kg": 4.5,
+    "commission_rate": 0.08,
+    "packaging": {
+     "code": "basic",
+     "priceUsd": 3,
+     "places": 1,
+     "optimized": true,
+     "savedUsd": 0
+    },
+    "insurance": {
+     "enabled": false,
+     "rate": 0,
+     "declaredUsd": 224.55
+    },
+    "weight": {
+     "estKg": 1.5,
+     "volumetricKg": 1.945,
+     "billableKg": 1.945,
+     "volumeM3": 0.0097
+    },
+    "tiers": [
+     {
+      "code": "BASE",
+      "name": "Base",
+      "commission": 0.1,
+      "threshold_rub_minor": 0,
+      "perks": [
+       "Стандартная поддержка"
+      ]
+     },
+     {
+      "code": "SILVER",
+      "name": "Silver",
+      "commission": 0.08,
+      "threshold_rub_minor": 5000000,
+      "perks": [
+       "Комиссия 8%",
+       "Приоритетный выкуп"
+      ]
+     },
+     {
+      "code": "GOLD",
+      "name": "Gold VIP",
+      "commission": 0.05,
+      "threshold_rub_minor": 20000000,
+      "perks": [
+       "Комиссия 5%",
+       "Личный менеджер",
+       "Бесплатная разгрузка"
+      ]
+     }
+    ]
+   },
+   "currency_view": "BYN",
+   "goods_minor": 62804,
+   "commission_minor": 5024,
+   "shipping_minor": 2447,
+   "packaging_minor": 839,
+   "insurance_minor": 0,
+   "unloading_minor": 839,
+   "discount_minor": 0,
+   "total_minor": 71953,
+   "paid_minor": 71953,
+   "goods_cny_minor": 159900,
+   "cogs_cny_minor": 157502,
+   "cargo_usd_minor": 805,
+   "extra_usd_minor": 600,
+   "acquiring_fee_minor": 1655,
+   "weight_est_kg": 1.5,
+   "weight_fact_kg": 1.52,
+   "volume_m3": 0.0097,
+   "places_count": 1,
+   "payment_status": "succeeded",
+   "payment_method": "card",
+   "loyalty_tier_at_order": "SILVER",
+   "commission_rate_at_order": 0.08,
+   "referral_code_used": null,
+   "promo_code": null,
+   "tracking_number": "BY-CN-9910455",
+   "carrier": "VanCargo",
+   "manager_id": null,
+   "warehouse_id": "u_piF5WfcD0llm",
+   "paid_at": "2026-08-28T09:30:00Z",
+   "purchased_at": null,
+   "sent_at": "2026-09-06T08:00:00Z",
+   "delivered_at": null,
+   "cancelled_at": null,
+   "eta_from": null,
+   "eta_to": null,
+   "comment": null,
+   "created_at": "2026-08-28T09:30:00Z",
+   "updated_at": "2026-09-21T17:19:41.283Z"
+  },
+  {
+   "id": "o_Fa4a6P9wHMlx",
+   "order_no": "PV-2026-000122",
+   "user_id": "u_ZSA6uZyReB",
+   "cart_id": null,
+   "status": "photo_report",
+   "destination": "RU_MOW",
+   "recipient_name": "Мария Орлова",
+   "recipient_phone": "+79161234567",
+   "recipient_address": null,
+   "snapshot": {
+    "rates": {
+     "RUB": {
+      "base": 1,
+      "markup": 0,
+      "symbol": "₽",
+      "minor": "kopeck"
+     },
+     "BYN": {
+      "base": 33.2,
+      "markup": 1.5,
+      "symbol": "Br",
+      "minor": "kopeck"
+     },
+     "USD": {
+      "base": 92.4,
+      "markup": 2,
+      "symbol": "$",
+      "minor": "cent"
+     },
+     "CNY": {
+      "base": 12.85,
+      "markup": 3,
+      "symbol": "¥",
+      "minor": "fen"
+     }
+    },
+    "tariff_usd_per_kg": 3.5,
+    "commission_rate": 0.1,
+    "packaging": {
+     "code": "basic",
+     "priceUsd": 3,
+     "places": 1,
+     "optimized": true,
+     "savedUsd": 6
+    },
+    "insurance": {
+     "enabled": false,
+     "rate": 0,
+     "declaredUsd": 536.03
+    },
+    "weight": {
+     "estKg": 3,
+     "volumetricKg": 2.592,
+     "billableKg": 3,
+     "volumeM3": 0.013
+    },
+    "tiers": [
+     {
+      "code": "BASE",
+      "name": "Base",
+      "commission": 0.1,
+      "threshold_rub_minor": 0,
+      "perks": [
+       "Стандартная поддержка"
+      ]
+     },
+     {
+      "code": "SILVER",
+      "name": "Silver",
+      "commission": 0.08,
+      "threshold_rub_minor": 5000000,
+      "perks": [
+       "Комиссия 8%",
+       "Приоритетный выкуп"
+      ]
+     },
+     {
+      "code": "GOLD",
+      "name": "Gold VIP",
+      "commission": 0.05,
+      "threshold_rub_minor": 20000000,
+      "perks": [
+       "Комиссия 5%",
+       "Личный менеджер",
+       "Бесплатная разгрузка"
+      ]
+     }
+    ]
+   },
+   "currency_view": "RUB",
+   "goods_minor": 5051990,
+   "commission_minor": 505199,
+   "shipping_minor": 98960,
+   "packaging_minor": 28274,
+   "insurance_minor": 0,
+   "unloading_minor": 28274,
+   "discount_minor": 0,
+   "total_minor": 5712697,
+   "paid_minor": 5712697,
+   "goods_cny_minor": 381700,
+   "cogs_cny_minor": 375975,
+   "cargo_usd_minor": 966,
+   "extra_usd_minor": 600,
+   "acquiring_fee_minor": 0,
+   "weight_est_kg": 3,
+   "weight_fact_kg": null,
+   "volume_m3": 0.013,
+   "places_count": 1,
+   "payment_status": "succeeded",
+   "payment_method": "wallet",
+   "loyalty_tier_at_order": "BASE",
+   "commission_rate_at_order": 0.1,
+   "referral_code_used": null,
+   "promo_code": null,
+   "tracking_number": null,
+   "carrier": null,
+   "manager_id": null,
+   "warehouse_id": "u_piF5WfcD0llm",
+   "paid_at": "2026-09-12T15:45:00Z",
+   "purchased_at": "2026-09-15T06:20:00Z",
+   "sent_at": null,
+   "delivered_at": null,
+   "cancelled_at": null,
+   "eta_from": null,
+   "eta_to": null,
+   "comment": null,
+   "created_at": "2026-09-12T15:45:00Z",
+   "updated_at": "2026-09-21T17:19:41.283Z"
+  },
+  {
+   "id": "o_LxdmvEfgYFdP",
+   "order_no": "PV-2026-000126",
+   "user_id": "u_xiPlHCyaZcj",
+   "cart_id": null,
+   "status": "paid",
+   "destination": "RU_MOW",
+   "recipient_name": "Кирилл Ерёмин",
+   "recipient_phone": "+79261110022",
+   "recipient_address": null,
+   "snapshot": {
+    "rates": {
+     "RUB": {
+      "base": 1,
+      "markup": 0,
+      "symbol": "₽",
+      "minor": "kopeck"
+     },
+     "BYN": {
+      "base": 33.2,
+      "markup": 1.5,
+      "symbol": "Br",
+      "minor": "kopeck"
+     },
+     "USD": {
+      "base": 92.4,
+      "markup": 2,
+      "symbol": "$",
+      "minor": "cent"
+     },
+     "CNY": {
+      "base": 12.85,
+      "markup": 3,
+      "symbol": "¥",
+      "minor": "fen"
+     }
+    },
+    "tariff_usd_per_kg": 3.5,
+    "commission_rate": 0.1,
+    "packaging": {
+     "code": "basic",
+     "priceUsd": 3,
+     "places": 1,
+     "optimized": true,
+     "savedUsd": 0
+    },
+    "insurance": {
+     "enabled": false,
+     "rate": 0,
+     "declaredUsd": 92.55
+    },
+    "weight": {
+     "estKg": 1.1,
+     "volumetricKg": 1.945,
+     "billableKg": 1.945,
+     "volumeM3": 0.0097
+    },
+    "tiers": [
+     {
+      "code": "BASE",
+      "name": "Base",
+      "commission": 0.1,
+      "threshold_rub_minor": 0,
+      "perks": [
+       "Стандартная поддержка"
+      ]
+     },
+     {
+      "code": "SILVER",
+      "name": "Silver",
+      "commission": 0.08,
+      "threshold_rub_minor": 5000000,
+      "perks": [
+       "Комиссия 8%",
+       "Приоритетный выкуп"
+      ]
+     },
+     {
+      "code": "GOLD",
+      "name": "Gold VIP",
+      "commission": 0.05,
+      "threshold_rub_minor": 20000000,
+      "perks": [
+       "Комиссия 5%",
+       "Личный менеджер",
+       "Бесплатная разгрузка"
+      ]
+     }
+    ]
+   },
+   "currency_view": "RUB",
+   "goods_minor": 872219,
+   "commission_minor": 87222,
+   "shipping_minor": 64183,
+   "packaging_minor": 28274,
+   "insurance_minor": 0,
+   "unloading_minor": 28274,
+   "discount_minor": 0,
+   "total_minor": 1080172,
+   "paid_minor": 1080172,
+   "goods_cny_minor": 65900,
+   "cogs_cny_minor": 64912,
+   "cargo_usd_minor": 626,
+   "extra_usd_minor": 600,
+   "acquiring_fee_minor": 24384,
+   "weight_est_kg": 1.1,
+   "weight_fact_kg": null,
+   "volume_m3": 0.0097,
+   "places_count": 1,
+   "payment_status": "succeeded",
+   "payment_method": "bonus",
+   "loyalty_tier_at_order": "BASE",
+   "commission_rate_at_order": 0.1,
+   "referral_code_used": null,
+   "promo_code": null,
+   "tracking_number": null,
+   "carrier": null,
+   "manager_id": null,
+   "warehouse_id": "u_piF5WfcD0llm",
+   "paid_at": "2026-09-19T18:05:00Z",
+   "purchased_at": null,
+   "sent_at": null,
+   "delivered_at": null,
+   "cancelled_at": null,
+   "eta_from": null,
+   "eta_to": null,
+   "comment": null,
+   "created_at": "2026-09-19T18:05:00Z",
+   "updated_at": "2026-09-21T17:19:41.284Z"
+  },
+  {
+   "id": "o_kJrmcenQ6ScG",
+   "order_no": "PV-2026-000127",
+   "user_id": "u_6YIL0HdscOee",
+   "cart_id": null,
+   "status": "awaiting_payment",
+   "destination": "RU_MOW",
+   "recipient_name": "Иван Соколов",
+   "recipient_phone": "+375291234567",
+   "recipient_address": "ул. Немига 5, кв. 42",
+   "snapshot": {
+    "rates": {
+     "RUB": {
+      "base": 1,
+      "markup": 0,
+      "symbol": "₽",
+      "minor": "kopeck"
+     },
+     "BYN": {
+      "base": 33.2,
+      "markup": 1.5,
+      "symbol": "Br",
+      "minor": "kopeck"
+     },
+     "USD": {
+      "base": 92.4,
+      "markup": 2,
+      "symbol": "$",
+      "minor": "cent"
+     },
+     "CNY": {
+      "base": 12.85,
+      "markup": 3,
+      "symbol": "¥",
+      "minor": "fen"
+     }
+    },
+    "tariff_usd_per_kg": 3.5,
+    "commission_rate": 0.08,
+    "packaging": {
+     "code": "basic",
+     "priceUsd": 3,
+     "places": 1,
+     "optimized": true,
+     "savedUsd": 0
+    },
+    "insurance": {
+     "enabled": false,
+     "rate": 0,
+     "declaredUsd": 158.55
+    },
+    "weight": {
+     "estKg": 1.25,
+     "volumetricKg": 1.945,
+     "billableKg": 1.945,
+     "volumeM3": 0.0097
+    },
+    "tiers": [
+     {
+      "code": "BASE",
+      "name": "Base",
+      "commission": 0.1,
+      "threshold_rub_minor": 0,
+      "perks": [
+       "Стандартная поддержка"
+      ]
+     },
+     {
+      "code": "SILVER",
+      "name": "Silver",
+      "commission": 0.08,
+      "threshold_rub_minor": 5000000,
+      "perks": [
+       "Комиссия 8%",
+       "Приоритетный выкуп"
+      ]
+     },
+     {
+      "code": "GOLD",
+      "name": "Gold VIP",
+      "commission": 0.05,
+      "threshold_rub_minor": 20000000,
+      "perks": [
+       "Комиссия 5%",
+       "Личный менеджер",
+       "Бесплатная разгрузка"
+      ]
+     }
+    ]
+   },
+   "currency_view": "BYN",
+   "goods_minor": 44344,
+   "commission_minor": 3548,
+   "shipping_minor": 1905,
+   "packaging_minor": 839,
+   "insurance_minor": 0,
+   "unloading_minor": 839,
+   "discount_minor": 0,
+   "total_minor": 51475,
+   "paid_minor": 0,
+   "goods_cny_minor": 112900,
+   "cogs_cny_minor": 0,
+   "cargo_usd_minor": 0,
+   "extra_usd_minor": 0,
+   "acquiring_fee_minor": 0,
+   "weight_est_kg": 1.25,
+   "weight_fact_kg": null,
+   "volume_m3": 0.0097,
+   "places_count": 1,
+   "payment_status": "pending",
+   "payment_method": "card",
+   "loyalty_tier_at_order": "SILVER",
+   "commission_rate_at_order": 0.08,
+   "referral_code_used": null,
+   "promo_code": null,
+   "tracking_number": null,
+   "carrier": null,
+   "manager_id": null,
+   "warehouse_id": "u_piF5WfcD0llm",
+   "paid_at": null,
+   "purchased_at": null,
+   "sent_at": null,
+   "delivered_at": null,
+   "cancelled_at": null,
+   "eta_from": null,
+   "eta_to": null,
+   "comment": null,
+   "created_at": "2026-09-20T07:10:00Z",
+   "updated_at": "2026-09-21T17:19:41.284Z"
+  },
+  {
+   "id": "Eq2UjO9rNPV",
+   "created_at": "2026-09-21T18:33:56.335Z",
+   "order_no": "PV-2026-000128",
+   "user_id": "iinQwwtqDiu1",
+   "cart_id": "ZnCyoQvSxys",
+   "status": "paid",
+   "destination": "RU_MOW",
+   "recipient_name": "Алексей Смирнов",
+   "recipient_phone": "+79998887766",
+   "recipient_address": null,
+   "snapshot": {
+    "rates": {
+     "RUB": {
+      "base": 1,
+      "markup": 0,
+      "symbol": "₽",
+      "minor": "kopeck"
+     },
+     "BYN": {
+      "base": 33.2,
+      "markup": 1.5,
+      "symbol": "Br",
+      "minor": "kopeck"
+     },
+     "USD": {
+      "base": 92.4,
+      "markup": 2,
+      "symbol": "$",
+      "minor": "cent"
+     },
+     "CNY": {
+      "base": 12.85,
+      "markup": 3,
+      "symbol": "¥",
+      "minor": "fen"
+     }
+    },
+    "tariff_usd_per_kg": 3.5,
+    "commission_rate": 0.1,
+    "packaging": {
+     "code": "basic",
+     "priceUsd": 3,
+     "places": 1,
+     "optimized": true,
+     "savedUsd": 0
+    },
+    "insurance": {
+     "enabled": false,
+     "rate": 0,
+     "declaredUsd": 98.16
+    },
+    "weight": {
+     "estKg": 1.4,
+     "volumetricKg": 0,
+     "billableKg": 1.4,
+     "volumeM3": 0
+    },
+    "tiers": [
+     {
+      "code": "BASE",
+      "name": "Base",
+      "commission": 0.1,
+      "threshold_rub_minor": 0,
+      "perks": [
+       "Стандартная поддержка"
+      ]
+     },
+     {
+      "code": "SILVER",
+      "name": "Silver",
+      "commission": 0.08,
+      "threshold_rub_minor": 5000000,
+      "perks": [
+       "Комиссия 8%",
+       "Приоритетный выкуп"
+      ]
+     },
+     {
+      "code": "GOLD",
+      "name": "Gold VIP",
+      "commission": 0.05,
+      "threshold_rub_minor": 20000000,
+      "perks": [
+       "Комиссия 5%",
+       "Личный менеджер",
+       "Бесплатная разгрузка"
+      ]
+     }
+    ],
+    "quote": {
+     "currency": "USD",
+     "destination": "RU_MOW",
+     "destinationLabel": "Москва, РФ",
+     "etaDays": {
+      "min": 22,
+      "max": 28
+     },
+     "tariffUsdPerKg": 3.5,
+     "rates": {
+      "RUB": 1,
+      "BYN": 33.698,
+      "USD": 94.248,
+      "CNY": 13.2355
+     },
+     "commissionRate": 0.1,
+     "tier": "BASE",
+     "insurance": {
+      "enabled": false,
+      "rate": 0,
+      "declaredUsd": 98.16
+     },
+     "packaging": {
+      "code": "basic",
+      "priceUsd": 3,
+      "places": 1,
+      "optimized": true,
+      "savedUsd": 0
+     },
+     "unloading": {
+      "applies": false,
+      "usd": 0
+     },
+     "weight": {
+      "estKg": 1.4,
+      "volumetricKg": 0,
+      "billableKg": 1.4,
+      "volumeM3": 0
+     },
+     "goodsCnyMinor": 69900,
+     "declaredUsdMinor": 9816,
+     "sourceMinor": {
+      "goodsCny": 69900,
+      "shippingUsd": 490,
+      "packagingUsd": 300,
+      "insuranceUsd": 0,
+      "unloadingUsd": 0
+     },
+     "breakdown": {
+      "goods": 9816,
+      "commission": 982,
+      "shipping": 490,
+      "packaging": 300,
+      "insurance": 0,
+      "unloading": 0,
+      "discount": 0,
+      "subtotal": 11588,
+      "total": 11588
+     },
+     "lines": [
+      {
+       "id": "2aXaEeno2dzI",
+       "title": "Nike Dunk Low Retro White Black",
+       "color": "Panda",
+       "size": "42.5",
+       "qty": 1,
+       "priceCnyMinor": 69900,
+       "totalCnyMinor": 69900,
+       "weightKg": 1.4,
+       "totalWeightKg": 1.4,
+       "goods": 9816,
+       "commission": 982,
+       "shipping": 490,
+       "lineTotal": 11288
+      }
+     ],
+     "itemCount": 1
+    }
+   },
+   "currency_view": "USD",
+   "payment_plan": "full",
+   "installments": [],
+   "delivery_type": "cdek_pvz",
+   "cdek_pvz": null,
+   "goods_minor": 9816,
+   "commission_minor": 982,
+   "shipping_minor": 490,
+   "packaging_minor": 300,
+   "insurance_minor": 0,
+   "unloading_minor": 0,
+   "discount_minor": 0,
+   "total_minor": 11588,
+   "paid_minor": 11588,
+   "goods_cny_minor": 69900,
+   "cogs_cny_minor": 68852,
+   "cargo_usd_minor": 451,
+   "extra_usd_minor": 300,
+   "acquiring_fee_minor": 267,
+   "weight_est_kg": 1.4,
+   "weight_fact_kg": null,
+   "volume_m3": 0,
+   "places_count": 1,
+   "payment_status": "succeeded",
+   "payment_method": "card",
+   "loyalty_tier_at_order": "BASE",
+   "commission_rate_at_order": 0.1,
+   "referral_code_used": null,
+   "promo_code": null,
+   "tracking_number": null,
+   "carrier": null,
+   "manager_id": null,
+   "warehouse_id": null,
+   "eta_from": null,
+   "eta_to": null,
+   "comment": null,
+   "updated_at": "2026-09-21T18:34:00.900Z",
+   "paid_at": "2026-09-21T18:34:00.900Z"
+  },
+  {
+   "id": "05Pb14iJABq",
+   "created_at": "2026-09-21T19:19:42.208Z",
+   "order_no": "PV-2026-000129",
+   "user_id": "TSfme7VDOEwN",
+   "cart_id": "VSbnjNplXTpA",
+   "status": "paid",
+   "destination": "BY_MSQ",
+   "recipient_name": "",
+   "recipient_phone": "+375297307893",
+   "recipient_address": null,
+   "snapshot": {
+    "rates": {
+     "RUB": {
+      "base": 1,
+      "markup": 0,
+      "symbol": "₽",
+      "minor": "kopeck"
+     },
+     "BYN": {
+      "base": 33.2,
+      "markup": 1.5,
+      "symbol": "Br",
+      "minor": "kopeck"
+     },
+     "USD": {
+      "base": 92.4,
+      "markup": 2,
+      "symbol": "$",
+      "minor": "cent"
+     },
+     "CNY": {
+      "base": 12.85,
+      "markup": 3,
+      "symbol": "¥",
+      "minor": "fen"
+     }
+    },
+    "tariff_usd_per_kg": 4.5,
+    "commission_rate": 0.1,
+    "packaging": {
+     "code": "basic",
+     "priceUsd": 3,
+     "places": 1,
+     "optimized": true,
+     "savedUsd": 0
+    },
+    "insurance": {
+     "enabled": false,
+     "rate": 0,
+     "declaredUsd": 98.16
+    },
+    "weight": {
+     "estKg": 1.4,
+     "volumetricKg": 0,
+     "billableKg": 1.4,
+     "volumeM3": 0
+    },
+    "tiers": [
+     {
+      "code": "BASE",
+      "name": "Base",
+      "commission": 0.1,
+      "threshold_rub_minor": 0,
+      "perks": [
+       "Стандартная поддержка"
+      ]
+     },
+     {
+      "code": "SILVER",
+      "name": "Silver",
+      "commission": 0.08,
+      "threshold_rub_minor": 5000000,
+      "perks": [
+       "Комиссия 8%",
+       "Приоритетный выкуп"
+      ]
+     },
+     {
+      "code": "GOLD",
+      "name": "Gold VIP",
+      "commission": 0.05,
+      "threshold_rub_minor": 20000000,
+      "perks": [
+       "Комиссия 5%",
+       "Личный менеджер",
+       "Бесплатная разгрузка"
+      ]
+     }
+    ],
+    "quote": {
+     "currency": "RUB",
+     "destination": "BY_MSQ",
+     "destinationLabel": "Минск, РБ",
+     "etaDays": {
+      "min": 30,
+      "max": 35
+     },
+     "tariffUsdPerKg": 4.5,
+     "rates": {
+      "RUB": 1,
+      "BYN": 33.698,
+      "USD": 94.248,
+      "CNY": 13.2355
+     },
+     "commissionRate": 0.1,
+     "tier": "BASE",
+     "insurance": {
+      "enabled": false,
+      "rate": 0,
+      "declaredUsd": 98.16
+     },
+     "packaging": {
+      "code": "basic",
+      "priceUsd": 3,
+      "places": 1,
+      "optimized": true,
+      "savedUsd": 0
+     },
+     "unloading": {
+      "applies": false,
+      "usd": 0
+     },
+     "weight": {
+      "estKg": 1.4,
+      "volumetricKg": 0,
+      "billableKg": 1.4,
+      "volumeM3": 0
+     },
+     "goodsCnyMinor": 69900,
+     "declaredUsdMinor": 9816,
+     "sourceMinor": {
+      "goodsCny": 69900,
+      "shippingUsd": 630,
+      "packagingUsd": 300,
+      "insuranceUsd": 0,
+      "unloadingUsd": 0
+     },
+     "breakdown": {
+      "goods": 925161,
+      "commission": 92516,
+      "shipping": 59376,
+      "packaging": 28274,
+      "insurance": 0,
+      "unloading": 0,
+      "discount": 0,
+      "subtotal": 1105327,
+      "total": 1105327
+     },
+     "lines": [
+      {
+       "id": "5LhtYSqfEo2k",
+       "title": "Nike Dunk Low Retro Panda",
+       "color": "Black/White",
+       "size": "42.5 EU",
+       "qty": 1,
+       "priceCnyMinor": 69900,
+       "totalCnyMinor": 69900,
+       "weightKg": 1.4,
+       "totalWeightKg": 1.4,
+       "goods": 925161,
+       "commission": 92516,
+       "shipping": 59376,
+       "lineTotal": 1077053
+      }
+     ],
+     "itemCount": 1
+    }
+   },
+   "currency_view": "RUB",
+   "payment_plan": "full",
+   "installments": [],
+   "delivery_type": "cdek_pvz",
+   "cdek_pvz": null,
+   "goods_minor": 925161,
+   "commission_minor": 92516,
+   "shipping_minor": 59376,
+   "packaging_minor": 28274,
+   "insurance_minor": 0,
+   "unloading_minor": 0,
+   "discount_minor": 0,
+   "total_minor": 1105327,
+   "paid_minor": 1105327,
+   "goods_cny_minor": 69900,
+   "cogs_cny_minor": 68852,
+   "cargo_usd_minor": 580,
+   "extra_usd_minor": 300,
+   "acquiring_fee_minor": 25423,
+   "weight_est_kg": 1.4,
+   "weight_fact_kg": null,
+   "volume_m3": 0,
+   "places_count": 1,
+   "payment_status": "succeeded",
+   "payment_method": "card",
+   "loyalty_tier_at_order": "BASE",
+   "commission_rate_at_order": 0.1,
+   "referral_code_used": null,
+   "promo_code": null,
+   "tracking_number": null,
+   "carrier": null,
+   "manager_id": null,
+   "warehouse_id": null,
+   "eta_from": null,
+   "eta_to": null,
+   "comment": null,
+   "updated_at": "2026-09-21T19:19:42.211Z",
+   "paid_at": "2026-09-21T19:19:42.211Z"
+  },
+  {
+   "id": "3lGQrVUM9Tl",
+   "created_at": "2026-09-21T19:20:55.081Z",
+   "order_no": "PV-2026-000130",
+   "user_id": "rwuuxWapb8fT",
+   "cart_id": "UxGEod1vsZIt",
+   "status": "paid",
+   "destination": "BY_MSQ",
+   "recipient_name": "",
+   "recipient_phone": "+375293754544",
+   "recipient_address": null,
+   "snapshot": {
+    "rates": {
+     "RUB": {
+      "base": 1,
+      "markup": 0,
+      "symbol": "₽",
+      "minor": "kopeck"
+     },
+     "BYN": {
+      "base": 33.2,
+      "markup": 1.5,
+      "symbol": "Br",
+      "minor": "kopeck"
+     },
+     "USD": {
+      "base": 92.4,
+      "markup": 2,
+      "symbol": "$",
+      "minor": "cent"
+     },
+     "CNY": {
+      "base": 12.85,
+      "markup": 3,
+      "symbol": "¥",
+      "minor": "fen"
+     }
+    },
+    "tariff_usd_per_kg": 4.5,
+    "commission_rate": 0.1,
+    "packaging": {
+     "code": "basic",
+     "priceUsd": 3,
+     "places": 1,
+     "optimized": true,
+     "savedUsd": 0
+    },
+    "insurance": {
+     "enabled": false,
+     "rate": 0,
+     "declaredUsd": 98.16
+    },
+    "weight": {
+     "estKg": 1.4,
+     "volumetricKg": 0,
+     "billableKg": 1.4,
+     "volumeM3": 0
+    },
+    "tiers": [
+     {
+      "code": "BASE",
+      "name": "Base",
+      "commission": 0.1,
+      "threshold_rub_minor": 0,
+      "perks": [
+       "Стандартная поддержка"
+      ]
+     },
+     {
+      "code": "SILVER",
+      "name": "Silver",
+      "commission": 0.08,
+      "threshold_rub_minor": 5000000,
+      "perks": [
+       "Комиссия 8%",
+       "Приоритетный выкуп"
+      ]
+     },
+     {
+      "code": "GOLD",
+      "name": "Gold VIP",
+      "commission": 0.05,
+      "threshold_rub_minor": 20000000,
+      "perks": [
+       "Комиссия 5%",
+       "Личный менеджер",
+       "Бесплатная разгрузка"
+      ]
+     }
+    ],
+    "quote": {
+     "currency": "RUB",
+     "destination": "BY_MSQ",
+     "destinationLabel": "Минск, РБ",
+     "etaDays": {
+      "min": 30,
+      "max": 35
+     },
+     "tariffUsdPerKg": 4.5,
+     "rates": {
+      "RUB": 1,
+      "BYN": 33.698,
+      "USD": 94.248,
+      "CNY": 13.2355
+     },
+     "commissionRate": 0.1,
+     "tier": "BASE",
+     "insurance": {
+      "enabled": false,
+      "rate": 0,
+      "declaredUsd": 98.16
+     },
+     "packaging": {
+      "code": "basic",
+      "priceUsd": 3,
+      "places": 1,
+      "optimized": true,
+      "savedUsd": 0
+     },
+     "unloading": {
+      "applies": false,
+      "usd": 0
+     },
+     "weight": {
+      "estKg": 1.4,
+      "volumetricKg": 0,
+      "billableKg": 1.4,
+      "volumeM3": 0
+     },
+     "goodsCnyMinor": 69900,
+     "declaredUsdMinor": 9816,
+     "sourceMinor": {
+      "goodsCny": 69900,
+      "shippingUsd": 630,
+      "packagingUsd": 300,
+      "insuranceUsd": 0,
+      "unloadingUsd": 0
+     },
+     "breakdown": {
+      "goods": 925161,
+      "commission": 92516,
+      "shipping": 59376,
+      "packaging": 28274,
+      "insurance": 0,
+      "unloading": 0,
+      "discount": 0,
+      "subtotal": 1105327,
+      "total": 1105327
+     },
+     "lines": [
+      {
+       "id": "ccf5ThsGnuMf",
+       "title": "Nike Dunk Low Retro Panda",
+       "color": "Black/White",
+       "size": "42.5 EU",
+       "qty": 1,
+       "priceCnyMinor": 69900,
+       "totalCnyMinor": 69900,
+       "weightKg": 1.4,
+       "totalWeightKg": 1.4,
+       "goods": 925161,
+       "commission": 92516,
+       "shipping": 59376,
+       "lineTotal": 1077053
+      }
+     ],
+     "itemCount": 1
+    }
+   },
+   "currency_view": "RUB",
+   "payment_plan": "full",
+   "installments": [],
+   "delivery_type": "cdek_pvz",
+   "cdek_pvz": null,
+   "goods_minor": 925161,
+   "commission_minor": 92516,
+   "shipping_minor": 59376,
+   "packaging_minor": 28274,
+   "insurance_minor": 0,
+   "unloading_minor": 0,
+   "discount_minor": 0,
+   "total_minor": 1105327,
+   "paid_minor": 1105327,
+   "goods_cny_minor": 69900,
+   "cogs_cny_minor": 68852,
+   "cargo_usd_minor": 580,
+   "extra_usd_minor": 300,
+   "acquiring_fee_minor": 25423,
+   "weight_est_kg": 1.4,
+   "weight_fact_kg": null,
+   "volume_m3": 0,
+   "places_count": 1,
+   "payment_status": "succeeded",
+   "payment_method": "card",
+   "loyalty_tier_at_order": "BASE",
+   "commission_rate_at_order": 0.1,
+   "referral_code_used": null,
+   "promo_code": null,
+   "tracking_number": null,
+   "carrier": null,
+   "manager_id": null,
+   "warehouse_id": null,
+   "eta_from": null,
+   "eta_to": null,
+   "comment": null,
+   "updated_at": "2026-09-21T19:20:55.083Z",
+   "paid_at": "2026-09-21T19:20:55.083Z"
+  },
+  {
+   "id": "mGtYxOspJGR5",
+   "created_at": "2026-09-21T19:21:10.161Z",
+   "order_no": "PV-2026-000131",
+   "user_id": "vqs5B9MeSQng",
+   "cart_id": "tnpqQ7BMMvIk",
+   "status": "paid",
+   "destination": "BY_MSQ",
+   "recipient_name": "Артём Обновлённый",
+   "recipient_phone": "+375293037223",
+   "recipient_address": null,
+   "snapshot": {
+    "rates": {
+     "RUB": {
+      "base": 1,
+      "markup": 0,
+      "symbol": "₽",
+      "minor": "kopeck"
+     },
+     "BYN": {
+      "base": 33.2,
+      "markup": 1.5,
+      "symbol": "Br",
+      "minor": "kopeck"
+     },
+     "USD": {
+      "base": 92.4,
+      "markup": 2,
+      "symbol": "$",
+      "minor": "cent"
+     },
+     "CNY": {
+      "base": 12.85,
+      "markup": 3,
+      "symbol": "¥",
+      "minor": "fen"
+     }
+    },
+    "tariff_usd_per_kg": 4.5,
+    "commission_rate": 0.1,
+    "packaging": {
+     "code": "basic",
+     "priceUsd": 3,
+     "places": 1,
+     "optimized": true,
+     "savedUsd": 0
+    },
+    "insurance": {
+     "enabled": false,
+     "rate": 0,
+     "declaredUsd": 98.16
+    },
+    "weight": {
+     "estKg": 1.4,
+     "volumetricKg": 0,
+     "billableKg": 1.4,
+     "volumeM3": 0
+    },
+    "tiers": [
+     {
+      "code": "BASE",
+      "name": "Base",
+      "commission": 0.1,
+      "threshold_rub_minor": 0,
+      "perks": [
+       "Стандартная поддержка"
+      ]
+     },
+     {
+      "code": "SILVER",
+      "name": "Silver",
+      "commission": 0.08,
+      "threshold_rub_minor": 5000000,
+      "perks": [
+       "Комиссия 8%",
+       "Приоритетный выкуп"
+      ]
+     },
+     {
+      "code": "GOLD",
+      "name": "Gold VIP",
+      "commission": 0.05,
+      "threshold_rub_minor": 20000000,
+      "perks": [
+       "Комиссия 5%",
+       "Личный менеджер",
+       "Бесплатная разгрузка"
+      ]
+     }
+    ],
+    "quote": {
+     "currency": "RUB",
+     "destination": "BY_MSQ",
+     "destinationLabel": "Минск, РБ",
+     "etaDays": {
+      "min": 30,
+      "max": 35
+     },
+     "tariffUsdPerKg": 4.5,
+     "rates": {
+      "RUB": 1,
+      "BYN": 33.698,
+      "USD": 94.248,
+      "CNY": 13.2355
+     },
+     "commissionRate": 0.1,
+     "tier": "BASE",
+     "insurance": {
+      "enabled": false,
+      "rate": 0,
+      "declaredUsd": 98.16
+     },
+     "packaging": {
+      "code": "basic",
+      "priceUsd": 3,
+      "places": 1,
+      "optimized": true,
+      "savedUsd": 0
+     },
+     "unloading": {
+      "applies": false,
+      "usd": 0
+     },
+     "weight": {
+      "estKg": 1.4,
+      "volumetricKg": 0,
+      "billableKg": 1.4,
+      "volumeM3": 0
+     },
+     "goodsCnyMinor": 69900,
+     "declaredUsdMinor": 9816,
+     "sourceMinor": {
+      "goodsCny": 69900,
+      "shippingUsd": 630,
+      "packagingUsd": 300,
+      "insuranceUsd": 0,
+      "unloadingUsd": 0
+     },
+     "breakdown": {
+      "goods": 925161,
+      "commission": 92516,
+      "shipping": 59376,
+      "packaging": 28274,
+      "insurance": 0,
+      "unloading": 0,
+      "discount": 0,
+      "subtotal": 1105327,
+      "total": 1105327
+     },
+     "lines": [
+      {
+       "id": "TSKyx4IA9tqM",
+       "title": "Nike Dunk Low Retro Panda",
+       "color": "Black/White",
+       "size": "42.5 EU",
+       "qty": 1,
+       "priceCnyMinor": 69900,
+       "totalCnyMinor": 69900,
+       "weightKg": 1.4,
+       "totalWeightKg": 1.4,
+       "goods": 925161,
+       "commission": 92516,
+       "shipping": 59376,
+       "lineTotal": 1077053
+      }
+     ],
+     "itemCount": 1
+    }
+   },
+   "currency_view": "RUB",
+   "payment_plan": "full",
+   "installments": [],
+   "delivery_type": "cdek_pvz",
+   "cdek_pvz": null,
+   "goods_minor": 925161,
+   "commission_minor": 92516,
+   "shipping_minor": 59376,
+   "packaging_minor": 28274,
+   "insurance_minor": 0,
+   "unloading_minor": 0,
+   "discount_minor": 0,
+   "total_minor": 1105327,
+   "paid_minor": 1105327,
+   "goods_cny_minor": 69900,
+   "cogs_cny_minor": 68852,
+   "cargo_usd_minor": 580,
+   "extra_usd_minor": 300,
+   "acquiring_fee_minor": 25423,
+   "weight_est_kg": 1.4,
+   "weight_fact_kg": null,
+   "volume_m3": 0,
+   "places_count": 1,
+   "payment_status": "succeeded",
+   "payment_method": "card",
+   "loyalty_tier_at_order": "BASE",
+   "commission_rate_at_order": 0.1,
+   "referral_code_used": null,
+   "promo_code": null,
+   "tracking_number": null,
+   "carrier": null,
+   "manager_id": null,
+   "warehouse_id": null,
+   "eta_from": null,
+   "eta_to": null,
+   "comment": null,
+   "updated_at": "2026-09-21T19:21:10.166Z",
+   "paid_at": "2026-09-21T19:21:10.166Z"
+  }
+ ],
+ "order_items": [
+  {
+   "id": "oi_iPjzYKCgWk",
+   "order_id": "o_bI1lW96BDo3Q",
+   "cart_item_id": null,
+   "variant_id": "pv_YlVeYwBHOIYB",
+   "product_id": "pr_aZFukFOUzNBr",
+   "title": "Arc'teryx Beta LT Jacket 'Black Sapphire'",
+   "brand": "Arc'teryx",
+   "color": "Black Sapphire",
+   "size": "M",
+   "image_url": "/img/p/beta-lt.svg",
+   "external_url": "https://www.poizon.com/product?spu=778420",
+   "price_cny_minor": 329900,
+   "qty": 1,
+   "weight_kg": 1.9,
+   "weight_fact_kg": null,
+   "line_goods_minor": 129574,
+   "line_commission_minor": 10366,
+   "line_shipping_minor": 2393,
+   "line_total_all_minor": 142333,
+   "status": "delivered",
+   "legit_check": null,
+   "notes": null,
+   "created_at": "2026-02-03T11:20:00Z"
+  },
+  {
+   "id": "oi_4zeaMvAEiYm",
+   "order_id": "o_bI1lW96BDo3Q",
+   "cart_item_id": null,
+   "variant_id": "pv_lVFUBh1fvoP",
+   "product_id": "pr_GIcujHj6sXBK",
+   "title": "Nike Tech Fleece Joggers 'Black'",
+   "brand": "Nike",
+   "color": "Black",
+   "size": "M",
+   "image_url": "/img/p/tech-jogger.svg",
+   "external_url": "https://www.poizon.com/product?spu=889001",
+   "price_cny_minor": 46900,
+   "qty": 1,
+   "weight_kg": 0.75,
+   "weight_fact_kg": null,
+   "line_goods_minor": 18421,
+   "line_commission_minor": 1474,
+   "line_shipping_minor": 944,
+   "line_total_all_minor": 20839,
+   "status": "delivered",
+   "legit_check": null,
+   "notes": null,
+   "created_at": "2026-02-03T11:20:00Z"
+  },
+  {
+   "id": "oi_j3lGmA5LtLtR",
+   "order_id": "o_YSOeNaMGJ8w2",
+   "cart_item_id": null,
+   "variant_id": "pv_lLrF9NjnuTF",
+   "product_id": "pr_2gjWmIekhM2a",
+   "title": "Salomon XT-6 'Forage/Black'",
+   "brand": "Salomon",
+   "color": "Forage/Black",
+   "size": "43.3",
+   "image_url": "/img/p/xt6.svg",
+   "external_url": "https://www.dewu.com/product?spu=441200",
+   "price_cny_minor": 112900,
+   "qty": 1,
+   "weight_kg": 1.25,
+   "weight_fact_kg": null,
+   "line_goods_minor": 44343,
+   "line_commission_minor": 3548,
+   "line_shipping_minor": 1998,
+   "line_total_all_minor": 49889,
+   "status": "delivered",
+   "legit_check": null,
+   "notes": null,
+   "created_at": "2026-04-22T08:05:00Z"
+  },
+  {
+   "id": "oi_5y2M8ihNUimM",
+   "order_id": "o_YSOeNaMGJ8w2",
+   "cart_item_id": null,
+   "variant_id": "pv_0JbtLcFT2U7",
+   "product_id": "pr_XkAshOP6mS4Y",
+   "title": "Stüssy Basic Logo Tee 'White'",
+   "brand": "Stüssy",
+   "color": "Black",
+   "size": "L",
+   "image_url": "/img/p/stussy-tee.svg",
+   "external_url": "https://www.poizon.com/product?spu=660311",
+   "price_cny_minor": 26900,
+   "qty": 2,
+   "weight_kg": 0.5,
+   "weight_fact_kg": null,
+   "line_goods_minor": 21131,
+   "line_commission_minor": 1690,
+   "line_shipping_minor": 1599,
+   "line_total_all_minor": 24420,
+   "status": "delivered",
+   "legit_check": null,
+   "notes": null,
+   "created_at": "2026-04-22T08:05:00Z"
+  },
+  {
+   "id": "oi_C1iHWQBx8sGN",
+   "order_id": "o_0EGhgZvRylE",
+   "cart_item_id": null,
+   "variant_id": "pv_lHMKxPXvgHP",
+   "product_id": "pr_Bb2lPBajUcge",
+   "title": "New Balance 9060 'Rain Cloud'",
+   "brand": "New Balance",
+   "color": "Rain Cloud",
+   "size": "42",
+   "image_url": "/img/p/nb9060.svg",
+   "external_url": "https://www.poizon.com/product?spu=208814",
+   "price_cny_minor": 79900,
+   "qty": 1,
+   "weight_kg": 1.3,
+   "weight_fact_kg": null,
+   "line_goods_minor": 31382,
+   "line_commission_minor": 2511,
+   "line_shipping_minor": 1915,
+   "line_total_all_minor": 35808,
+   "status": "delivered",
+   "legit_check": null,
+   "notes": null,
+   "created_at": "2026-06-14T10:12:00Z"
+  },
+  {
+   "id": "oi_L4FtPrCBFIH",
+   "order_id": "o_0EGhgZvRylE",
+   "cart_item_id": null,
+   "variant_id": "pv_0LdbJuWAb9p1",
+   "product_id": "pr_hko9gtGsG2kl",
+   "title": "Fear of God Essentials Hoodie 'Oatmeal'",
+   "brand": "Fear of God Essentials",
+   "color": "Oatmeal",
+   "size": "M",
+   "image_url": "/img/p/fog-hoodie.svg",
+   "external_url": "https://www.poizon.com/product?spu=551002",
+   "price_cny_minor": 52900,
+   "qty": 1,
+   "weight_kg": 1.1,
+   "weight_fact_kg": null,
+   "line_goods_minor": 20778,
+   "line_commission_minor": 1662,
+   "line_shipping_minor": 1620,
+   "line_total_all_minor": 24060,
+   "status": "delivered",
+   "legit_check": null,
+   "notes": null,
+   "created_at": "2026-06-14T10:12:00Z"
+  },
+  {
+   "id": "oi_1QSZ1soKH5nK",
+   "order_id": "o_5VCsI5QOw2OS",
+   "cart_item_id": null,
+   "variant_id": "pv_8iI65DGFywV9",
+   "product_id": "pr_pGJNEmNj9ZZo",
+   "title": "Air Jordan 1 Retro High OG 'Chicago Lost & Found'",
+   "brand": "Air Jordan",
+   "color": "Chicago/White-Red",
+   "size": "44",
+   "image_url": "/img/p/aj1-chicago.svg",
+   "external_url": "https://www.poizon.com/product?spu=100231",
+   "price_cny_minor": 159900,
+   "qty": 1,
+   "weight_kg": 1.5,
+   "weight_fact_kg": null,
+   "line_goods_minor": 62804,
+   "line_commission_minor": 5024,
+   "line_shipping_minor": 2447,
+   "line_total_all_minor": 70275,
+   "status": "in_transit",
+   "legit_check": null,
+   "notes": null,
+   "created_at": "2026-08-28T09:30:00Z"
+  },
+  {
+   "id": "oi_bfmCOXHVsh2t",
+   "order_id": "o_Fa4a6P9wHMlx",
+   "cart_item_id": null,
+   "variant_id": "pv_XFpLUSBMXMo8",
+   "product_id": "pr_aZFukFOUzNBr",
+   "title": "Arc'teryx Beta LT Jacket 'Black Sapphire'",
+   "brand": "Arc'teryx",
+   "color": "Black Sapphire",
+   "size": "L",
+   "image_url": "/img/p/beta-lt.svg",
+   "external_url": "https://www.poizon.com/product?spu=778420",
+   "price_cny_minor": 329900,
+   "qty": 1,
+   "weight_kg": 2,
+   "weight_fact_kg": null,
+   "line_goods_minor": 4366391,
+   "line_commission_minor": 436639,
+   "line_shipping_minor": 65973,
+   "line_total_all_minor": 4869003,
+   "status": "photo_report",
+   "legit_check": null,
+   "notes": null,
+   "created_at": "2026-09-12T15:45:00Z"
+  },
+  {
+   "id": "oi_o7y3ZLrdfz6",
+   "order_id": "o_Fa4a6P9wHMlx",
+   "cart_item_id": null,
+   "variant_id": "pv_ZcwPMAzWrJ0O",
+   "product_id": "pr_XkAshOP6mS4Y",
+   "title": "Stüssy Basic Logo Tee 'White'",
+   "brand": "Stüssy",
+   "color": "White",
+   "size": "L",
+   "image_url": "/img/p/stussy-tee.svg",
+   "external_url": "https://www.poizon.com/product?spu=660311",
+   "price_cny_minor": 25900,
+   "qty": 2,
+   "weight_kg": 0.5,
+   "weight_fact_kg": null,
+   "line_goods_minor": 685599,
+   "line_commission_minor": 68560,
+   "line_shipping_minor": 32987,
+   "line_total_all_minor": 787146,
+   "status": "photo_report",
+   "legit_check": null,
+   "notes": null,
+   "created_at": "2026-09-12T15:45:00Z"
+  },
+  {
+   "id": "oi_HCPuWWiYuchB",
+   "order_id": "o_LxdmvEfgYFdP",
+   "cart_item_id": null,
+   "variant_id": "pv_GIHwPGmVXxga",
+   "product_id": "pr_GRUkjnDU4iUg",
+   "title": "Adidas Samba OG 'Cloud White / Core Black'",
+   "brand": "Adidas",
+   "color": "Cloud White/Core Black",
+   "size": "40",
+   "image_url": "/img/p/samba.svg",
+   "external_url": "https://www.poizon.com/product?spu=330117",
+   "price_cny_minor": 65900,
+   "qty": 1,
+   "weight_kg": 1.1,
+   "weight_fact_kg": null,
+   "line_goods_minor": 872219,
+   "line_commission_minor": 87222,
+   "line_shipping_minor": 64183,
+   "line_total_all_minor": 1023624,
+   "status": "paid",
+   "legit_check": null,
+   "notes": null,
+   "created_at": "2026-09-19T18:05:00Z"
+  },
+  {
+   "id": "oi_vlitLnKzYxLc",
+   "order_id": "o_kJrmcenQ6ScG",
+   "cart_item_id": null,
+   "variant_id": "pv_lLrF9NjnuTF",
+   "product_id": "pr_2gjWmIekhM2a",
+   "title": "Salomon XT-6 'Forage/Black'",
+   "brand": "Salomon",
+   "color": "Forage/Black",
+   "size": "43.3",
+   "image_url": "/img/p/xt6.svg",
+   "external_url": "https://www.dewu.com/product?spu=441200",
+   "price_cny_minor": 112900,
+   "qty": 1,
+   "weight_kg": 1.25,
+   "weight_fact_kg": null,
+   "line_goods_minor": 44344,
+   "line_commission_minor": 3548,
+   "line_shipping_minor": 1905,
+   "line_total_all_minor": 49797,
+   "status": "awaiting_payment",
+   "legit_check": null,
+   "notes": null,
+   "created_at": "2026-09-20T07:10:00Z"
+  },
+  {
+   "id": "1i6bs331DMDJ",
+   "created_at": "2026-09-21T18:33:56.335Z",
+   "order_id": "Eq2UjO9rNPV",
+   "cart_item_id": "2aXaEeno2dzI",
+   "variant_id": null,
+   "product_id": null,
+   "title": "Nike Dunk Low Retro White Black",
+   "brand": null,
+   "color": "Panda",
+   "size": "42.5",
+   "image_url": null,
+   "external_url": null,
+   "price_cny_minor": 69900,
+   "qty": 1,
+   "weight_kg": 1.4,
+   "dims_cm": null,
+   "category_slug": "sneakers",
+   "weight_fact_kg": null,
+   "line_goods_minor": 9816,
+   "line_commission_minor": 982,
+   "line_shipping_minor": 490,
+   "line_total_all_minor": 11288,
+   "status": "paid",
+   "legit_check": null,
+   "notes": null,
+   "updated_at": "2026-09-21T18:34:00.900Z"
+  },
+  {
+   "id": "dftWgtDkFjQx",
+   "created_at": "2026-09-21T19:19:42.208Z",
+   "order_id": "05Pb14iJABq",
+   "cart_item_id": "5LhtYSqfEo2k",
+   "variant_id": null,
+   "product_id": null,
+   "title": "Nike Dunk Low Retro Panda",
+   "brand": null,
+   "color": "Black/White",
+   "size": "42.5 EU",
+   "image_url": null,
+   "external_url": "https://dw4.co/t/A/NikeDunk",
+   "price_cny_minor": 69900,
+   "qty": 1,
+   "weight_kg": 1.4,
+   "dims_cm": null,
+   "category_slug": "sneakers",
+   "weight_fact_kg": null,
+   "line_goods_minor": 925161,
+   "line_commission_minor": 92516,
+   "line_shipping_minor": 59376,
+   "line_total_all_minor": 1077053,
+   "status": "paid",
+   "legit_check": null,
+   "notes": null,
+   "updated_at": "2026-09-21T19:19:42.211Z"
+  },
+  {
+   "id": "8XAYvikFssZG",
+   "created_at": "2026-09-21T19:20:55.081Z",
+   "order_id": "3lGQrVUM9Tl",
+   "cart_item_id": "ccf5ThsGnuMf",
+   "variant_id": null,
+   "product_id": null,
+   "title": "Nike Dunk Low Retro Panda",
+   "brand": null,
+   "color": "Black/White",
+   "size": "42.5 EU",
+   "image_url": null,
+   "external_url": "https://dw4.co/t/A/NikeDunk",
+   "price_cny_minor": 69900,
+   "qty": 1,
+   "weight_kg": 1.4,
+   "dims_cm": null,
+   "category_slug": "sneakers",
+   "weight_fact_kg": null,
+   "line_goods_minor": 925161,
+   "line_commission_minor": 92516,
+   "line_shipping_minor": 59376,
+   "line_total_all_minor": 1077053,
+   "status": "paid",
+   "legit_check": null,
+   "notes": null,
+   "updated_at": "2026-09-21T19:20:55.083Z"
+  },
+  {
+   "id": "6vhHc8n9AjC",
+   "created_at": "2026-09-21T19:21:10.161Z",
+   "order_id": "mGtYxOspJGR5",
+   "cart_item_id": "TSKyx4IA9tqM",
+   "variant_id": null,
+   "product_id": null,
+   "title": "Nike Dunk Low Retro Panda",
+   "brand": null,
+   "color": "Black/White",
+   "size": "42.5 EU",
+   "image_url": null,
+   "external_url": "https://dw4.co/t/A/NikeDunk",
+   "price_cny_minor": 69900,
+   "qty": 1,
+   "weight_kg": 1.4,
+   "dims_cm": null,
+   "category_slug": "sneakers",
+   "weight_fact_kg": null,
+   "line_goods_minor": 925161,
+   "line_commission_minor": 92516,
+   "line_shipping_minor": 59376,
+   "line_total_all_minor": 1077053,
+   "status": "paid",
+   "legit_check": null,
+   "notes": null,
+   "updated_at": "2026-09-21T19:21:10.166Z"
+  }
+ ],
+ "order_status_history": [
+  {
+   "id": "h_EERJ0cGosKe",
+   "order_id": "o_bI1lW96BDo3Q",
+   "from_status": null,
+   "to_status": "awaiting_payment",
+   "changed_by": null,
+   "comment": "Заказ создан",
+   "created_at": "2026-02-03T11:20:00Z"
+  },
+  {
+   "id": "h_D31SKXy1tHK1",
+   "order_id": "o_bI1lW96BDo3Q",
+   "from_status": "awaiting_payment",
+   "to_status": "paid",
+   "changed_by": null,
+   "comment": "Оплата: card",
+   "created_at": "2026-02-03T11:20:00Z"
+  },
+  {
+   "id": "h_wnp16DACN4an",
+   "order_id": "o_bI1lW96BDo3Q",
+   "from_status": "paid",
+   "to_status": "purchasing",
+   "changed_by": null,
+   "comment": null,
+   "created_at": "2026-02-03T11:20:00Z"
+  },
+  {
+   "id": "h_mfeICr0jmrkG",
+   "order_id": "o_bI1lW96BDo3Q",
+   "from_status": "purchasing",
+   "to_status": "purchased",
+   "changed_by": null,
+   "comment": null,
+   "created_at": "2026-02-03T11:20:00Z"
+  },
+  {
+   "id": "h_h4pTPaw1gSX",
+   "order_id": "o_bI1lW96BDo3Q",
+   "from_status": "purchased",
+   "to_status": "photo_report",
+   "changed_by": null,
+   "comment": null,
+   "created_at": "2026-02-03T11:20:00Z"
+  },
+  {
+   "id": "h_F7MMKgIXXGJ",
+   "order_id": "o_bI1lW96BDo3Q",
+   "from_status": "photo_report",
+   "to_status": "legit_check_failed",
+   "changed_by": null,
+   "comment": null,
+   "created_at": "2026-02-03T11:20:00Z"
+  },
+  {
+   "id": "h_WOACzmlJSt5b",
+   "order_id": "o_bI1lW96BDo3Q",
+   "from_status": "legit_check_failed",
+   "to_status": "packed",
+   "changed_by": null,
+   "comment": null,
+   "created_at": "2026-02-03T11:20:00Z"
+  },
+  {
+   "id": "h_fs0awNNSfOD",
+   "order_id": "o_bI1lW96BDo3Q",
+   "from_status": "packed",
+   "to_status": "sent_to_ru",
+   "changed_by": null,
+   "comment": null,
+   "created_at": "2026-02-03T11:20:00Z"
+  },
+  {
+   "id": "h_REP2hINS64I7",
+   "order_id": "o_bI1lW96BDo3Q",
+   "from_status": "sent_to_ru",
+   "to_status": "in_transit",
+   "changed_by": null,
+   "comment": null,
+   "created_at": "2026-02-03T11:20:00Z"
+  },
+  {
+   "id": "h_QLyiXjTV9Jx",
+   "order_id": "o_bI1lW96BDo3Q",
+   "from_status": "in_transit",
+   "to_status": "customs",
+   "changed_by": null,
+   "comment": null,
+   "created_at": "2026-02-03T11:20:00Z"
+  },
+  {
+   "id": "h_M2TzE2vjxA8r",
+   "order_id": "o_bI1lW96BDo3Q",
+   "from_status": "customs",
+   "to_status": "arrived_msk",
+   "changed_by": null,
+   "comment": null,
+   "created_at": "2026-02-03T11:20:00Z"
+  },
+  {
+   "id": "h_ModLxnwCLjP",
+   "order_id": "o_bI1lW96BDo3Q",
+   "from_status": "arrived_msk",
+   "to_status": "arrived_minsk",
+   "changed_by": null,
+   "comment": null,
+   "created_at": "2026-02-03T11:20:00Z"
+  },
+  {
+   "id": "h_f3LLS3vpktJ",
+   "order_id": "o_bI1lW96BDo3Q",
+   "from_status": "arrived_minsk",
+   "to_status": "ready_for_pickup",
+   "changed_by": null,
+   "comment": null,
+   "created_at": "2026-02-03T11:20:00Z"
+  },
+  {
+   "id": "h_8blh6TJ2qjb",
+   "order_id": "o_bI1lW96BDo3Q",
+   "from_status": "ready_for_pickup",
+   "to_status": "delivered",
+   "changed_by": null,
+   "comment": null,
+   "created_at": "2026-02-03T11:20:00Z"
+  },
+  {
+   "id": "h_bE10CWBSLwsN",
+   "order_id": "o_YSOeNaMGJ8w2",
+   "from_status": null,
+   "to_status": "awaiting_payment",
+   "changed_by": null,
+   "comment": "Заказ создан",
+   "created_at": "2026-04-22T08:05:00Z"
+  },
+  {
+   "id": "h_GVTPVaUKZTP",
+   "order_id": "o_YSOeNaMGJ8w2",
+   "from_status": "awaiting_payment",
+   "to_status": "paid",
+   "changed_by": null,
+   "comment": "Оплата: sbp",
+   "created_at": "2026-04-22T08:05:00Z"
+  },
+  {
+   "id": "h_MyZmFSQbgPLA",
+   "order_id": "o_YSOeNaMGJ8w2",
+   "from_status": "paid",
+   "to_status": "purchasing",
+   "changed_by": null,
+   "comment": null,
+   "created_at": "2026-04-22T08:05:00Z"
+  },
+  {
+   "id": "h_86fhDPki91S",
+   "order_id": "o_YSOeNaMGJ8w2",
+   "from_status": "purchasing",
+   "to_status": "purchased",
+   "changed_by": null,
+   "comment": null,
+   "created_at": "2026-04-22T08:05:00Z"
+  },
+  {
+   "id": "h_xY9sDKMF3Jj2",
+   "order_id": "o_YSOeNaMGJ8w2",
+   "from_status": "purchased",
+   "to_status": "photo_report",
+   "changed_by": null,
+   "comment": null,
+   "created_at": "2026-04-22T08:05:00Z"
+  },
+  {
+   "id": "h_g05kJmASBVU",
+   "order_id": "o_YSOeNaMGJ8w2",
+   "from_status": "photo_report",
+   "to_status": "legit_check_failed",
+   "changed_by": null,
+   "comment": null,
+   "created_at": "2026-04-22T08:05:00Z"
+  },
+  {
+   "id": "h_1ZXrBf9tDCiI",
+   "order_id": "o_YSOeNaMGJ8w2",
+   "from_status": "legit_check_failed",
+   "to_status": "packed",
+   "changed_by": null,
+   "comment": null,
+   "created_at": "2026-04-22T08:05:00Z"
+  },
+  {
+   "id": "h_eSYmBZGaRnJb",
+   "order_id": "o_YSOeNaMGJ8w2",
+   "from_status": "packed",
+   "to_status": "sent_to_ru",
+   "changed_by": null,
+   "comment": null,
+   "created_at": "2026-04-22T08:05:00Z"
+  },
+  {
+   "id": "h_J6LJcpinAVM3",
+   "order_id": "o_YSOeNaMGJ8w2",
+   "from_status": "sent_to_ru",
+   "to_status": "in_transit",
+   "changed_by": null,
+   "comment": null,
+   "created_at": "2026-04-22T08:05:00Z"
+  },
+  {
+   "id": "h_AjH3g252wgCI",
+   "order_id": "o_YSOeNaMGJ8w2",
+   "from_status": "in_transit",
+   "to_status": "customs",
+   "changed_by": null,
+   "comment": null,
+   "created_at": "2026-04-22T08:05:00Z"
+  },
+  {
+   "id": "h_Mom6VastaA6z",
+   "order_id": "o_YSOeNaMGJ8w2",
+   "from_status": "customs",
+   "to_status": "arrived_msk",
+   "changed_by": null,
+   "comment": null,
+   "created_at": "2026-04-22T08:05:00Z"
+  },
+  {
+   "id": "h_45vZMlT9Do3o",
+   "order_id": "o_YSOeNaMGJ8w2",
+   "from_status": "arrived_msk",
+   "to_status": "arrived_minsk",
+   "changed_by": null,
+   "comment": null,
+   "created_at": "2026-04-22T08:05:00Z"
+  },
+  {
+   "id": "h_CYkKUX6BNEBc",
+   "order_id": "o_YSOeNaMGJ8w2",
+   "from_status": "arrived_minsk",
+   "to_status": "ready_for_pickup",
+   "changed_by": null,
+   "comment": null,
+   "created_at": "2026-04-22T08:05:00Z"
+  },
+  {
+   "id": "h_jqdYnQQun7DU",
+   "order_id": "o_YSOeNaMGJ8w2",
+   "from_status": "ready_for_pickup",
+   "to_status": "delivered",
+   "changed_by": null,
+   "comment": null,
+   "created_at": "2026-04-22T08:05:00Z"
+  },
+  {
+   "id": "h_fbIM3QWtqqnY",
+   "order_id": "o_0EGhgZvRylE",
+   "from_status": null,
+   "to_status": "awaiting_payment",
+   "changed_by": null,
+   "comment": "Заказ создан",
+   "created_at": "2026-06-14T10:12:00Z"
+  },
+  {
+   "id": "h_60bwFQVifsyl",
+   "order_id": "o_0EGhgZvRylE",
+   "from_status": "awaiting_payment",
+   "to_status": "paid",
+   "changed_by": null,
+   "comment": "Оплата: combined",
+   "created_at": "2026-06-14T10:12:00Z"
+  },
+  {
+   "id": "h_ygbldyR7jxz",
+   "order_id": "o_0EGhgZvRylE",
+   "from_status": "paid",
+   "to_status": "purchasing",
+   "changed_by": null,
+   "comment": null,
+   "created_at": "2026-06-14T10:12:00Z"
+  },
+  {
+   "id": "h_kwrxWRSX2zY",
+   "order_id": "o_0EGhgZvRylE",
+   "from_status": "purchasing",
+   "to_status": "purchased",
+   "changed_by": null,
+   "comment": null,
+   "created_at": "2026-06-14T10:12:00Z"
+  },
+  {
+   "id": "h_oNLTGJxaP",
+   "order_id": "o_0EGhgZvRylE",
+   "from_status": "purchased",
+   "to_status": "photo_report",
+   "changed_by": null,
+   "comment": null,
+   "created_at": "2026-06-14T10:12:00Z"
+  },
+  {
+   "id": "h_ryRQyTlcl5nE",
+   "order_id": "o_0EGhgZvRylE",
+   "from_status": "photo_report",
+   "to_status": "legit_check_failed",
+   "changed_by": null,
+   "comment": null,
+   "created_at": "2026-06-14T10:12:00Z"
+  },
+  {
+   "id": "h_nV6yDgKkwUYr",
+   "order_id": "o_0EGhgZvRylE",
+   "from_status": "legit_check_failed",
+   "to_status": "packed",
+   "changed_by": null,
+   "comment": null,
+   "created_at": "2026-06-14T10:12:00Z"
+  },
+  {
+   "id": "h_c7kYvuMxwxpc",
+   "order_id": "o_0EGhgZvRylE",
+   "from_status": "packed",
+   "to_status": "sent_to_ru",
+   "changed_by": null,
+   "comment": null,
+   "created_at": "2026-06-14T10:12:00Z"
+  },
+  {
+   "id": "h_jc7mnAFJ4ja2",
+   "order_id": "o_0EGhgZvRylE",
+   "from_status": "sent_to_ru",
+   "to_status": "in_transit",
+   "changed_by": null,
+   "comment": null,
+   "created_at": "2026-06-14T10:12:00Z"
+  },
+  {
+   "id": "h_w5V9Ar9xASoS",
+   "order_id": "o_0EGhgZvRylE",
+   "from_status": "in_transit",
+   "to_status": "customs",
+   "changed_by": null,
+   "comment": null,
+   "created_at": "2026-06-14T10:12:00Z"
+  },
+  {
+   "id": "h_0StBnW2KetQ",
+   "order_id": "o_0EGhgZvRylE",
+   "from_status": "customs",
+   "to_status": "arrived_msk",
+   "changed_by": null,
+   "comment": null,
+   "created_at": "2026-06-14T10:12:00Z"
+  },
+  {
+   "id": "h_kbDDi1OgfsV",
+   "order_id": "o_0EGhgZvRylE",
+   "from_status": "arrived_msk",
+   "to_status": "arrived_minsk",
+   "changed_by": null,
+   "comment": null,
+   "created_at": "2026-06-14T10:12:00Z"
+  },
+  {
+   "id": "h_RAftF2Bx6Wh7",
+   "order_id": "o_0EGhgZvRylE",
+   "from_status": "arrived_minsk",
+   "to_status": "ready_for_pickup",
+   "changed_by": null,
+   "comment": null,
+   "created_at": "2026-06-14T10:12:00Z"
+  },
+  {
+   "id": "h_ZdeG2K6Qejcx",
+   "order_id": "o_0EGhgZvRylE",
+   "from_status": "ready_for_pickup",
+   "to_status": "delivered",
+   "changed_by": null,
+   "comment": null,
+   "created_at": "2026-06-14T10:12:00Z"
+  },
+  {
+   "id": "h_xh9B9uw5THy3",
+   "order_id": "o_5VCsI5QOw2OS",
+   "from_status": null,
+   "to_status": "awaiting_payment",
+   "changed_by": null,
+   "comment": "Заказ создан",
+   "created_at": "2026-08-28T09:30:00Z"
+  },
+  {
+   "id": "h_sQEId5Xc1i3L",
+   "order_id": "o_5VCsI5QOw2OS",
+   "from_status": "awaiting_payment",
+   "to_status": "paid",
+   "changed_by": null,
+   "comment": "Оплата: card",
+   "created_at": "2026-08-28T09:30:00Z"
+  },
+  {
+   "id": "h_zvZWwqK35vVg",
+   "order_id": "o_5VCsI5QOw2OS",
+   "from_status": "paid",
+   "to_status": "purchasing",
+   "changed_by": null,
+   "comment": null,
+   "created_at": "2026-08-28T09:30:00Z"
+  },
+  {
+   "id": "h_LMCXsAlt4H50",
+   "order_id": "o_5VCsI5QOw2OS",
+   "from_status": "purchasing",
+   "to_status": "purchased",
+   "changed_by": null,
+   "comment": null,
+   "created_at": "2026-08-28T09:30:00Z"
+  },
+  {
+   "id": "h_pUe764vPCgaQ",
+   "order_id": "o_5VCsI5QOw2OS",
+   "from_status": "purchased",
+   "to_status": "photo_report",
+   "changed_by": null,
+   "comment": null,
+   "created_at": "2026-08-28T09:30:00Z"
+  },
+  {
+   "id": "h_yBE14aKLrKJV",
+   "order_id": "o_5VCsI5QOw2OS",
+   "from_status": "photo_report",
+   "to_status": "legit_check_failed",
+   "changed_by": null,
+   "comment": null,
+   "created_at": "2026-08-28T09:30:00Z"
+  },
+  {
+   "id": "h_2tJLo6gZayUp",
+   "order_id": "o_5VCsI5QOw2OS",
+   "from_status": "legit_check_failed",
+   "to_status": "packed",
+   "changed_by": null,
+   "comment": null,
+   "created_at": "2026-08-28T09:30:00Z"
+  },
+  {
+   "id": "h_cgj9djdOdPy",
+   "order_id": "o_5VCsI5QOw2OS",
+   "from_status": "packed",
+   "to_status": "sent_to_ru",
+   "changed_by": null,
+   "comment": null,
+   "created_at": "2026-08-28T09:30:00Z"
+  },
+  {
+   "id": "h_9MP95PytPCf8",
+   "order_id": "o_5VCsI5QOw2OS",
+   "from_status": "sent_to_ru",
+   "to_status": "in_transit",
+   "changed_by": null,
+   "comment": null,
+   "created_at": "2026-08-28T09:30:00Z"
+  },
+  {
+   "id": "h_mls5zN6r6FHo",
+   "order_id": "o_Fa4a6P9wHMlx",
+   "from_status": null,
+   "to_status": "awaiting_payment",
+   "changed_by": null,
+   "comment": "Заказ создан",
+   "created_at": "2026-09-12T15:45:00Z"
+  },
+  {
+   "id": "h_B81PI1RvZIqN",
+   "order_id": "o_Fa4a6P9wHMlx",
+   "from_status": "awaiting_payment",
+   "to_status": "paid",
+   "changed_by": null,
+   "comment": "Оплата: wallet",
+   "created_at": "2026-09-12T15:45:00Z"
+  },
+  {
+   "id": "h_EaRn7AvuJxZl",
+   "order_id": "o_Fa4a6P9wHMlx",
+   "from_status": "paid",
+   "to_status": "purchasing",
+   "changed_by": null,
+   "comment": null,
+   "created_at": "2026-09-12T15:45:00Z"
+  },
+  {
+   "id": "h_26pKOu5pKJG",
+   "order_id": "o_Fa4a6P9wHMlx",
+   "from_status": "purchasing",
+   "to_status": "purchased",
+   "changed_by": null,
+   "comment": null,
+   "created_at": "2026-09-12T15:45:00Z"
+  },
+  {
+   "id": "h_N6UoVn7LJAN",
+   "order_id": "o_Fa4a6P9wHMlx",
+   "from_status": "purchased",
+   "to_status": "photo_report",
+   "changed_by": null,
+   "comment": null,
+   "created_at": "2026-09-12T15:45:00Z"
+  },
+  {
+   "id": "h_l9zDb4UFSxvU",
+   "order_id": "o_LxdmvEfgYFdP",
+   "from_status": null,
+   "to_status": "awaiting_payment",
+   "changed_by": null,
+   "comment": "Заказ создан",
+   "created_at": "2026-09-19T18:05:00Z"
+  },
+  {
+   "id": "h_dMsdZNwiME",
+   "order_id": "o_LxdmvEfgYFdP",
+   "from_status": "awaiting_payment",
+   "to_status": "paid",
+   "changed_by": null,
+   "comment": "Оплата: bonus",
+   "created_at": "2026-09-19T18:05:00Z"
+  },
+  {
+   "id": "h_x2B1Oa80W93n",
+   "order_id": "o_kJrmcenQ6ScG",
+   "from_status": null,
+   "to_status": "awaiting_payment",
+   "changed_by": null,
+   "comment": "Заказ создан",
+   "created_at": "2026-09-20T07:10:00Z"
+  },
+  {
+   "id": "BHQBQC4Vcvza",
+   "created_at": "2026-09-21T18:33:56.335Z",
+   "order_id": "Eq2UjO9rNPV",
+   "from_status": null,
+   "to_status": "awaiting_payment",
+   "changed_by": "iinQwwtqDiu1",
+   "comment": "Заказ создан"
+  },
+  {
+   "id": "riQLGtHQ9M0",
+   "created_at": "2026-09-21T18:34:00.900Z",
+   "order_id": "Eq2UjO9rNPV",
+   "from_status": "awaiting_payment",
+   "to_status": "paid",
+   "changed_by": "iinQwwtqDiu1",
+   "comment": "Оплата получена"
+  },
+  {
+   "id": "cNccNFCuHbrQ",
+   "created_at": "2026-09-21T19:19:42.208Z",
+   "order_id": "05Pb14iJABq",
+   "from_status": null,
+   "to_status": "awaiting_payment",
+   "changed_by": "TSfme7VDOEwN",
+   "comment": "Заказ создан"
+  },
+  {
+   "id": "kNpoTgH9LPs6",
+   "created_at": "2026-09-21T19:19:42.211Z",
+   "order_id": "05Pb14iJABq",
+   "from_status": "awaiting_payment",
+   "to_status": "paid",
+   "changed_by": "TSfme7VDOEwN",
+   "comment": "Оплата получена"
+  },
+  {
+   "id": "PuRwYjmwlCGg",
+   "created_at": "2026-09-21T19:20:55.081Z",
+   "order_id": "3lGQrVUM9Tl",
+   "from_status": null,
+   "to_status": "awaiting_payment",
+   "changed_by": "rwuuxWapb8fT",
+   "comment": "Заказ создан"
+  },
+  {
+   "id": "YY8KOAQ5AZp",
+   "created_at": "2026-09-21T19:20:55.083Z",
+   "order_id": "3lGQrVUM9Tl",
+   "from_status": "awaiting_payment",
+   "to_status": "paid",
+   "changed_by": "rwuuxWapb8fT",
+   "comment": "Оплата получена"
+  },
+  {
+   "id": "c7XWHH5rhGVS",
+   "created_at": "2026-09-21T19:21:10.161Z",
+   "order_id": "mGtYxOspJGR5",
+   "from_status": null,
+   "to_status": "awaiting_payment",
+   "changed_by": "vqs5B9MeSQng",
+   "comment": "Заказ создан"
+  },
+  {
+   "id": "kys3jybIuEiX",
+   "created_at": "2026-09-21T19:21:10.166Z",
+   "order_id": "mGtYxOspJGR5",
+   "from_status": "awaiting_payment",
+   "to_status": "paid",
+   "changed_by": "vqs5B9MeSQng",
+   "comment": "Оплата получена"
+  }
+ ],
+ "order_photos": [
+  {
+   "id": "ph_cAzOUPqR4Cz",
+   "order_id": "o_bI1lW96BDo3Q",
+   "order_item_id": null,
+   "url": "/img/report/PV-2026-000031-tag-1.svg?label=%D0%91%D0%B8%D1%80%D1%8E%D0%B7%D0%BE%D0%B2%D0%B0%D1%8F%20%D0%BF%D0%BB%D0%BE%D0%BC%D0%B1%D0%B0%20Poizon%20Legit%20Check%20%D1%81%20%D1%83%D0%BD%D0%B8%D0%BA%D0%B0%D0%BB%D1%8C%D0%BD%D1%8B%D0%BC%20%D0%BD%D0%BE%D0%BC%D0%B5%D1%80%D0%BE%D0%BC",
+   "thumb_url": null,
+   "kind": "tag",
+   "caption": "Бирюзовая пломба Poizon Legit Check с уникальным номером",
+   "uploaded_by": "u_piF5WfcD0llm",
+   "is_visible_to_client": true,
+   "created_at": "2026-02-03T11:20:00Z"
+  },
+  {
+   "id": "ph_tfaX2pt1FmOW",
+   "order_id": "o_bI1lW96BDo3Q",
+   "order_item_id": null,
+   "url": "/img/report/PV-2026-000031-cert-2.svg?label=%D0%9E%D1%80%D0%B8%D0%B3%D0%B8%D0%BD%D0%B0%D0%BB%D1%8C%D0%BD%D1%8B%D0%B9%20%D1%81%D0%B5%D1%80%D1%82%D0%B8%D1%84%D0%B8%D0%BA%D0%B0%D1%82%20%D0%BF%D0%BE%D0%B4%D0%BB%D0%B8%D0%BD%D0%BD%D0%BE%D1%81%D1%82%D0%B8%20Dewu%20%D1%81%20%D0%B7%D0%B0%D1%89%D0%B8%D1%82%D0%BD%D1%8B%D0%BC%20QR",
+   "thumb_url": null,
+   "kind": "cert",
+   "caption": "Оригинальный сертификат подлинности Dewu с защитным QR",
+   "uploaded_by": "u_piF5WfcD0llm",
+   "is_visible_to_client": true,
+   "created_at": "2026-02-03T11:20:00Z"
+  },
+  {
+   "id": "ph_yDs6ddavQEdI",
+   "order_id": "o_bI1lW96BDo3Q",
+   "order_item_id": null,
+   "url": "/img/report/PV-2026-000031-box-3.svg?label=%D0%A4%D0%B8%D1%80%D0%BC%D0%B5%D0%BD%D0%BD%D0%B0%D1%8F%20%D0%BA%D0%BE%D1%80%D0%BE%D0%B1%D0%BA%D0%B0%20Poizon%2C%20%D1%83%D0%B3%D0%BB%D1%8B%20%D0%B8%20%D0%BF%D0%BB%D0%BE%D0%BC%D0%B1%D0%B8%D1%80%D0%BE%D0%B2%D0%BE%D1%87%D0%BD%D1%8B%D0%B9%20%D1%81%D0%BA%D0%BE%D1%82%D1%87%20%D1%86%D0%B5%D0%BB%D1%8B",
+   "thumb_url": null,
+   "kind": "box",
+   "caption": "Фирменная коробка Poizon, углы и пломбировочный скотч целы",
+   "uploaded_by": "u_piF5WfcD0llm",
+   "is_visible_to_client": true,
+   "created_at": "2026-02-03T11:20:00Z"
+  },
+  {
+   "id": "ph_MpII3IeCL0un",
+   "order_id": "o_bI1lW96BDo3Q",
+   "order_item_id": null,
+   "url": "/img/report/PV-2026-000031-weight-4.svg?label=%D0%9A%D0%BE%D0%BD%D1%82%D1%80%D0%BE%D0%BB%D1%8C%D0%BD%D0%BE%D0%B5%20%D0%B2%D0%B7%D0%B2%D0%B5%D1%88%D0%B8%D0%B2%D0%B0%D0%BD%D0%B8%D0%B5%20%D0%BD%D0%B0%20%D0%BA%D0%B0%D0%BB%D0%B8%D0%B1%D1%80%D0%BE%D0%B2%D0%B0%D0%BD%D0%BD%D1%8B%D1%85%20%D0%B2%D0%B5%D1%81%D0%B0%D1%85%20%D1%81%D0%BA%D0%BB%D0%B0%D0%B4%D0%B0%3A%202.1%20%D0%BA%D0%B3",
+   "thumb_url": null,
+   "kind": "weight",
+   "caption": "Контрольное взвешивание на калиброванных весах склада: 2.1 кг",
+   "uploaded_by": "u_piF5WfcD0llm",
+   "is_visible_to_client": true,
+   "created_at": "2026-02-03T11:20:00Z"
+  },
+  {
+   "id": "ph_idwkaZpDyp2N",
+   "order_id": "o_YSOeNaMGJ8w2",
+   "order_item_id": null,
+   "url": "/img/report/PV-2026-000064-tag-1.svg?label=%D0%91%D0%B8%D1%80%D1%8E%D0%B7%D0%BE%D0%B2%D0%B0%D1%8F%20%D0%BF%D0%BB%D0%BE%D0%BC%D0%B1%D0%B0%20Poizon%20Legit%20Check%20%D1%81%20%D1%83%D0%BD%D0%B8%D0%BA%D0%B0%D0%BB%D1%8C%D0%BD%D1%8B%D0%BC%20%D0%BD%D0%BE%D0%BC%D0%B5%D1%80%D0%BE%D0%BC",
+   "thumb_url": null,
+   "kind": "tag",
+   "caption": "Бирюзовая пломба Poizon Legit Check с уникальным номером",
+   "uploaded_by": "u_piF5WfcD0llm",
+   "is_visible_to_client": true,
+   "created_at": "2026-04-22T08:05:00Z"
+  },
+  {
+   "id": "ph_Vb5zaxPygX",
+   "order_id": "o_YSOeNaMGJ8w2",
+   "order_item_id": null,
+   "url": "/img/report/PV-2026-000064-cert-2.svg?label=%D0%9E%D1%80%D0%B8%D0%B3%D0%B8%D0%BD%D0%B0%D0%BB%D1%8C%D0%BD%D1%8B%D0%B9%20%D1%81%D0%B5%D1%80%D1%82%D0%B8%D1%84%D0%B8%D0%BA%D0%B0%D1%82%20%D0%BF%D0%BE%D0%B4%D0%BB%D0%B8%D0%BD%D0%BD%D0%BE%D1%81%D1%82%D0%B8%20Dewu%20%D1%81%20%D0%B7%D0%B0%D1%89%D0%B8%D1%82%D0%BD%D1%8B%D0%BC%20QR",
+   "thumb_url": null,
+   "kind": "cert",
+   "caption": "Оригинальный сертификат подлинности Dewu с защитным QR",
+   "uploaded_by": "u_piF5WfcD0llm",
+   "is_visible_to_client": true,
+   "created_at": "2026-04-22T08:05:00Z"
+  },
+  {
+   "id": "ph_IxIPxu6M61Kp",
+   "order_id": "o_YSOeNaMGJ8w2",
+   "order_item_id": null,
+   "url": "/img/report/PV-2026-000064-box-3.svg?label=%D0%A4%D0%B8%D1%80%D0%BC%D0%B5%D0%BD%D0%BD%D0%B0%D1%8F%20%D0%BA%D0%BE%D1%80%D0%BE%D0%B1%D0%BA%D0%B0%20Poizon%2C%20%D1%83%D0%B3%D0%BB%D1%8B%20%D0%B8%20%D0%BF%D0%BB%D0%BE%D0%BC%D0%B1%D0%B8%D1%80%D0%BE%D0%B2%D0%BE%D1%87%D0%BD%D1%8B%D0%B9%20%D1%81%D0%BA%D0%BE%D1%82%D1%87%20%D1%86%D0%B5%D0%BB%D1%8B",
+   "thumb_url": null,
+   "kind": "box",
+   "caption": "Фирменная коробка Poizon, углы и пломбировочный скотч целы",
+   "uploaded_by": "u_piF5WfcD0llm",
+   "is_visible_to_client": true,
+   "created_at": "2026-04-22T08:05:00Z"
+  },
+  {
+   "id": "ph_oKVA70pyjEXT",
+   "order_id": "o_YSOeNaMGJ8w2",
+   "order_item_id": null,
+   "url": "/img/report/PV-2026-000064-weight-4.svg?label=%D0%9A%D0%BE%D0%BD%D1%82%D1%80%D0%BE%D0%BB%D1%8C%D0%BD%D0%BE%D0%B5%20%D0%B2%D0%B7%D0%B2%D0%B5%D1%88%D0%B8%D0%B2%D0%B0%D0%BD%D0%B8%D0%B5%20%D0%BD%D0%B0%20%D0%BA%D0%B0%D0%BB%D0%B8%D0%B1%D1%80%D0%BE%D0%B2%D0%B0%D0%BD%D0%BD%D1%8B%D1%85%20%D0%B2%D0%B5%D1%81%D0%B0%D1%85%20%D1%81%D0%BA%D0%BB%D0%B0%D0%B4%D0%B0%3A%202.5%20%D0%BA%D0%B3",
+   "thumb_url": null,
+   "kind": "weight",
+   "caption": "Контрольное взвешивание на калиброванных весах склада: 2.5 кг",
+   "uploaded_by": "u_piF5WfcD0llm",
+   "is_visible_to_client": true,
+   "created_at": "2026-04-22T08:05:00Z"
+  },
+  {
+   "id": "ph_TMlBMEWAykx",
+   "order_id": "o_0EGhgZvRylE",
+   "order_item_id": null,
+   "url": "/img/report/PV-2026-000101-tag-1.svg?label=%D0%91%D0%B8%D1%80%D1%8E%D0%B7%D0%BE%D0%B2%D0%B0%D1%8F%20%D0%BF%D0%BB%D0%BE%D0%BC%D0%B1%D0%B0%20Poizon%20Legit%20Check%20%D1%81%20%D1%83%D0%BD%D0%B8%D0%BA%D0%B0%D0%BB%D1%8C%D0%BD%D1%8B%D0%BC%20%D0%BD%D0%BE%D0%BC%D0%B5%D1%80%D0%BE%D0%BC",
+   "thumb_url": null,
+   "kind": "tag",
+   "caption": "Бирюзовая пломба Poizon Legit Check с уникальным номером",
+   "uploaded_by": "u_piF5WfcD0llm",
+   "is_visible_to_client": true,
+   "created_at": "2026-06-14T10:12:00Z"
+  },
+  {
+   "id": "ph_YoJ9RDn4Vfbq",
+   "order_id": "o_0EGhgZvRylE",
+   "order_item_id": null,
+   "url": "/img/report/PV-2026-000101-cert-2.svg?label=%D0%9E%D1%80%D0%B8%D0%B3%D0%B8%D0%BD%D0%B0%D0%BB%D1%8C%D0%BD%D1%8B%D0%B9%20%D1%81%D0%B5%D1%80%D1%82%D0%B8%D1%84%D0%B8%D0%BA%D0%B0%D1%82%20%D0%BF%D0%BE%D0%B4%D0%BB%D0%B8%D0%BD%D0%BD%D0%BE%D1%81%D1%82%D0%B8%20Dewu%20%D1%81%20%D0%B7%D0%B0%D1%89%D0%B8%D1%82%D0%BD%D1%8B%D0%BC%20QR",
+   "thumb_url": null,
+   "kind": "cert",
+   "caption": "Оригинальный сертификат подлинности Dewu с защитным QR",
+   "uploaded_by": "u_piF5WfcD0llm",
+   "is_visible_to_client": true,
+   "created_at": "2026-06-14T10:12:00Z"
+  },
+  {
+   "id": "ph_cV9K8iKCrCj4",
+   "order_id": "o_0EGhgZvRylE",
+   "order_item_id": null,
+   "url": "/img/report/PV-2026-000101-box-3.svg?label=%D0%A4%D0%B8%D1%80%D0%BC%D0%B5%D0%BD%D0%BD%D0%B0%D1%8F%20%D0%BA%D0%BE%D1%80%D0%BE%D0%B1%D0%BA%D0%B0%20Poizon%2C%20%D1%83%D0%B3%D0%BB%D1%8B%20%D0%B8%20%D0%BF%D0%BB%D0%BE%D0%BC%D0%B1%D0%B8%D1%80%D0%BE%D0%B2%D0%BE%D1%87%D0%BD%D1%8B%D0%B9%20%D1%81%D0%BA%D0%BE%D1%82%D1%87%20%D1%86%D0%B5%D0%BB%D1%8B",
+   "thumb_url": null,
+   "kind": "box",
+   "caption": "Фирменная коробка Poizon, углы и пломбировочный скотч целы",
+   "uploaded_by": "u_piF5WfcD0llm",
+   "is_visible_to_client": true,
+   "created_at": "2026-06-14T10:12:00Z"
+  },
+  {
+   "id": "ph_wgdvKw1faU4",
+   "order_id": "o_0EGhgZvRylE",
+   "order_item_id": null,
+   "url": "/img/report/PV-2026-000101-weight-4.svg?label=%D0%9A%D0%BE%D0%BD%D1%82%D1%80%D0%BE%D0%BB%D1%8C%D0%BD%D0%BE%D0%B5%20%D0%B2%D0%B7%D0%B2%D0%B5%D1%88%D0%B8%D0%B2%D0%B0%D0%BD%D0%B8%D0%B5%20%D0%BD%D0%B0%20%D0%BA%D0%B0%D0%BB%D0%B8%D0%B1%D1%80%D0%BE%D0%B2%D0%B0%D0%BD%D0%BD%D1%8B%D1%85%20%D0%B2%D0%B5%D1%81%D0%B0%D1%85%20%D1%81%D0%BA%D0%BB%D0%B0%D0%B4%D0%B0%3A%203.05%20%D0%BA%D0%B3",
+   "thumb_url": null,
+   "kind": "weight",
+   "caption": "Контрольное взвешивание на калиброванных весах склада: 3.05 кг",
+   "uploaded_by": "u_piF5WfcD0llm",
+   "is_visible_to_client": true,
+   "created_at": "2026-06-14T10:12:00Z"
+  },
+  {
+   "id": "ph_ktg1tbKl38",
+   "order_id": "o_5VCsI5QOw2OS",
+   "order_item_id": null,
+   "url": "/img/report/PV-2026-000118-report-1.svg?label=%D0%9A%D0%BE%D1%80%D0%BE%D0%B1%D0%BA%D0%B0%20Poizon%2C%20%D0%BF%D0%BB%D0%BE%D0%BC%D0%B1%D0%B0%20Legit%20Check%20%D1%86%D0%B5%D0%BB%D0%B0",
+   "thumb_url": null,
+   "kind": "report",
+   "caption": "Коробка Poizon, пломба Legit Check цела",
+   "uploaded_by": "u_piF5WfcD0llm",
+   "is_visible_to_client": true,
+   "created_at": "2026-08-28T09:30:00Z"
+  },
+  {
+   "id": "ph_iThHHZG1m7Al",
+   "order_id": "o_5VCsI5QOw2OS",
+   "order_item_id": null,
+   "url": "/img/report/PV-2026-000118-report-2.svg?label=%D0%A1%D0%B5%D1%80%D1%82%D0%B8%D1%84%D0%B8%D0%BA%D0%B0%D1%82%20%D0%BF%D0%BE%D0%B4%D0%BB%D0%B8%D0%BD%D0%BD%D0%BE%D1%81%D1%82%D0%B8%20%2B%20%D0%B1%D0%B8%D1%80%D0%BA%D0%B0",
+   "thumb_url": null,
+   "kind": "report",
+   "caption": "Сертификат подлинности + бирка",
+   "uploaded_by": "u_piF5WfcD0llm",
+   "is_visible_to_client": true,
+   "created_at": "2026-08-28T09:30:00Z"
+  },
+  {
+   "id": "ph_35unWxpfMHA7",
+   "order_id": "o_5VCsI5QOw2OS",
+   "order_item_id": null,
+   "url": "/img/report/PV-2026-000118-weight-3.svg?label=%D0%92%D0%B7%D0%B2%D0%B5%D1%88%D0%B8%D0%B2%D0%B0%D0%BD%D0%B8%D0%B5%3A%201.52%20%D0%BA%D0%B3%20%D1%81%20%D1%83%D0%BF%D0%B0%D0%BA%D0%BE%D0%B2%D0%BA%D0%BE%D0%B9",
+   "thumb_url": null,
+   "kind": "weight",
+   "caption": "Взвешивание: 1.52 кг с упаковкой",
+   "uploaded_by": "u_piF5WfcD0llm",
+   "is_visible_to_client": true,
+   "created_at": "2026-08-28T09:30:00Z"
+  },
+  {
+   "id": "ph_wubQwtci3IcP",
+   "order_id": "o_Fa4a6P9wHMlx",
+   "order_item_id": null,
+   "url": "/img/report/PV-2026-000122-report-1.svg?label=Arc'teryx%20Beta%20LT%20%E2%80%94%20%D0%BF%D1%80%D0%BE%D0%B2%D0%B5%D1%80%D0%BA%D0%B0%20%D1%88%D0%B2%D0%BE%D0%B2%20%D0%B8%20%D0%B3%D0%BE%D0%BB%D0%BE%D0%B3%D1%80%D0%B0%D0%BC%D0%BC%D1%8B",
+   "thumb_url": null,
+   "kind": "report",
+   "caption": "Arc'teryx Beta LT — проверка швов и голограммы",
+   "uploaded_by": "u_piF5WfcD0llm",
+   "is_visible_to_client": true,
+   "created_at": "2026-09-12T15:45:00Z"
+  },
+  {
+   "id": "ph_qfvFlcwBhGB7",
+   "order_id": "o_Fa4a6P9wHMlx",
+   "order_item_id": null,
+   "url": "/img/report/PV-2026-000122-report-2.svg?label=%D0%A4%D1%83%D1%82%D0%B1%D0%BE%D0%BB%D0%BA%D0%B8%20St%C3%BCssy%3A%202%20%D1%88%D1%82.%2C%20%D0%B1%D0%B8%D1%80%D0%BA%D0%B8%20%D0%BD%D0%B0%20%D0%BC%D0%B5%D1%81%D1%82%D0%B5",
+   "thumb_url": null,
+   "kind": "report",
+   "caption": "Футболки Stüssy: 2 шт., бирки на месте",
+   "uploaded_by": "u_piF5WfcD0llm",
+   "is_visible_to_client": true,
+   "created_at": "2026-09-12T15:45:00Z"
+  }
+ ],
+ "order_adjustments": [],
+ "shipments": [
+  {
+   "id": "sh_MZFWvnCbc4d",
+   "order_id": "o_bI1lW96BDo3Q",
+   "tracking_number": "BY-CN-7710984",
+   "carrier": "VanCargo",
+   "destination": "BY_MSQ",
+   "weight_kg": 2.1,
+   "places_count": 1,
+   "status": "delivered",
+   "shipped_at": null,
+   "delivered_at": "2026-03-06T12:00:00Z",
+   "tracking_events": []
+  },
+  {
+   "id": "sh_z7W8649rW2E",
+   "order_id": "o_YSOeNaMGJ8w2",
+   "tracking_number": "RU-CN-3320117",
+   "carrier": "VanCargo",
+   "destination": "RU_MOW",
+   "weight_kg": 2.5,
+   "places_count": 1,
+   "status": "delivered",
+   "shipped_at": null,
+   "delivered_at": "2026-05-18T12:00:00Z",
+   "tracking_events": []
+  },
+  {
+   "id": "sh_cbDTMqWc2zEL",
+   "order_id": "o_0EGhgZvRylE",
+   "tracking_number": "BY-CN-8841203",
+   "carrier": "VanCargo",
+   "destination": "BY_MSQ",
+   "weight_kg": 3.05,
+   "places_count": 1,
+   "status": "delivered",
+   "shipped_at": null,
+   "delivered_at": "2026-07-18T12:00:00Z",
+   "tracking_events": []
+  },
+  {
+   "id": "sh_OeWO6d39XdL",
+   "order_id": "o_5VCsI5QOw2OS",
+   "tracking_number": "BY-CN-9910455",
+   "carrier": "VanCargo",
+   "destination": "BY_MSQ",
+   "weight_kg": 1.52,
+   "places_count": 1,
+   "status": "in_transit",
+   "shipped_at": "2026-09-06T08:00:00Z",
+   "delivered_at": null,
+   "tracking_events": []
+  }
+ ],
+ "labels": [],
+ "payments": [
+  {
+   "id": "pay_KmZvkkiW6Md",
+   "order_id": "o_bI1lW96BDo3Q",
+   "user_id": "u_6YIL0HdscOee",
+   "provider": "yookassa",
+   "provider_tx_id": "ACQ2Z4KGLQZVHE",
+   "method": "card",
+   "amount_minor": 164850,
+   "currency": "BYN",
+   "status": "succeeded",
+   "fee_minor": 3792,
+   "idempotency_key": "o_bI1lW96BDo3Q:card",
+   "payload": {},
+   "paid_at": "2026-02-03T11:20:00Z",
+   "created_at": "2026-02-03T11:20:00Z",
+   "updated_at": "2026-02-03T11:20:00Z"
+  },
+  {
+   "id": "pay_WxwcOusSVrc",
+   "order_id": "o_YSOeNaMGJ8w2",
+   "user_id": "u_6YIL0HdscOee",
+   "provider": "yookassa_sbp",
+   "provider_tx_id": "ACQF0S69Q6ZSH7",
+   "method": "sbp",
+   "amount_minor": 75987,
+   "currency": "BYN",
+   "status": "succeeded",
+   "fee_minor": 1748,
+   "idempotency_key": "o_YSOeNaMGJ8w2:sbp",
+   "payload": {},
+   "paid_at": "2026-04-22T08:05:00Z",
+   "created_at": "2026-04-22T08:05:00Z",
+   "updated_at": "2026-04-22T08:05:00Z"
+  },
+  {
+   "id": "pay_048ymuV8hcH",
+   "order_id": "o_0EGhgZvRylE",
+   "user_id": "u_6YIL0HdscOee",
+   "provider": "wallet",
+   "provider_tx_id": null,
+   "method": "bonus",
+   "amount_minor": 61546,
+   "currency": "BYN",
+   "status": "succeeded",
+   "fee_minor": 0,
+   "idempotency_key": "o_0EGhgZvRylE:wallet",
+   "payload": {},
+   "paid_at": "2026-06-14T10:12:00Z",
+   "created_at": "2026-06-14T10:12:00Z",
+   "updated_at": "2026-06-14T10:12:00Z"
+  },
+  {
+   "id": "pay_ONyjP5X6gx3w",
+   "order_id": "o_5VCsI5QOw2OS",
+   "user_id": "u_6YIL0HdscOee",
+   "provider": "yookassa",
+   "provider_tx_id": "ACQN3VN9V4Y0VA5",
+   "method": "card",
+   "amount_minor": 71953,
+   "currency": "BYN",
+   "status": "succeeded",
+   "fee_minor": 1655,
+   "idempotency_key": "o_5VCsI5QOw2OS:card",
+   "payload": {},
+   "paid_at": "2026-08-28T09:30:00Z",
+   "created_at": "2026-08-28T09:30:00Z",
+   "updated_at": "2026-08-28T09:30:00Z"
+  },
+  {
+   "id": "pay_8BPGR3x58a4",
+   "order_id": "o_Fa4a6P9wHMlx",
+   "user_id": "u_ZSA6uZyReB",
+   "provider": "wallet",
+   "provider_tx_id": null,
+   "method": "wallet",
+   "amount_minor": 5712697,
+   "currency": "RUB",
+   "status": "succeeded",
+   "fee_minor": 0,
+   "idempotency_key": "o_Fa4a6P9wHMlx:wallet",
+   "payload": {},
+   "paid_at": "2026-09-12T15:45:00Z",
+   "created_at": "2026-09-12T15:45:00Z",
+   "updated_at": "2026-09-12T15:45:00Z"
+  },
+  {
+   "id": "pay_N3n64O8YSeyR",
+   "order_id": "o_LxdmvEfgYFdP",
+   "user_id": "u_xiPlHCyaZcj",
+   "provider": "yookassa",
+   "provider_tx_id": "ACQRZYXHEPICN3M",
+   "method": "card",
+   "amount_minor": 1060172,
+   "currency": "RUB",
+   "status": "succeeded",
+   "fee_minor": 24384,
+   "idempotency_key": "o_LxdmvEfgYFdP:card",
+   "payload": {},
+   "paid_at": "2026-09-19T18:05:00Z",
+   "created_at": "2026-09-19T18:05:00Z",
+   "updated_at": "2026-09-19T18:05:00Z"
+  },
+  {
+   "id": "pay_dhTnRhULnyGd",
+   "order_id": "o_LxdmvEfgYFdP",
+   "user_id": "u_xiPlHCyaZcj",
+   "provider": "wallet",
+   "provider_tx_id": null,
+   "method": "wallet",
+   "amount_minor": 20000,
+   "currency": "RUB",
+   "status": "succeeded",
+   "fee_minor": 0,
+   "idempotency_key": "o_LxdmvEfgYFdP:wallet",
+   "payload": {},
+   "paid_at": "2026-09-19T18:05:00Z",
+   "created_at": "2026-09-19T18:05:00Z",
+   "updated_at": "2026-09-19T18:05:00Z"
+  },
+  {
+   "id": "GDixl8aIhySB",
+   "created_at": "2026-09-21T18:34:00.900Z",
+   "order_id": "Eq2UjO9rNPV",
+   "user_id": "iinQwwtqDiu1",
+   "provider": "yookassa",
+   "provider_tx_id": "NILAQBQPCCCAQA",
+   "method": "card",
+   "amount_minor": 11588,
+   "currency": "USD",
+   "status": "succeeded",
+   "fee_minor": 267,
+   "idempotency_key": "Eq2UjO9rNPV:card:1790015640900",
+   "payload": {
+    "gateway": "direct"
+   },
+   "paid_at": "2026-09-21T18:34:00.900Z"
+  },
+  {
+   "id": "rblcDg4vU1Z",
+   "created_at": "2026-09-21T19:19:42.211Z",
+   "order_id": "05Pb14iJABq",
+   "user_id": "TSfme7VDOEwN",
+   "provider": "yookassa",
+   "provider_tx_id": "FK091LPFE0MAUA",
+   "method": "card",
+   "amount_minor": 1105327,
+   "currency": "RUB",
+   "status": "succeeded",
+   "fee_minor": 25423,
+   "idempotency_key": "05Pb14iJABq:card:1790018382211",
+   "payload": {
+    "gateway": "direct"
+   },
+   "paid_at": "2026-09-21T19:19:42.211Z"
+  },
+  {
+   "id": "MrKD8ZMR21U",
+   "created_at": "2026-09-21T19:20:55.083Z",
+   "order_id": "3lGQrVUM9Tl",
+   "user_id": "rwuuxWapb8fT",
+   "provider": "yookassa",
+   "provider_tx_id": "W1SEC7QV04SGLQ",
+   "method": "card",
+   "amount_minor": 1105327,
+   "currency": "RUB",
+   "status": "succeeded",
+   "fee_minor": 25423,
+   "idempotency_key": "3lGQrVUM9Tl:card:1790018455083",
+   "payload": {
+    "gateway": "direct"
+   },
+   "paid_at": "2026-09-21T19:20:55.083Z"
+  },
+  {
+   "id": "afJryVsT7Cl",
+   "created_at": "2026-09-21T19:21:10.165Z",
+   "order_id": "mGtYxOspJGR5",
+   "user_id": "vqs5B9MeSQng",
+   "provider": "yookassa",
+   "provider_tx_id": "ZB5-DYS-AMHSJG",
+   "method": "card",
+   "amount_minor": 1105327,
+   "currency": "RUB",
+   "status": "succeeded",
+   "fee_minor": 25423,
+   "idempotency_key": "mGtYxOspJGR5:card:1790018470165",
+   "payload": {
+    "gateway": "direct"
+   },
+   "paid_at": "2026-09-21T19:21:10.165Z"
+  }
+ ],
+ "wallets": [
+  {
+   "id": "w_H1i8a01Xsm",
+   "user_id": "u_nWHUQ5mLoPSz",
+   "currency": "RUB",
+   "balance_main_minor": 0,
+   "balance_bonus_minor": 0,
+   "frozen_minor": 0,
+   "updated_at": "2026-09-21T17:19:41.001Z"
+  },
+  {
+   "id": "w_MXtFCxwxHZK",
+   "user_id": "u_piF5WfcD0llm",
+   "currency": "RUB",
+   "balance_main_minor": 0,
+   "balance_bonus_minor": 0,
+   "frozen_minor": 0,
+   "updated_at": "2026-09-21T17:19:41.051Z"
+  },
+  {
+   "id": "w_l3PlVMLRrP6",
+   "user_id": "u_bvz2Dc6o9v2s",
+   "currency": "RUB",
+   "balance_main_minor": 0,
+   "balance_bonus_minor": 0,
+   "frozen_minor": 0,
+   "updated_at": "2026-09-21T17:19:41.096Z"
+  },
+  {
+   "id": "w_XLSPIWHVpRR",
+   "user_id": "u_bVBa3zY6WGKf",
+   "currency": "RUB",
+   "balance_main_minor": 0,
+   "balance_bonus_minor": 0,
+   "frozen_minor": 0,
+   "updated_at": "2026-09-21T17:19:41.141Z"
+  },
+  {
+   "id": "w_j60tpQ9HEqka",
+   "user_id": "u_6YIL0HdscOee",
+   "currency": "RUB",
+   "balance_main_minor": 3500000,
+   "balance_bonus_minor": 317809,
+   "frozen_minor": 0,
+   "updated_at": "2026-09-19T18:05:00Z"
+  },
+  {
+   "id": "w_pNlAvIM0zCr",
+   "user_id": "u_ZSA6uZyReB",
+   "currency": "RUB",
+   "balance_main_minor": 1287303,
+   "balance_bonus_minor": 20000,
+   "frozen_minor": 0,
+   "updated_at": "2026-09-21T17:19:41.278Z"
+  },
+  {
+   "id": "w_lGiHGk0WjKDr",
+   "user_id": "u_xiPlHCyaZcj",
+   "currency": "RUB",
+   "balance_main_minor": 0,
+   "balance_bonus_minor": 20000,
+   "frozen_minor": 0,
+   "updated_at": "2026-09-21T17:19:41.278Z"
+  },
+  {
+   "id": "MYeJlnu3URr",
+   "created_at": "2026-09-21T18:05:35.463Z",
+   "user_id": "7dr87DFJYZ16",
+   "currency": "RUB",
+   "balance_main_minor": 0,
+   "balance_bonus_minor": 0,
+   "frozen_minor": 0
+  },
+  {
+   "id": "mjxoTe6D2SE",
+   "created_at": "2026-09-21T18:33:29.855Z",
+   "user_id": "iinQwwtqDiu1",
+   "currency": "RUB",
+   "balance_main_minor": 0,
+   "balance_bonus_minor": 0,
+   "frozen_minor": 0
+  },
+  {
+   "id": "d6KExitgbLWX",
+   "created_at": "2026-09-21T19:19:15.550Z",
+   "user_id": "ipsvF26eIFPo",
+   "currency": "RUB",
+   "balance_main_minor": 0,
+   "balance_bonus_minor": 0,
+   "frozen_minor": 0
+  },
+  {
+   "id": "5yMb6gop1Gba",
+   "created_at": "2026-09-21T19:19:42.156Z",
+   "user_id": "TSfme7VDOEwN",
+   "currency": "RUB",
+   "balance_main_minor": 0,
+   "balance_bonus_minor": 0,
+   "frozen_minor": 0
+  },
+  {
+   "id": "ePod385XNmCD",
+   "created_at": "2026-09-21T19:20:55.030Z",
+   "user_id": "rwuuxWapb8fT",
+   "currency": "RUB",
+   "balance_main_minor": 0,
+   "balance_bonus_minor": 0,
+   "frozen_minor": 0
+  },
+  {
+   "id": "WeK8Hd6PWR63",
+   "created_at": "2026-09-21T19:21:10.099Z",
+   "user_id": "vqs5B9MeSQng",
+   "currency": "RUB",
+   "balance_main_minor": 0,
+   "balance_bonus_minor": 0,
+   "frozen_minor": 0
+  }
+ ],
+ "wallet_transactions": [
+  {
+   "id": "tx_fsxHfhAQaAu4",
+   "user_id": "u_6YIL0HdscOee",
+   "wallet_type": "main",
+   "type": "topup",
+   "amount_minor": 2000000,
+   "currency": "RUB",
+   "balance_before": 0,
+   "balance_after": 2000000,
+   "ref_type": null,
+   "ref_id": null,
+   "idempotency_key": null,
+   "comment": "Пополнение через СБП",
+   "created_by": null,
+   "created_at": "2026-08-20T12:00:00Z"
+  },
+  {
+   "id": "tx_iw0zLR6REMS",
+   "user_id": "u_6YIL0HdscOee",
+   "wallet_type": "bonus",
+   "type": "tiktok_reward",
+   "amount_minor": 70950,
+   "currency": "RUB",
+   "balance_before": 0,
+   "balance_after": 70950,
+   "ref_type": null,
+   "ref_id": null,
+   "idempotency_key": null,
+   "comment": "TikTok: 47 300 просмотров",
+   "created_by": null,
+   "created_at": "2026-09-05T11:00:00Z"
+  },
+  {
+   "id": "tx_Ebnz8AQW5dEL",
+   "user_id": "u_6YIL0HdscOee",
+   "wallet_type": "bonus",
+   "type": "referral_reward",
+   "amount_minor": 55500,
+   "currency": "RUB",
+   "balance_before": 70950,
+   "balance_after": 126450,
+   "ref_type": null,
+   "ref_id": null,
+   "idempotency_key": null,
+   "comment": "Реферал PV-000125 — первый оплаченный заказ",
+   "created_by": null,
+   "created_at": "2026-09-12T16:00:00Z"
+  },
+  {
+   "id": "tx_q6yw1KIbQr",
+   "user_id": "u_xiPlHCyaZcj",
+   "wallet_type": "bonus",
+   "type": "referral_reward",
+   "amount_minor": 20000,
+   "currency": "RUB",
+   "balance_before": 0,
+   "balance_after": 20000,
+   "ref_type": null,
+   "ref_id": null,
+   "idempotency_key": null,
+   "comment": "Приветственный бонус приглашённого",
+   "created_by": null,
+   "created_at": "2026-09-18T10:00:00Z"
+  },
+  {
+   "id": "tx_9kwfIJuU51aS",
+   "user_id": "u_6YIL0HdscOee",
+   "wallet_type": "main",
+   "type": "topup",
+   "amount_minor": 1500000,
+   "currency": "RUB",
+   "balance_before": 2000000,
+   "balance_after": 3500000,
+   "ref_type": null,
+   "ref_id": null,
+   "idempotency_key": null,
+   "comment": "Пополнение картой (эквайринг)",
+   "created_by": null,
+   "created_at": "2026-09-18T09:05:00Z"
+  },
+  {
+   "id": "tx_Z2n5PH4TzFep",
+   "user_id": "u_ZSA6uZyReB",
+   "wallet_type": "main",
+   "type": "topup",
+   "amount_minor": 7000000,
+   "currency": "RUB",
+   "balance_before": 0,
+   "balance_after": 7000000,
+   "ref_type": null,
+   "ref_id": null,
+   "idempotency_key": null,
+   "comment": "Пополнение через СБП (70 000 ₽)",
+   "created_by": null,
+   "created_at": "2026-09-10T14:20:00Z"
+  },
+  {
+   "id": "tx_FXLsks4zFybQ",
+   "user_id": "u_6YIL0HdscOee",
+   "wallet_type": "bonus",
+   "type": "order_payment_bonus",
+   "amount_minor": -61546,
+   "currency": "RUB",
+   "balance_before": 126450,
+   "balance_after": 64904,
+   "ref_type": "order",
+   "ref_id": "o_0EGhgZvRylE",
+   "idempotency_key": null,
+   "comment": "Оплата заказа PV-2026-000101 (бонусы)",
+   "created_by": null,
+   "created_at": "2026-06-14T10:12:00Z"
+  },
+  {
+   "id": "tx_pv3Q2F3Dkx",
+   "user_id": "u_ZSA6uZyReB",
+   "wallet_type": "main",
+   "type": "order_payment",
+   "amount_minor": -5712697,
+   "currency": "RUB",
+   "balance_before": 7000000,
+   "balance_after": 1287303,
+   "ref_type": "order",
+   "ref_id": "o_Fa4a6P9wHMlx",
+   "idempotency_key": null,
+   "comment": "Оплата заказа PV-2026-000122 (баланс)",
+   "created_by": null,
+   "created_at": "2026-09-12T15:45:00Z"
+  },
+  {
+   "id": "tx_g2pw8owsOJez",
+   "user_id": "u_xiPlHCyaZcj",
+   "wallet_type": "bonus",
+   "type": "order_payment_bonus",
+   "amount_minor": -20000,
+   "currency": "RUB",
+   "balance_before": 20000,
+   "balance_after": 0,
+   "ref_type": "order",
+   "ref_id": "o_LxdmvEfgYFdP",
+   "idempotency_key": null,
+   "comment": "Оплата заказа PV-2026-000126 (бонусы)",
+   "created_by": null,
+   "created_at": "2026-09-19T18:05:00Z"
+  },
+  {
+   "id": "tx_reVtFLfsZ5Y",
+   "user_id": "u_6YIL0HdscOee",
+   "wallet_type": "bonus",
+   "type": "tiktok_reward",
+   "amount_minor": 70500,
+   "currency": "RUB",
+   "balance_before": 64904,
+   "balance_after": 135404,
+   "ref_type": "tiktok",
+   "ref_id": "tt_y67vwkdZTkL3",
+   "idempotency_key": null,
+   "comment": "TikTok: 47 300 просмотров",
+   "created_by": "u_bvz2Dc6o9v2s",
+   "created_at": "2026-09-05T11:00:00Z"
+  },
+  {
+   "id": "tx_0EGjFfB0ApNT",
+   "user_id": "u_ZSA6uZyReB",
+   "wallet_type": "bonus",
+   "type": "promo",
+   "amount_minor": 20000,
+   "currency": "RUB",
+   "balance_before": 0,
+   "balance_after": 20000,
+   "ref_type": "referral",
+   "ref_id": "rf_RBaoYrQOHp",
+   "idempotency_key": null,
+   "comment": "Приветственный бонус по коду IVANPV",
+   "created_by": null,
+   "created_at": "2026-09-21T17:19:41.278Z"
+  },
+  {
+   "id": "tx_jnK3xlmHJzLO",
+   "user_id": "u_6YIL0HdscOee",
+   "wallet_type": "bonus",
+   "type": "referral_reward",
+   "amount_minor": 150000,
+   "currency": "RUB",
+   "balance_before": 135404,
+   "balance_after": 285404,
+   "ref_type": "referral",
+   "ref_id": "rf_RBaoYrQOHp",
+   "idempotency_key": null,
+   "comment": "Реферал PV-000125: первый оплаченный заказ PV-2026-000122",
+   "created_by": null,
+   "created_at": "2026-09-12T15:45:00Z"
+  },
+  {
+   "id": "tx_m6Hd9DSs0bOj",
+   "user_id": "u_xiPlHCyaZcj",
+   "wallet_type": "bonus",
+   "type": "promo",
+   "amount_minor": 20000,
+   "currency": "RUB",
+   "balance_before": 0,
+   "balance_after": 20000,
+   "ref_type": "referral",
+   "ref_id": "rf_jTPDTnyUV4X",
+   "idempotency_key": null,
+   "comment": "Приветственный бонус по коду IVANPV",
+   "created_by": null,
+   "created_at": "2026-09-21T17:19:41.278Z"
+  },
+  {
+   "id": "tx_dEKnAcOGcXal",
+   "user_id": "u_6YIL0HdscOee",
+   "wallet_type": "bonus",
+   "type": "referral_reward",
+   "amount_minor": 32405,
+   "currency": "RUB",
+   "balance_before": 285404,
+   "balance_after": 317809,
+   "ref_type": "referral",
+   "ref_id": "rf_jTPDTnyUV4X",
+   "idempotency_key": null,
+   "comment": "Реферал PV-000126: первый оплаченный заказ PV-2026-000126",
+   "created_by": null,
+   "created_at": "2026-09-19T18:05:00Z"
+  }
+ ],
+ "referrals": [
+  {
+   "id": "rf_RBaoYrQOHp",
+   "referrer_id": "u_6YIL0HdscOee",
+   "referee_id": "u_ZSA6uZyReB",
+   "code_used": "IVANPV",
+   "status": "rewarded",
+   "first_order_id": "o_Fa4a6P9wHMlx",
+   "reward_minor": 150000,
+   "invitee_bonus_minor": 20000,
+   "rewarded_at": "2026-09-12T15:45:00Z",
+   "created_at": "2026-09-21T17:19:41.278Z"
+  },
+  {
+   "id": "rf_jTPDTnyUV4X",
+   "referrer_id": "u_6YIL0HdscOee",
+   "referee_id": "u_xiPlHCyaZcj",
+   "code_used": "IVANPV",
+   "status": "rewarded",
+   "first_order_id": "o_LxdmvEfgYFdP",
+   "reward_minor": 32405,
+   "invitee_bonus_minor": 20000,
+   "rewarded_at": "2026-09-19T18:05:00Z",
+   "created_at": "2026-09-21T17:19:41.278Z"
+  }
+ ],
+ "tiktok_submissions": [
+  {
+   "id": "tt_y67vwkdZTkL3",
+   "user_id": "u_6YIL0HdscOee",
+   "url": "https://www.tiktok.com/@ivan.sokolov/video/7410223344556677889",
+   "video_id": "7410223344556677889",
+   "author_handle": "@ivan.sokolov",
+   "hashtag_found": true,
+   "link_found": true,
+   "views_declared": 48200,
+   "views_verified": 47300,
+   "status": "approved",
+   "reward_minor": 2092,
+   "reward_currency": "BYN",
+   "reviewer_id": "u_bvz2Dc6o9v2s",
+   "reviewed_at": "2026-09-05T11:00:00Z",
+   "reject_reason": null,
+   "order_ref": null,
+   "screenshot_url": null,
+   "created_at": "2026-09-21T17:19:41.284Z"
+  },
+  {
+   "id": "tt_HcGhKVOrDWj",
+   "user_id": "u_ZSA6uZyReB",
+   "url": "https://www.tiktok.com/@maria_orlova/video/7415556667778889990",
+   "video_id": "7415556667778889990",
+   "author_handle": "@maria_orlova",
+   "hashtag_found": true,
+   "link_found": true,
+   "views_declared": 12300,
+   "views_verified": null,
+   "status": "pending",
+   "reward_minor": 0,
+   "reward_currency": "RUB",
+   "reviewer_id": null,
+   "reviewed_at": null,
+   "reject_reason": null,
+   "order_ref": null,
+   "screenshot_url": null,
+   "created_at": "2026-09-19T20:14:00Z"
+  },
+  {
+   "id": "tt_rjqgBlZOsp4",
+   "user_id": "u_xiPlHCyaZcj",
+   "url": "https://www.tiktok.com/@kirill_e/video/7419990001112223334",
+   "video_id": "7419990001112223334",
+   "author_handle": "@kirill_e",
+   "hashtag_found": false,
+   "link_found": true,
+   "views_declared": 3200,
+   "views_verified": null,
+   "status": "pending",
+   "reward_minor": 0,
+   "reward_currency": "RUB",
+   "reviewer_id": null,
+   "reviewed_at": null,
+   "reject_reason": null,
+   "order_ref": null,
+   "screenshot_url": null,
+   "created_at": "2026-09-20T06:40:00Z"
+  }
+ ],
+ "disputes": [],
+ "chat_threads": [
+  {
+   "id": "ct_PrgQv7ZbHQU8",
+   "user_id": "u_6YIL0HdscOee",
+   "order_id": null,
+   "status": "open",
+   "subject": "Вопрос по срокам доставки в Минск",
+   "last_message_at": "2026-09-21T17:19:41.323Z",
+   "created_at": "2026-09-21T17:19:41.323Z"
+  },
+  {
+   "id": "Mggy8dMUCCP",
+   "created_at": "2026-09-21T18:34:04.638Z",
+   "user_id": "iinQwwtqDiu1",
+   "order_id": null,
+   "status": "open",
+   "subject": "Обращение в поддержку",
+   "last_message_at": "2026-09-21T18:34:04.638Z",
+   "updated_at": "2026-09-21T18:34:04.638Z"
+  },
+  {
+   "id": "mH5LMNUGjk0G",
+   "created_at": "2026-09-21T19:21:10.175Z",
+   "user_id": "vqs5B9MeSQng",
+   "order_id": null,
+   "status": "open",
+   "subject": "Обращение в поддержку",
+   "last_message_at": "2026-09-21T19:21:10.175Z",
+   "updated_at": "2026-09-21T19:21:10.175Z"
+  }
+ ],
+ "chat_messages": [
+  {
+   "id": "cm_eno9udU5npHR",
+   "thread_id": "ct_PrgQv7ZbHQU8",
+   "author_id": "u_6YIL0HdscOee",
+   "author_type": "user",
+   "body": "Здравствуйте! Подскажите, если заказать сейчас две пары и худи, успеет ли прийти к концу октября в Минск?",
+   "attachments": [],
+   "is_read": true,
+   "created_at": "2026-09-21T17:19:41.323Z"
+  },
+  {
+   "id": "cm_9MTxfVxvTVWn",
+   "thread_id": "ct_PrgQv7ZbHQU8",
+   "author_id": "u_bvz2Dc6o9v2s",
+   "author_type": "admin",
+   "body": "Добрый день! Да, срок по Беларуси 30–35 дней с момента выкупа. Если оформить сегодня — выкупим завтра, ориентировочно 25–30 октября будете забирать. Трек-номер придёт в Telegram.",
+   "attachments": [],
+   "is_read": false,
+   "created_at": "2026-09-21T17:19:41.323Z"
+  },
+  {
+   "id": "o0oCCIadmRL3",
+   "created_at": "2026-09-21T18:34:04.638Z",
+   "thread_id": "Mggy8dMUCCP",
+   "author_id": "iinQwwtqDiu1",
+   "author_type": "user",
+   "body": "Здравствуйте! Подскажите, когда заказ PV-2026-000128 поступит на склад в Китае?",
+   "attachments": [],
+   "is_read": false
+  },
+  {
+   "id": "aGIAtq6frmC3",
+   "created_at": "2026-09-21T19:21:10.175Z",
+   "thread_id": "mH5LMNUGjk0G",
+   "author_id": "vqs5B9MeSQng",
+   "author_type": "user",
+   "body": "Здравствуйте! Подскажите, сколько будет стоить доставка до Минска?",
+   "attachments": [],
+   "is_read": false
+  }
+ ],
+ "notifications": [
+  {
+   "id": "w4cOZMxbPRpy",
+   "created_at": "2026-09-21T18:34:00.900Z",
+   "user_id": "iinQwwtqDiu1",
+   "channel": "inapp",
+   "event": "order_status",
+   "title": "Заказ PV-2026-000128: Оплачен",
+   "body": "Статус заказа PV-2026-000128 изменён на «Оплачен»",
+   "payload": {
+    "orderId": "Eq2UjO9rNPV",
+    "status": "paid"
+   },
+   "status": "sent",
+   "sent_at": "2026-09-21T18:34:00.900Z"
+  },
+  {
+   "id": "9j3s48w0Ox",
+   "created_at": "2026-09-21T18:34:00.901Z",
+   "user_id": "iinQwwtqDiu1",
+   "channel": "inapp",
+   "event": "order_paid",
+   "title": "Заказ PV-2026-000128 оплачен",
+   "body": "Начинаем выкуп на Poizon",
+   "payload": {
+    "orderId": "Eq2UjO9rNPV",
+    "split": {
+     "bonus": 0,
+     "main": 0,
+     "card": 11588
+    }
+   },
+   "status": "sent",
+   "sent_at": "2026-09-21T18:34:00.901Z"
+  },
+  {
+   "id": "hz0oC94hpm2",
+   "created_at": "2026-09-21T18:34:04.638Z",
+   "user_id": "u_nWHUQ5mLoPSz",
+   "channel": "inapp",
+   "event": "chat_message",
+   "title": "Новое сообщение от PV-000135",
+   "body": "Здравствуйте! Подскажите, когда заказ PV-2026-000128 поступит на склад в Китае?",
+   "payload": {
+    "threadId": "Mggy8dMUCCP"
+   },
+   "status": "sent",
+   "sent_at": "2026-09-21T18:34:04.638Z"
+  },
+  {
+   "id": "zBu44mR8Es16",
+   "created_at": "2026-09-21T18:34:04.638Z",
+   "user_id": "u_bvz2Dc6o9v2s",
+   "channel": "inapp",
+   "event": "chat_message",
+   "title": "Новое сообщение от PV-000135",
+   "body": "Здравствуйте! Подскажите, когда заказ PV-2026-000128 поступит на склад в Китае?",
+   "payload": {
+    "threadId": "Mggy8dMUCCP"
+   },
+   "status": "sent",
+   "sent_at": "2026-09-21T18:34:04.638Z"
+  },
+  {
+   "id": "zhSFEEOJu59q",
+   "created_at": "2026-09-21T18:34:04.638Z",
+   "user_id": "u_bVBa3zY6WGKf",
+   "channel": "inapp",
+   "event": "chat_message",
+   "title": "Новое сообщение от PV-000135",
+   "body": "Здравствуйте! Подскажите, когда заказ PV-2026-000128 поступит на склад в Китае?",
+   "payload": {
+    "threadId": "Mggy8dMUCCP"
+   },
+   "status": "sent",
+   "sent_at": "2026-09-21T18:34:04.638Z"
+  },
+  {
+   "id": "8eerLtVrhtJ7",
+   "created_at": "2026-09-21T19:19:42.212Z",
+   "user_id": "TSfme7VDOEwN",
+   "channel": "inapp",
+   "event": "order_status",
+   "title": "Заказ PV-2026-000129: Оплачен",
+   "body": "Статус заказа PV-2026-000129 изменён на «Оплачен»",
+   "payload": {
+    "orderId": "05Pb14iJABq",
+    "status": "paid"
+   },
+   "status": "sent",
+   "sent_at": "2026-09-21T19:19:42.212Z"
+  },
+  {
+   "id": "ZHkgUAuKJ6n",
+   "created_at": "2026-09-21T19:19:42.212Z",
+   "user_id": "TSfme7VDOEwN",
+   "channel": "inapp",
+   "event": "order_paid",
+   "title": "Заказ PV-2026-000129 оплачен",
+   "body": "Начинаем выкуп на Poizon",
+   "payload": {
+    "orderId": "05Pb14iJABq",
+    "split": {
+     "bonus": 0,
+     "main": 0,
+     "card": 1105327
+    }
+   },
+   "status": "sent",
+   "sent_at": "2026-09-21T19:19:42.212Z"
+  },
+  {
+   "id": "MboNbHfI5zAP",
+   "created_at": "2026-09-21T19:20:55.083Z",
+   "user_id": "rwuuxWapb8fT",
+   "channel": "inapp",
+   "event": "order_status",
+   "title": "Заказ PV-2026-000130: Оплачен",
+   "body": "Статус заказа PV-2026-000130 изменён на «Оплачен»",
+   "payload": {
+    "orderId": "3lGQrVUM9Tl",
+    "status": "paid"
+   },
+   "status": "sent",
+   "sent_at": "2026-09-21T19:20:55.083Z"
+  },
+  {
+   "id": "E7Hnjdzu1NQO",
+   "created_at": "2026-09-21T19:20:55.084Z",
+   "user_id": "rwuuxWapb8fT",
+   "channel": "inapp",
+   "event": "order_paid",
+   "title": "Заказ PV-2026-000130 оплачен",
+   "body": "Начинаем выкуп на Poizon",
+   "payload": {
+    "orderId": "3lGQrVUM9Tl",
+    "split": {
+     "bonus": 0,
+     "main": 0,
+     "card": 1105327
+    }
+   },
+   "status": "sent",
+   "sent_at": "2026-09-21T19:20:55.084Z"
+  },
+  {
+   "id": "cWPyJgacy1gF",
+   "created_at": "2026-09-21T19:21:10.166Z",
+   "user_id": "vqs5B9MeSQng",
+   "channel": "inapp",
+   "event": "order_status",
+   "title": "Заказ PV-2026-000131: Оплачен",
+   "body": "Статус заказа PV-2026-000131 изменён на «Оплачен»",
+   "payload": {
+    "orderId": "mGtYxOspJGR5",
+    "status": "paid"
+   },
+   "status": "sent",
+   "sent_at": "2026-09-21T19:21:10.166Z"
+  },
+  {
+   "id": "mxsZxEJ7PTvn",
+   "created_at": "2026-09-21T19:21:10.167Z",
+   "user_id": "vqs5B9MeSQng",
+   "channel": "inapp",
+   "event": "order_paid",
+   "title": "Заказ PV-2026-000131 оплачен",
+   "body": "Начинаем выкуп на Poizon",
+   "payload": {
+    "orderId": "mGtYxOspJGR5",
+    "split": {
+     "bonus": 0,
+     "main": 0,
+     "card": 1105327
+    }
+   },
+   "status": "sent",
+   "sent_at": "2026-09-21T19:21:10.167Z"
+  },
+  {
+   "id": "Ca1VwB9X5yYH",
+   "created_at": "2026-09-21T19:21:10.175Z",
+   "user_id": "u_nWHUQ5mLoPSz",
+   "channel": "inapp",
+   "event": "chat_message",
+   "title": "Новое сообщение от PV-000139",
+   "body": "Здравствуйте! Подскажите, сколько будет стоить доставка до Минска?",
+   "payload": {
+    "threadId": "mH5LMNUGjk0G"
+   },
+   "status": "sent",
+   "sent_at": "2026-09-21T19:21:10.175Z"
+  },
+  {
+   "id": "sxwdhJK7TI",
+   "created_at": "2026-09-21T19:21:10.175Z",
+   "user_id": "u_bvz2Dc6o9v2s",
+   "channel": "inapp",
+   "event": "chat_message",
+   "title": "Новое сообщение от PV-000139",
+   "body": "Здравствуйте! Подскажите, сколько будет стоить доставка до Минска?",
+   "payload": {
+    "threadId": "mH5LMNUGjk0G"
+   },
+   "status": "sent",
+   "sent_at": "2026-09-21T19:21:10.175Z"
+  },
+  {
+   "id": "cwtVwf9Qwtu",
+   "created_at": "2026-09-21T19:21:10.175Z",
+   "user_id": "u_bVBa3zY6WGKf",
+   "channel": "inapp",
+   "event": "chat_message",
+   "title": "Новое сообщение от PV-000139",
+   "body": "Здравствуйте! Подскажите, сколько будет стоить доставка до Минска?",
+   "payload": {
+    "threadId": "mH5LMNUGjk0G"
+   },
+   "status": "sent",
+   "sent_at": "2026-09-21T19:21:10.175Z"
+  }
+ ],
+ "tasks": [
+  {
+   "id": "tk_JjvzLY2rhE9",
+   "title": "Выкупить PV-2026-000127 (Salomon XT-6) до конца дня",
+   "description": null,
+   "assignee_id": "u_piF5WfcD0llm",
+   "created_by": "u_nWHUQ5mLoPSz",
+   "order_id": null,
+   "status": "todo",
+   "priority": "high",
+   "due_at": null,
+   "completed_at": null,
+   "created_at": "2026-09-21T17:19:41.323Z"
+  },
+  {
+   "id": "tk_bsMM1CmgMrEK",
+   "title": "Проверить TikTok-заявки за 19–20 сентября",
+   "description": null,
+   "assignee_id": "u_bvz2Dc6o9v2s",
+   "created_by": "u_nWHUQ5mLoPSz",
+   "order_id": null,
+   "status": "in_progress",
+   "priority": "normal",
+   "due_at": null,
+   "completed_at": null,
+   "created_at": "2026-09-21T17:19:41.323Z"
+  },
+  {
+   "id": "tk_O8Oe7E6Ewvg",
+   "title": "Сверить леджер кошельков с платежами за август",
+   "description": null,
+   "assignee_id": "u_nWHUQ5mLoPSz",
+   "created_by": "u_nWHUQ5mLoPSz",
+   "order_id": null,
+   "status": "todo",
+   "priority": "normal",
+   "due_at": null,
+   "completed_at": null,
+   "created_at": "2026-09-21T17:19:41.323Z"
+  }
+ ],
+ "audit_log": [
+  {
+   "id": "1JhvjgCPQ52R",
+   "created_at": "2026-09-21T18:05:29.075Z",
+   "actor_id": "u_ZSA6uZyReB",
+   "action": "auth.login",
+   "entity": "user",
+   "entity_id": "u_ZSA6uZyReB",
+   "before": null,
+   "after": null,
+   "ip": "127.0.0.1",
+   "user_agent": null
+  },
+  {
+   "id": "yb3cYZ5sMYwn",
+   "created_at": "2026-09-21T18:05:29.130Z",
+   "actor_id": "u_6YIL0HdscOee",
+   "action": "auth.login",
+   "entity": "user",
+   "entity_id": "u_6YIL0HdscOee",
+   "before": null,
+   "after": null,
+   "ip": "127.0.0.1",
+   "user_agent": null
+  },
+  {
+   "id": "Oe6jTmBsQx5A",
+   "created_at": "2026-09-21T18:05:35.463Z",
+   "actor_id": "7dr87DFJYZ16",
+   "action": "auth.register",
+   "entity": "user",
+   "entity_id": "7dr87DFJYZ16",
+   "before": null,
+   "after": {
+    "public_uid": "PV-000134"
+   },
+   "ip": "127.0.0.1",
+   "user_agent": null
+  },
+  {
+   "id": "ZvEZ4ffUGo5",
+   "created_at": "2026-09-21T18:18:25.815Z",
+   "actor_id": "u_6YIL0HdscOee",
+   "action": "auth.login",
+   "entity": "user",
+   "entity_id": "u_6YIL0HdscOee",
+   "before": null,
+   "after": null,
+   "ip": "127.0.0.1",
+   "user_agent": null
+  },
+  {
+   "id": "cFfQxrU2jVWG",
+   "created_at": "2026-09-21T18:33:29.855Z",
+   "actor_id": "iinQwwtqDiu1",
+   "action": "auth.register",
+   "entity": "user",
+   "entity_id": "iinQwwtqDiu1",
+   "before": null,
+   "after": {
+    "public_uid": "PV-000135"
+   },
+   "ip": "127.0.0.1",
+   "user_agent": null
+  },
+  {
+   "id": "nlYRKT0j59n",
+   "created_at": "2026-09-21T18:33:33.869Z",
+   "actor_id": "iinQwwtqDiu1",
+   "action": "settings.update",
+   "entity": "user_settings",
+   "entity_id": "fnShpJ8aoQeu",
+   "before": {
+    "id": "fnShpJ8aoQeu",
+    "created_at": "2026-09-21T18:33:29.855Z",
+    "user_id": "iinQwwtqDiu1",
+    "theme": "dark",
+    "currency": "USD",
+    "language": "ru",
+    "notify_telegram": true,
+    "notify_email": true,
+    "notify_price_drop": true,
+    "notify_status": true,
+    "default_destination": "RU_MOW",
+    "default_packaging": "basic",
+    "default_insurance": "none",
+    "updated_at": "2026-09-21T18:33:37.902Z"
+   },
+   "after": {
+    "currency": "BYN"
+   },
+   "ip": null,
+   "user_agent": null
+  },
+  {
+   "id": "3SFoVR5YHF",
+   "created_at": "2026-09-21T18:33:37.902Z",
+   "actor_id": "iinQwwtqDiu1",
+   "action": "settings.update",
+   "entity": "user_settings",
+   "entity_id": "fnShpJ8aoQeu",
+   "before": {
+    "id": "fnShpJ8aoQeu",
+    "created_at": "2026-09-21T18:33:29.855Z",
+    "user_id": "iinQwwtqDiu1",
+    "theme": "dark",
+    "currency": "USD",
+    "language": "ru",
+    "notify_telegram": true,
+    "notify_email": true,
+    "notify_price_drop": true,
+    "notify_status": true,
+    "default_destination": "RU_MOW",
+    "default_packaging": "basic",
+    "default_insurance": "none",
+    "updated_at": "2026-09-21T18:33:37.902Z"
+   },
+   "after": {
+    "currency": "USD"
+   },
+   "ip": null,
+   "user_agent": null
+  },
+  {
+   "id": "cGBZuyimv7l3",
+   "created_at": "2026-09-21T18:33:48.289Z",
+   "actor_id": "iinQwwtqDiu1",
+   "action": "cart.add",
+   "entity": "cart",
+   "entity_id": "ZnCyoQvSxys",
+   "before": null,
+   "after": {
+    "title": "Nike Dunk Low Retro White Black"
+   },
+   "ip": null,
+   "user_agent": null
+  },
+  {
+   "id": "l0kl5b4bUkv",
+   "created_at": "2026-09-21T18:33:56.335Z",
+   "actor_id": "iinQwwtqDiu1",
+   "action": "order.create",
+   "entity": "order",
+   "entity_id": "Eq2UjO9rNPV",
+   "before": null,
+   "after": {
+    "orderNo": "PV-2026-000128",
+    "total": 11588
+   },
+   "ip": null,
+   "user_agent": null
+  },
+  {
+   "id": "YFyItIbbs6Gq",
+   "created_at": "2026-09-21T18:34:00.900Z",
+   "actor_id": "iinQwwtqDiu1",
+   "action": "order.status",
+   "entity": "order",
+   "entity_id": "Eq2UjO9rNPV",
+   "before": {
+    "status": "awaiting_payment"
+   },
+   "after": {
+    "status": "paid"
+   },
+   "ip": null,
+   "user_agent": null
+  },
+  {
+   "id": "Cbs6TlhUL5bG",
+   "created_at": "2026-09-21T18:34:00.901Z",
+   "actor_id": "iinQwwtqDiu1",
+   "action": "order.paid",
+   "entity": "order",
+   "entity_id": "Eq2UjO9rNPV",
+   "before": null,
+   "after": {
+    "total": 11588,
+    "paid": 11588,
+    "split": {
+     "bonus": 0,
+     "main": 0,
+     "card": 11588
+    }
+   },
+   "ip": null,
+   "user_agent": null
+  },
+  {
+   "id": "1GFAC3tFdkl6",
+   "created_at": "2026-09-21T18:45:40.740Z",
+   "actor_id": "u_6YIL0HdscOee",
+   "action": "auth.login",
+   "entity": "user",
+   "entity_id": "u_6YIL0HdscOee",
+   "before": null,
+   "after": null,
+   "ip": "127.0.0.1",
+   "user_agent": null
+  },
+  {
+   "id": "x3KVbuQmnhB",
+   "created_at": "2026-09-21T19:19:15.501Z",
+   "actor_id": null,
+   "action": "cart.add",
+   "entity": "cart",
+   "entity_id": "VSUAVO5ORkVe",
+   "before": null,
+   "after": {
+    "title": "Nike Dunk Low Test"
+   },
+   "ip": null,
+   "user_agent": null
+  },
+  {
+   "id": "mpSKO8JzRkgj",
+   "created_at": "2026-09-21T19:19:15.550Z",
+   "actor_id": "ipsvF26eIFPo",
+   "action": "auth.register",
+   "entity": "user",
+   "entity_id": "ipsvF26eIFPo",
+   "before": null,
+   "after": {
+    "public_uid": "PV-000136"
+   },
+   "ip": "127.0.0.1",
+   "user_agent": null
+  },
+  {
+   "id": "s3FGJRlUQPrZ",
+   "created_at": "2026-09-21T19:19:42.156Z",
+   "actor_id": "TSfme7VDOEwN",
+   "action": "auth.register",
+   "entity": "user",
+   "entity_id": "TSfme7VDOEwN",
+   "before": null,
+   "after": {
+    "public_uid": "PV-000137"
+   },
+   "ip": "127.0.0.1",
+   "user_agent": null
+  },
+  {
+   "id": "BAfk30M7IAM2",
+   "created_at": "2026-09-21T19:19:42.197Z",
+   "actor_id": "TSfme7VDOEwN",
+   "action": "auth.login",
+   "entity": "user",
+   "entity_id": "TSfme7VDOEwN",
+   "before": null,
+   "after": null,
+   "ip": "127.0.0.1",
+   "user_agent": null
+  },
+  {
+   "id": "zZZiBo28pwJ",
+   "created_at": "2026-09-21T19:19:42.203Z",
+   "actor_id": "TSfme7VDOEwN",
+   "action": "cart.add",
+   "entity": "cart",
+   "entity_id": "VSbnjNplXTpA",
+   "before": null,
+   "after": {
+    "title": "Nike Dunk Low Retro Panda"
+   },
+   "ip": null,
+   "user_agent": null
+  },
+  {
+   "id": "CH9PH9bq9Lok",
+   "created_at": "2026-09-21T19:19:42.208Z",
+   "actor_id": "TSfme7VDOEwN",
+   "action": "order.create",
+   "entity": "order",
+   "entity_id": "05Pb14iJABq",
+   "before": null,
+   "after": {
+    "orderNo": "PV-2026-000129",
+    "total": 1105327
+   },
+   "ip": null,
+   "user_agent": null
+  },
+  {
+   "id": "fTrKrT0zg78l",
+   "created_at": "2026-09-21T19:19:42.212Z",
+   "actor_id": "TSfme7VDOEwN",
+   "action": "order.status",
+   "entity": "order",
+   "entity_id": "05Pb14iJABq",
+   "before": {
+    "status": "awaiting_payment"
+   },
+   "after": {
+    "status": "paid"
+   },
+   "ip": null,
+   "user_agent": null
+  },
+  {
+   "id": "5KlSaWNFWRlG",
+   "created_at": "2026-09-21T19:19:42.212Z",
+   "actor_id": "TSfme7VDOEwN",
+   "action": "order.paid",
+   "entity": "order",
+   "entity_id": "05Pb14iJABq",
+   "before": null,
+   "after": {
+    "total": 1105327,
+    "paid": 1105327,
+    "split": {
+     "bonus": 0,
+     "main": 0,
+     "card": 1105327
+    }
+   },
+   "ip": null,
+   "user_agent": null
+  },
+  {
+   "id": "3v3dutrTpHE",
+   "created_at": "2026-09-21T19:20:55.030Z",
+   "actor_id": "rwuuxWapb8fT",
+   "action": "auth.register",
+   "entity": "user",
+   "entity_id": "rwuuxWapb8fT",
+   "before": null,
+   "after": {
+    "public_uid": "PV-000138"
+   },
+   "ip": "127.0.0.1",
+   "user_agent": null
+  },
+  {
+   "id": "iC686LqppTy",
+   "created_at": "2026-09-21T19:20:55.071Z",
+   "actor_id": "rwuuxWapb8fT",
+   "action": "auth.login",
+   "entity": "user",
+   "entity_id": "rwuuxWapb8fT",
+   "before": null,
+   "after": null,
+   "ip": "127.0.0.1",
+   "user_agent": null
+  },
+  {
+   "id": "1UJkZnoQnznU",
+   "created_at": "2026-09-21T19:20:55.077Z",
+   "actor_id": "rwuuxWapb8fT",
+   "action": "cart.add",
+   "entity": "cart",
+   "entity_id": "UxGEod1vsZIt",
+   "before": null,
+   "after": {
+    "title": "Nike Dunk Low Retro Panda"
+   },
+   "ip": null,
+   "user_agent": null
+  },
+  {
+   "id": "IeLdORQTbfP5",
+   "created_at": "2026-09-21T19:20:55.081Z",
+   "actor_id": "rwuuxWapb8fT",
+   "action": "order.create",
+   "entity": "order",
+   "entity_id": "3lGQrVUM9Tl",
+   "before": null,
+   "after": {
+    "orderNo": "PV-2026-000130",
+    "total": 1105327
+   },
+   "ip": null,
+   "user_agent": null
+  },
+  {
+   "id": "ynZ8mH6dITZ8",
+   "created_at": "2026-09-21T19:20:55.084Z",
+   "actor_id": "rwuuxWapb8fT",
+   "action": "order.status",
+   "entity": "order",
+   "entity_id": "3lGQrVUM9Tl",
+   "before": {
+    "status": "awaiting_payment"
+   },
+   "after": {
+    "status": "paid"
+   },
+   "ip": null,
+   "user_agent": null
+  },
+  {
+   "id": "pHtHjSVHsh9",
+   "created_at": "2026-09-21T19:20:55.084Z",
+   "actor_id": "rwuuxWapb8fT",
+   "action": "order.paid",
+   "entity": "order",
+   "entity_id": "3lGQrVUM9Tl",
+   "before": null,
+   "after": {
+    "total": 1105327,
+    "paid": 1105327,
+    "split": {
+     "bonus": 0,
+     "main": 0,
+     "card": 1105327
+    }
+   },
+   "ip": null,
+   "user_agent": null
+  },
+  {
+   "id": "JUjnGysMM7D",
+   "created_at": "2026-09-21T19:21:10.100Z",
+   "actor_id": "vqs5B9MeSQng",
+   "action": "auth.register",
+   "entity": "user",
+   "entity_id": "vqs5B9MeSQng",
+   "before": null,
+   "after": {
+    "public_uid": "PV-000139"
+   },
+   "ip": "127.0.0.1",
+   "user_agent": null
+  },
+  {
+   "id": "yVBLUJJu8ckK",
+   "created_at": "2026-09-21T19:21:10.147Z",
+   "actor_id": "vqs5B9MeSQng",
+   "action": "auth.login",
+   "entity": "user",
+   "entity_id": "vqs5B9MeSQng",
+   "before": null,
+   "after": null,
+   "ip": "127.0.0.1",
+   "user_agent": null
+  },
+  {
+   "id": "7ZhKwhLmvjkj",
+   "created_at": "2026-09-21T19:21:10.155Z",
+   "actor_id": "vqs5B9MeSQng",
+   "action": "cart.add",
+   "entity": "cart",
+   "entity_id": "tnpqQ7BMMvIk",
+   "before": null,
+   "after": {
+    "title": "Nike Dunk Low Retro Panda"
+   },
+   "ip": null,
+   "user_agent": null
+  },
+  {
+   "id": "S2QwwqYL45FN",
+   "created_at": "2026-09-21T19:21:10.161Z",
+   "actor_id": "vqs5B9MeSQng",
+   "action": "order.create",
+   "entity": "order",
+   "entity_id": "mGtYxOspJGR5",
+   "before": null,
+   "after": {
+    "orderNo": "PV-2026-000131",
+    "total": 1105327
+   },
+   "ip": null,
+   "user_agent": null
+  },
+  {
+   "id": "30t02dQPrO8d",
+   "created_at": "2026-09-21T19:21:10.166Z",
+   "actor_id": "vqs5B9MeSQng",
+   "action": "order.status",
+   "entity": "order",
+   "entity_id": "mGtYxOspJGR5",
+   "before": {
+    "status": "awaiting_payment"
+   },
+   "after": {
+    "status": "paid"
+   },
+   "ip": null,
+   "user_agent": null
+  },
+  {
+   "id": "vhlGFnAbCDJ",
+   "created_at": "2026-09-21T19:21:10.167Z",
+   "actor_id": "vqs5B9MeSQng",
+   "action": "order.paid",
+   "entity": "order",
+   "entity_id": "mGtYxOspJGR5",
+   "before": null,
+   "after": {
+    "total": 1105327,
+    "paid": 1105327,
+    "split": {
+     "bonus": 0,
+     "main": 0,
+     "card": 1105327
+    }
+   },
+   "ip": null,
+   "user_agent": null
+  },
+  {
+   "id": "YDfVcTFnISCM",
+   "created_at": "2026-09-22T04:25:40.505Z",
+   "actor_id": "u_bvz2Dc6o9v2s",
+   "action": "auth.login",
+   "entity": "user",
+   "entity_id": "u_bvz2Dc6o9v2s",
+   "before": null,
+   "after": null,
+   "ip": "127.0.0.1",
+   "user_agent": null
+  },
+  {
+   "id": "dtLEGJO72S2H",
+   "created_at": "2026-09-22T04:26:40.030Z",
+   "actor_id": "u_nWHUQ5mLoPSz",
+   "action": "auth.login",
+   "entity": "user",
+   "entity_id": "u_nWHUQ5mLoPSz",
+   "before": null,
+   "after": null,
+   "ip": "127.0.0.1",
+   "user_agent": null
+  },
+  {
+   "id": "cIDB3ZhGm9Y",
+   "created_at": "2026-09-22T04:26:40.037Z",
+   "actor_id": "u_nWHUQ5mLoPSz",
+   "action": "system.restart",
+   "entity": "system",
+   "entity_id": "server",
+   "before": null,
+   "after": {
+    "triggered_by": "PV-000001"
+   },
+   "ip": null,
+   "user_agent": null
+  },
+  {
+   "id": "8aLFmwbOIkp",
+   "created_at": "2026-09-22T13:14:33.374Z",
+   "actor_id": "u_nWHUQ5mLoPSz",
+   "action": "auth.login",
+   "entity": "user",
+   "entity_id": "u_nWHUQ5mLoPSz",
+   "before": null,
+   "after": null,
+   "ip": "127.0.0.1",
+   "user_agent": null
+  },
+  {
+   "id": "GDBGaNmubtPX",
+   "created_at": "2026-09-22T13:14:53.374Z",
+   "actor_id": "u_nWHUQ5mLoPSz",
+   "action": "auth.login",
+   "entity": "user",
+   "entity_id": "u_nWHUQ5mLoPSz",
+   "before": null,
+   "after": null,
+   "ip": "127.0.0.1",
+   "user_agent": null
+  },
+  {
+   "id": "1lCuHNvlpY",
+   "created_at": "2026-09-22T13:14:53.384Z",
+   "actor_id": "u_nWHUQ5mLoPSz",
+   "action": "system.restart",
+   "entity": "system",
+   "entity_id": "server",
+   "before": null,
+   "after": {
+    "triggered_by": "PV-000001"
+   },
+   "ip": null,
+   "user_agent": null
+  }
+ ],
+ "promo_codes": [],
+ "reviews": [
+  {
+   "id": "rv_1Oo3jN3H7Ph",
+   "user_id": null,
+   "order_id": null,
+   "photos": [],
+   "rating": 5,
+   "body": "AJ1 Chicago доехали за 26 дней в Минск. Фотоотчёт пришёл на 4-й день, пломба Poizon была цела. Вес совпал до 70 грамм.",
+   "author_name": "Иван С.",
+   "is_published": true,
+   "created_at": "2026-09-21T17:19:41.323Z"
+  },
+  {
+   "id": "rv_NmoNWWDjwQGs",
+   "user_id": null,
+   "order_id": null,
+   "photos": [],
+   "rating": 5,
+   "body": "Брала Arc'teryx Beta LT — переживала за подлинность. Пришёл сертификат, голограмма, всё по Legit Check. Комиссия 10% честно показана в калькуляторе.",
+   "author_name": "Мария О.",
+   "is_published": true,
+   "created_at": "2026-09-21T17:19:41.323Z"
+  },
+  {
+   "id": "rv_n5bw1ZxhJZPY",
+   "user_id": null,
+   "order_id": null,
+   "photos": [],
+   "rating": 4,
+   "body": "Samba OG пришли на 2 дня позже вилки срока, но поддержка отвечала в Telegram за 5 минут. Бонус за TikTok начислили без вопросов.",
+   "author_name": "Кирилл Е.",
+   "is_published": true,
+   "created_at": "2026-09-21T17:19:41.323Z"
+  }
+ ],
+ "opex_entries": [
+  {
+   "id": "ox_OrBhbZ9x7E1A",
+   "day": "2026-09-01",
+   "category": "salary",
+   "amount_minor": 900000,
+   "currency": "RUB",
+   "comment": "ФОТ склада КНР и менеджеров (доля периода)",
+   "created_by": null,
+   "created_at": "2026-09-21T17:19:41.324Z"
+  },
+  {
+   "id": "ox_xQFnfOjYVt2K",
+   "day": "2026-09-01",
+   "category": "marketing",
+   "amount_minor": 220000,
+   "currency": "RUB",
+   "comment": "TikTok-продвижение, блогеры",
+   "created_by": null,
+   "created_at": "2026-09-21T17:19:41.324Z"
+  },
+  {
+   "id": "ox_yX4eZLMBq86",
+   "day": "2026-09-01",
+   "category": "software",
+   "amount_minor": 45000,
+   "currency": "RUB",
+   "comment": "Серверы, CRM, Telegram-бот",
+   "created_by": null,
+   "created_at": "2026-09-21T17:19:41.324Z"
+  }
+ ],
+ "meta": [
+  {
+   "id": "schema",
+   "version": "1.0.0",
+   "seeded_at": "2026-09-21T17:19:41.324Z"
+  }
+ ]
+}

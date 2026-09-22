@@ -1,0 +1,12 @@
+{
+  "name": "poizonvanart-root",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "start": "node project/server/index.js",
+    "serve": "node project/server/index.js",
+    "local": "node run.js",
+    "dev": "node --watch project/server/index.js"
+  }
+}

@@ -1,0 +1,99 @@
+/* ═══════════════════════════════════════════════════════════════════════════
+   PoizonVanart · tokens.css
+   Дизайн-токены: ТЁМНАЯ и СВЕТЛАЯ темы через CSS-переменные.
+   Переключение = один атрибут data-theme на <html> → мгновенный реflow без JS.
+   ═══════════════════════════════════════════════════════════════════════════ */
+
+:root {
+  /* бренд: Sand & Champagne Gold Luxury */
+  --brand: #d4a373;
+  --brand-600: #c28f5c;
+  --brand-300: #e5b98b;
+  --brand-soft: rgba(212, 163, 115, 0.14);
+  --brand-glow: rgba(212, 163, 115, 0.32);
+  --gold: #d4a373;
+  --ok: #d4a373;
+  --warn: #e09f3e;
+  --danger: #e63946;
+  --info: #a8dadc;
+
+  /* типографика */
+  --ff: -apple-system, BlinkMacSystemFont, 'SF Pro Display', 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+  --ff-mono: ui-monospace, SFMono-Regular, "SF Mono", Menlo, Consolas, monospace;
+  --fs-xs: 12px; --fs-sm: 13px; --fs-md: 14px; --fs-lg: 16px; --fs-xl: 20px;
+  --fs-2xl: 26px; --fs-3xl: 34px; --fs-4xl: 46px;
+
+  /* геометрия */
+  --r-sm: 8px; --r-md: 12px; --r-lg: 18px; --r-xl: 26px; --r-pill: 999px;
+  --sp-1: 4px; --sp-2: 8px; --sp-3: 12px; --sp-4: 16px; --sp-5: 24px; --sp-6: 32px; --sp-7: 48px; --sp-8: 72px;
+  --container: 1240px;
+  --header-h: 66px;
+
+  /* эффекты */
+  --tr: 180ms cubic-bezier(.4, 0, .2, 1);
+  --shadow-1: 0 2px 6px rgba(0,0,0,.25);
+  --shadow-2: 0 10px 28px rgba(0,0,0,.35);
+  --shadow-3: 0 28px 70px rgba(0,0,0,.5);
+}
+
+/* ── ТЁМНАЯ ТЕМА (по умолчанию) ─────────────────────────────────────────── */
+:root, [data-theme="dark"] {
+  color-scheme: dark;
+  --bg: #0b0c10;
+  --bg-2: #101217;
+  --bg-3: #171922;
+  --surface: rgba(255,255,255,.03);
+  --surface-2: rgba(255,255,255,.06);
+  --card: #13151c;
+  --card-2: #191c26;
+  --border: rgba(255,255,255,.07);
+  --border-strong: rgba(212, 163, 115, 0.25);
+  --text: #f7f4ee;
+  --text-2: #a19d94;
+  --text-3: #6b6760;
+  --overlay: rgba(5,6,9,.75);
+}
+  --text-2: #a4adbd;
+  --text-3: #6f7889;
+  --overlay: rgba(4,6,10,.72);
+  --grid: rgba(255,255,255,.04);
+  --glow: radial-gradient(1000px 480px at 80% -10%, rgba(255,77,45,.20), transparent 60%),
+          radial-gradient(700px 420px at 0% 0%, rgba(56,189,248,.10), transparent 55%);
+}
+
+/* ── СВЕТЛАЯ ТЕМА ───────────────────────────────────────────────────────── */
+[data-theme="light"] {
+  color-scheme: light;
+  --brand: #e63e20;
+  --brand-600: #c9321a;
+  --brand-soft: rgba(230,62,32,.10);
+  --bg: #f5f6f9;
+  --bg-2: #ffffff;
+  --bg-3: #eef0f5;
+  --surface: rgba(15,19,27,.035);
+  --surface-2: rgba(15,19,27,.06);
+  --card: #ffffff;
+  --card-2: #f7f8fb;
+  --border: rgba(15,19,27,.10);
+  --border-strong: rgba(15,19,27,.22);
+  --text: #12151c;
+  --text-2: #535c6d;
+  --text-3: #8b93a3;
+  --overlay: rgba(20,24,32,.45);
+  --grid: rgba(15,19,27,.05);
+  --shadow-1: 0 1px 2px rgba(16,24,40,.06);
+  --shadow-2: 0 8px 24px rgba(16,24,40,.10);
+  --shadow-3: 0 24px 60px rgba(16,24,40,.16);
+  --glow: radial-gradient(900px 420px at 85% -10%, rgba(255,77,45,.14), transparent 60%),
+          radial-gradient(600px 380px at 0% 0%, rgba(56,189,248,.10), transparent 55%);
+}
+
+@media (prefers-color-scheme: light) {
+  [data-theme="system"] {
+    color-scheme: light;
+    --bg: #f5f6f9; --bg-2: #fff; --bg-3: #eef0f5; --card: #fff; --card-2: #f7f8fb;
+    --border: rgba(15,19,27,.10); --border-strong: rgba(15,19,27,.22);
+    --text: #12151c; --text-2: #535c6d; --text-3: #8b93a3; --overlay: rgba(20,24,32,.45);
+    --surface: rgba(15,19,27,.035); --surface-2: rgba(15,19,27,.06); --grid: rgba(15,19,27,.05);
+  }
+}
